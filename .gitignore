@@ -1,0 +1,9 @@
+# Ignore all Python scripts
+*.py
+
+# Ignore large output folders
+/assets/output/
+/input/
+
+# Ignore local system files
+*.log

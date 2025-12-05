@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نيو مون | تواصل معنا</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن الشركة</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="portfolio.html">أعمالنا</a></li>
+                <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
+                <li><a href="contact.html" class="active btn-nav">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>تواصل معنا</h1>
+        <p>ابدأ الخطوة الأولى نحو شراكة ناجحة</p>
+    </section>
+
+    <section class="contact" style="background:#fff;">
+        <div class="container">
+            <div style="display:flex; flex-wrap:wrap; gap:40px;">
+                
+                <div class="feedback-box" style="flex:1; min-width:300px;">
+                    <form action="mailto:newmmoon22@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="الاسم بالكامل" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="role" class="form-input" style="background-color: #f8f9fa; cursor: pointer;" required>
+                                <option value="" disabled selected>أنت تمثل جهة؟ (يساعدنا في توجيه طلبك)</option>
+                                <option value="marketing">👔 مدير تسويق / دعاية</option>
+                                <option value="purchasing">📦 مسؤول مشتريات / توريدات</option>
+                                <option value="owner">💼 صاحب عمل / مدير عام</option>
+                                <option value="other">🔹 غير ذلك</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="رقم الهاتف (واتساب)" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="تفاصيل مشروعك..." rows="5" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الطلب</button>
+                    </form>
+                </div>
+
+                <div class="contact-info" style="flex:1; padding:30px; background:#f8f9fa; border-radius:15px; border:1px solid #eee;">
+                    <h3 style="color:var(--primary);">بيانات التواصل</h3>
+                    <ul style="list-style:none; padding:0; margin-top:20px; line-height:2;">
+                        <li><i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> 177 أحمد عصمت، الألف مسكن، جسر السويس.</li>
+                        <li><i class="fas fa-phone" style="color:var(--secondary);"></i> 01280081544 - 01212678990</li>
+                        <li><i class="fas fa-envelope" style="color:var(--secondary);"></i> newmmoon22@gmail.com</li>
+                        <li><i class="fas fa-clock" style="color:var(--secondary);"></i> السبت - الخميس: 9ص - 6م</li>
+                    </ul>
+                    <div class="map-box" style="height:250px; border-radius:10px; overflow:hidden; margin-top:20px; border:1px solid #ddd;">
+                        <iframe src="https://maps.app.goo.gl/NFiLa7ZMK2UcgDaU9" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #002244; color: #ccc; text-align: center; padding: 40px 0;">
+        <div class="container" style="padding: 0;">
+            <div class="social-icons" style="margin-bottom: 20px;">
+                <a href="https://www.facebook.com/profile.php?id=61569383031991" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/new_moonagency/?__pwa=1#" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/newmoon121" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p style="margin-bottom:15px;">جميع الحقوق محفوظة © 2025 شركة نيو مون</p>
+            <a href="assets/Company-Profile.pdf" download class="btn btn-outline" style="border:1px solid #555; color:#aaa; font-size:0.8rem; padding:8px 20px;">
+                <i class="fas fa-file-pdf"></i> تحميل بروفايل الشركة
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

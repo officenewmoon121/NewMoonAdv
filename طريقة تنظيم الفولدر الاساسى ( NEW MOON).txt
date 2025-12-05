@@ -1,0 +1,25 @@
+new-moon/
+│
+├── index.html          (الرئيسية)
+├── about.html          (عن الشركة)
+├── services.html       (الخدمات)
+├── portfolio.html      (الأعمال)
+├── contact.html        (اتصل بنا)
+├── tool.html           (المعمل)
+│
+├── css/                (فولدر التنسيق)
+│   ├── style.css       (ستايل الموقع العام)
+│   └── tool.css        (ستايل المعمل فقط)
+│
+├── js/                 (فولدر الذكاء)
+│   ├── main.js         (تشغيل الموقع: القائمة، السلايدر)
+│   ├── tool.js         (تشغيل المعمل: الرسم، التحميل)
+│   ├── gallery-data.js (بيانات صور المعرض)
+│   └── products.js     (بيانات منتجات المعمل)
+│
+└── assets/             (فولدر الأصول)
+    └── images/
+        ├── client1.jpeg, client2.jpeg... (لوجوهات)
+        ├── hero4.jpeg (صورة الهيرو)
+        └── products/
+            ├── mug-base.jpg, mug-mask.png... (صور المعمل)
