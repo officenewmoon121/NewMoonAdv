@@ -1,16 +1,26 @@
-.tool-body { height: 100vh; overflow: hidden; display: flex; flex-direction: column; background: #eee; }
-.lab-container { display: flex; flex-direction: column; height: 100%; }
+/* Tool Specific Styles */
+.tool-body { background-color: #f0f2f5; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.back-btn-floating { position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 100; color: #333; }
 
-.preview-zone { flex: 1; display: flex; align-items: center; justify-content: center; background: #e0e5ec; padding: 20px; }
-.mockup-stage { width: 300px; height: 300px; position: relative; }
-.product-base { width: 100%; height: 100%; object-fit: contain; }
-.logo-layer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 50%; cursor: move; }
+.lab-container { display: flex; height: 100%; }
+.preview-zone { flex: 2; display: flex; align-items: center; justify-content: center; background: #e0e5ec; position: relative; }
+.mockup-stage { width: 400px; height: 400px; position: relative; display: flex; align-items: center; justify-content: center; }
+.product-base { max-width: 100%; max-height: 100%; object-fit: contain; z-index: 1; }
+.logo-layer { position: absolute; max-width: 100px; z-index: 2; transform-origin: center; cursor: grab; }
 
-.controls-zone { background: #fff; padding: 20px; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); max-height: 50vh; overflow-y: auto; }
-.tool-title { text-align: center; margin-bottom: 15px; color: var(--primary); }
-.control-card { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 10px; border: 1px solid #eee; }
-.big-select, .file-input { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-top: 5px; }
-.range-group { display: flex; align-items: center; gap: 10px; margin-top: 5px; }
-.range-group input { flex: 1; }
-.big-action-btn { width: 100%; padding: 15px; font-size: 1.2rem; margin-top: 10px; }
-.back-btn-floating { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 100; }
+.controls-zone { flex: 1; background: #fff; padding: 20px; box-shadow: -2px 0 10px rgba(0,0,0,0.05); overflow-y: auto; display: flex; flex-direction: column; gap: 20px; z-index: 10; }
+.tool-title { color: #002244; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #f4a261; display: inline-block; align-self: center; padding-bottom: 5px; }
+
+.control-card { background: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #eee; }
+.control-card label { display: block; margin-bottom: 10px; font-weight: bold; color: #555; }
+.big-select, .file-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #fff; }
+.range-group { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.big-action-btn { width: 100%; padding: 15px; margin-top: auto; font-size: 1.1rem; }
+
+/* Mobile Tool */
+@media (max-width: 768px) {
+    .lab-container { flex-direction: column; }
+    .preview-zone { flex: 1; height: 45vh; }
+    .mockup-stage { width: 250px; height: 250px; }
+    .controls-zone { flex: 1.2; border-radius: 20px 20px 0 0; padding-bottom: 80px; }
+}

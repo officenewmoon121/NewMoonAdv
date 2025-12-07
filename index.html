@@ -3,79 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة نيو مون | شريكك للتميز</title>
-    <link rel="stylesheet" href="./css/style.css?v=3.0">
+    <title>نيو مون | الرئيسية</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="about.html">عن الشركة</a></li>
-                <li><a href="services.html">خدماتنا</a></li>
-                <li><a href="portfolio.html">أعمالنا</a></li>
-                <li><a href="tool.html" style="color:var(--secondary); font-weight:bold;">المعمل الذكي</a></li>
-                <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
+            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="about.html">عن الشركة</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="portfolio.html">أعمالنا</a></li>
+                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
+                    <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>نصنع واجهة تليق بقيمة علامتك التجارية</h1>
-            <p>خبرة 25 عاماً في خدمة كبرى الشركات والبنوك، مع تخصص دقيق وخبرة عريقة في تلبية متطلبات قطاع الأدوية المصري.</p>
-            
+            <p>خبرة 25 عاماً في خدمة كبرى الشركات.</p>
             <div class="hero-btns">
-                <a href="tool.html" class="btn btn-primary pulse-effect"><i class="fas fa-magic"></i> صمم هديتك بنفسك (المعمل)</a>
-                <a href="services.html" class="btn btn-outline">تصفح جميع خدماتنا</a>
+                <a href="tool.html" class="btn btn-primary pulse-effect">صمم هديتك بنفسك</a>
+                <a href="services.html" class="btn btn-outline">خدماتنا</a>
             </div>
         </div>
-
         <div class="hero-footer">
-            <div class="section-header-mini">
-                <span class="line"></span>
-                <p class="trusted-by">كيانات وثقت بنا</p>
-                <span class="line"></span>
-            </div>
             <div class="clients-slider-wrapper">
                 <div class="clients-track">
-                    <div class="slide"><img src="./assets/images/samsung.jpg" alt="Samsung"></div>
-                    <div class="slide"><img src="./assets/images/etisalat.jpg" alt="Etisalat"></div>
-                    <div class="slide"><img src="./assets/images/pfizer.jpg" alt="Pfizer"></div>
-                    <div class="slide"><img src="./assets/images/buc.jpg" alt="BUC"></div>
-                    <div class="slide"><img src="./assets/images/jamjoom.jpg" alt="Jamjoom"></div>
-                    <div class="slide"><img src="./assets/images/sedico.jpg" alt="SEDICO"></div>
-                    <div class="slide"><img src="./assets/images/glc.jpg" alt="GLC"></div>
-                    <div class="slide"><img src="./assets/images/ghataty.jpg" alt="Ghataty"></div>
-                    <div class="slide"><img src="./assets/images/indomie.jpg" alt="Indomie"></div>
-                    <div class="slide"><img src="./assets/images/samsung.jpg" alt="Samsung"></div>
-                    <div class="slide"><img src="./assets/images/etisalat.jpg" alt="Etisalat"></div>
-                    <div class="slide"><img src="./assets/images/pfizer.jpg" alt="Pfizer"></div>
-                </div>
+                    <div class="slide"><img src="assets/images/samsung.jpg" alt="Client"></div>
+                    <div class="slide"><img src="assets/images/etisalat.jpg" alt="Client"></div>
+                     </div>
             </div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2 class="section-title">لماذا نيو مون؟</h2>
-            <div class="features-grid">
-                <div class="feature"><i class="fas fa-history"></i><h4>25 عاماً من الخبرة</h4><p>تاريخ طويل من الالتزام مع كبرى المؤسسات.</p></div>
-                <div class="feature"><i class="fas fa-layer-group"></i><h4>خدمات شاملة</h4><p>من المطبوعات والهدايا وحتى تجهيز المعارض والمستلزمات الطبية.</p></div>
-                <div class="feature"><i class="fas fa-fingerprint"></i><h4>بصمة خاصة</h4><p>نبتكر حلولاً دعائية خارج الصندوق تخلد اسم علامتك.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #002244; color: #ccc; text-align: center; padding: 40px 0;">
-        <div class="container" style="padding: 0;">
-            <p style="margin-bottom:15px;">جميع الحقوق محفوظة © 2025 شركة نيو مون</p>
-        </div>
-    </footer>
-    
-    <script src="./js/main.js"></script>
+    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

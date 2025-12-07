@@ -1,6 +1,15 @@
-const productsDB = [
-    { id: 'mug-ceramic', name: 'مج سيراميك', baseImage: 'assets/images/products/mug-base.jpg' },
-    { id: 'pen-plastic', name: 'قلم بلاستيك', baseImage: 'assets/images/products/pen-base.jpg' },
-    { id: 'agenda-2025', name: 'أجندة فاخرة', baseImage: 'assets/images/products/agenda-base.jpg' },
-    { id: 'bag-nonwoven', name: 'شنطة قماش', baseImage: 'assets/images/products/bag-base.jpg' }
+const products = [
+    { id: 'mug', name: 'مج سيراميك', image: 'assets/images/products/mug-base.jpg' },
+    { id: 'notebook', name: 'أجندة جلد', image: 'assets/images/products/notebook.jpg' },
+    { id: 'pen', name: 'قلم معدني', image: 'assets/images/products/pen.jpg' }
 ];
+
+const productSelect = document.getElementById('product-select');
+if(productSelect) {
+    products.forEach(prod => {
+        const option = document.createElement('option');
+        option.value = prod.image;
+        option.textContent = prod.name;
+        productSelect.appendChild(option);
+    });
+}

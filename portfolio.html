@@ -9,52 +9,36 @@
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">عن الشركة</a></li>
-                <li><a href="services.html">خدماتنا</a></li>
-                <li><a href="portfolio.html" class="active">أعمالنا</a></li>
-                <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
-                <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
+            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">عن الشركة</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="portfolio.html" class="active">أعمالنا</a></li>
+                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
+                    <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="page-header">
-        <h1>معرض الأعمال</h1>
-        <p>نماذج حقيقية من سابقة أعمالنا</p>
-    </section>
+    <section class="page-header"><h1>معرض الأعمال</h1></section>
+    <section class="portfolio"><div class="container portfolio-grid" id="portfolio-container"></div></section>
 
-    <section class="portfolio">
-        <div class="container">
-            <div class="portfolio-grid" id="portfolio-container"></div>
-        </div>
-    </section>
-
-    <footer style="background: #002244; color: #ccc; text-align: center; padding: 40px 0;">
-        <div class="container" style="padding: 0;">
-            <div class="social-icons" style="margin-bottom: 20px;">
-                <a href="https://www.facebook.com/profile.php?id=61569383031991" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/new_moonagency/?__pwa=1#" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/newmoon121" target="_blank" style="color:#fff; margin:0 10px; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p style="margin-bottom:15px;">جميع الحقوق محفوظة © 2025 شركة نيو مون</p>
-            <a href="assets/Company-Profile.pdf" download class="btn btn-outline" style="border:1px solid #555; color:#aaa; font-size:0.8rem; padding:8px 20px;">
-                <i class="fas fa-file-pdf"></i> تحميل بروفايل الشركة
-            </a>
-        </div>
-    </footer>
-
+    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
+    
     <script src="js/gallery-data.js"></script>
     <script>
         const container = document.getElementById('portfolio-container');
-        let html = '';
-        portfolioItems.forEach(item => {
-            html += `<div class="portfolio-item"><img src="${item.image}" alt="${item.title}"><div class="portfolio-info"><h3>${item.title}</h3><p>${item.desc}</p></div></div>`;
-        });
-        container.innerHTML = html;
+        if(container && typeof portfolioItems !== 'undefined') {
+            portfolioItems.forEach(item => {
+                container.innerHTML += `<div class="portfolio-item"><img src="${item.image}" alt="${item.title}"><h3>${item.title}</h3><p>${item.desc}</p></div>`;
+            });
+        }
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

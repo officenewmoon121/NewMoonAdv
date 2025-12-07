@@ -12,34 +12,43 @@
 body { direction: rtl; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
 
-/* Header */
+/* ================= Header ================= */
 header { background: #fff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-header .logo a { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; margin-right: 20px;}
-header nav ul { display: flex; gap: 20px; align-items: center; justify-content: center;}
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+header .logo a { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+/* Desktop Navigation */
+header nav ul { display: flex; gap: 20px; align-items: center; }
 header nav ul li a { color: var(--dark); font-weight: 600; transition: 0.3s; }
 header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
 .btn-nav { background: var(--primary); color: #fff !important; padding: 8px 20px; border-radius: 5px; }
 
-/* Hero Section */
+/* Mobile Menu Button (Hidden on Desktop) */
+.menu-toggle { display: none; cursor: pointer; }
+.menu-toggle .bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--dark); }
+
+/* ================= Hero Section ================= */
 .hero { 
     height: 100vh; 
     background: url('../assets/images/hero4.jpeg') no-repeat center center/cover; 
     position: relative; 
     display: flex; 
+    flex-direction: column;
     align-items: center; 
     justify-content: center; 
     text-align: center; 
     color: #fff; 
 }
-.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 34, 68, 0.7); }
-.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 34, 68, 0.75); }
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; margin-top: auto; margin-bottom: auto; }
 .hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6; }
 
-/* Hero Buttons */
+/* Buttons */
 .hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;}
-.btn { padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; border: none;}
+.btn { padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
 .btn-primary { background: var(--secondary); color: #fff; }
 .btn-outline { border: 2px solid #fff; color: #fff; background: transparent; }
 .btn:hover { transform: translateY(-3px); }
@@ -47,7 +56,7 @@ header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(244, 162, 97, 0); } 100% { box-shadow: 0 0 0 0 rgba(244, 162, 97, 0); } }
 
 /* Client Slider */
-.hero-footer { position: absolute; bottom: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px 0; border-top: 1px solid #ddd; z-index: 10; }
+.hero-footer { position: relative; bottom: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px 0; border-top: 1px solid #ddd; z-index: 10; }
 .section-header-mini { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
 .section-header-mini .line { width: 30px; height: 3px; background: var(--secondary); }
 .section-header-mini .trusted-by { color: var(--primary); font-weight: bold; margin: 0; }
@@ -55,260 +64,57 @@ header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
 .clients-track { display: flex; animation: scroll 25s linear infinite; }
 .clients-track .slide { width: 150px; padding: 0 15px; flex-shrink: 0; }
 .clients-track img { width: 100%; height: 50px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
-.clients-track .slide:hover img { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-150px * 9)); } }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-150px * 7)); } }
 
-/* Features */
-.about { padding: 60px 0; background: #fff; }
-.container { width: 90%; max-width: 1200px; margin: auto; }
+/* Features & General Sections */
+.about, .services, .contact, .portfolio { padding: 60px 0; background: #fff; }
+.page-header { background: var(--primary); color: #fff; padding: 60px 0; text-align: center; }
+.page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
 .section-title { text-align: center; color: var(--primary); margin-bottom: 40px; font-size: 2rem; }
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-.feature { padding: 20px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
-.feature:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-5px); }
-.feature i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+.features-grid, .services-grid, .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+.feature, .service-card { padding: 20px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
+.feature:hover, .service-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-5px); }
+.feature i, .service-card i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+.portfolio-item img { width: 100%; border-radius: 10px; }
 
-/* Responsive */
-@media (max-width: 768px) {
-    header nav ul { display: none; } /* يمكن إضافة قائمة هامبرجر لاحقاً */
-    .hero-content h1 { font-size: 2rem; }
-    .hero-btns { flex-direction: column; width: 100%; }
-    .btn { width: 100%; }
-    .hero-footer { padding: 10px 0; position: relative; } /* الشريط لا يغطي المحتوى في الموبايل */
-}/* =======================================================
-   📱 تحديثات الموبايل والتابلت (Mobile & Tablet Patch)
+/* Contact Form */
+.form-input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
+
+/* =======================================================
+   📱 MOBILE & TABLET RESPONSIVE FIXES
    ======================================================= */
-
-/* --- 1. تحسينات عامة للموبايل (شاشات أقل من 768px) --- */
 @media (max-width: 768px) {
+    /* Header & Menu */
+    .menu-toggle { display: block; position: absolute; left: 20px; top: 22px; z-index: 1001;}
+    .header-container { justify-content: center; }
     
-    /* الهيدر والقائمة */
-    header .logo a { font-size: 1.2rem; justify-content: center; margin: 0; }
-    header nav ul { 
-        gap: 10px; 
-        padding: 10px; 
-        flex-wrap: wrap; /* يخلي الروابط تنزل تحت بعض لو مفيش مكان */
-        justify-content: center;
-    }
-    header nav ul li a { font-size: 0.9rem; }
-    .btn-nav { padding: 5px 15px; font-size: 0.9rem; }
-
-    /* الواجهة الرئيسية (Hero) */
-    .hero { height: auto; min-height: 80vh; padding-top: 20px; align-items: flex-start; }
-    .hero-content { padding-top: 100px; padding-bottom: 150px; } /* مساحة عشان الكلام ميركبش فوق بعض */
-    .hero-content h1 { font-size: 1.8rem; line-height: 1.3; }
-    .hero-content p { font-size: 1rem; padding: 0 10px; }
-    
-    /* أزرار الهيرو */
-    .hero-btns { flex-direction: column; width: 100%; gap: 10px; }
-    .btn { width: 100%; display: block; padding: 12px; }
-
-    /* شريط العملاء */
-    .hero-footer { position: relative; background: #fff; padding: 20px 0; }
-    .clients-track .slide { width: 100px; } /* تصغير اللوجوهات شوية */
-
-    /* قسم المميزات والخدمات */
-    .features-grid, .services-grid { grid-template-columns: 1fr; gap: 20px; } /* عمود واحد */
-    .section-title { font-size: 1.5rem; margin-bottom: 25px; }
-}
-
-/* --- 2. تحسينات المعمل الذكي للموبايل (Tool Mobile) --- */
-@media (max-width: 768px) {
-    .tool-body { 
-        height: 100vh; /* ملء الشاشة */
-        overflow: hidden; /* منع السكرول للصفحة كلها */
-        position: fixed; top: 0; left: 0; width: 100%; 
-    }
-    
-    /* منطقة العرض (صورة المج) */
-    .preview-zone { 
-        height: 45vh; /* تاخد 45% من الشاشة */
-        padding: 10px;
-        align-items: flex-end; /* تنزل الصورة لتحت شوية */
-    }
-    .mockup-stage { width: 220px; height: 220px; } /* تصغير مساحة العمل */
-
-    /* منطقة التحكم (الزراير) */
-    .controls-zone { 
-        height: 55vh; /* تاخد باقي الشاشة */
-        border-radius: 25px 25px 0 0; 
-        padding: 15px; 
-        padding-bottom: 80px; /* مساحة عشان آخر زرار يبان */
-    }
-    
-    .tool-title { font-size: 1.2rem; margin-bottom: 10px; }
-    .control-card { padding: 10px; margin-bottom: 8px; }
-    .control-card label { font-size: 0.85rem; margin-bottom: 5px; }
-    
-    /* تكبير عناصر اللمس */
-    .range-group input[type=range] { height: 25px; } /* تكبير الشريط */
-    .big-action-btn { padding: 12px; font-size: 1rem; }
-    
-    /* زر الخروج */
-    .back-btn-floating { top: 10px; left: 10px; right: auto; width: 35px; height: 35px; }
-}
-
-/* --- 3. تحسينات للتابلت والآيباد (Tablets) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-btns { flex-direction: row; } /* الأزرار جنب بعض عادي */
-    .features-grid { grid-template-columns: repeat(2, 1fr); } /* عمودين */
-    
-    /* المعمل في التابلت */
-    .preview-zone { height: 50vh; }
-    .controls-zone { height: 50vh; }
-}/* === 📱 إصلاح شريط العملاء للموبايل === */
-@media (max-width: 768px) {
-    /* 1. إلغاء الوضع العائم للشريط */
-    .hero-footer {
-        position: relative !important; /* يخليه جزء طبيعي من الصفحة مش عائم */
-        bottom: auto !important;
-        margin-top: 30px; /* يسيب مسافة بينه وبين الكلام */
-        width: 100%;
-    }
-
-    /* 2. السماح للصفحة تطول براحتها */
-    .hero {
-        height: auto !important; /* يلغي الطول الثابت */
-        min-height: 100vh; /* يضمن إنها تغطي الشاشة */
-        padding-top: 100px; /* مسافة من فوق عشان الهيدر */
-        padding-bottom: 50px; /* مسافة من تحت */
-        background-position: center; /* يظبط خلفية الصورة */
-    }
-
-    /* 3. تنسيق النص */
-    .hero-content {
-        padding: 0 20px; /* هوامش عشان الكلام ميلزقش في الحواف */
-        width: 100%;
-    }
-}/* ==============================================
-   📱 إصلاح شامل لواجهة الموبايل (Hero Mobile Fix)
-   ============================================== */
-@media (max-width: 768px) {
-    
-    /* 1. إصلاح الخلفية والمساحات */
-    .hero {
-        height: auto !important; /* إلغاء الطول الثابت */
-        min-height: 100vh; /* الصفحة تاخد طول الشاشة براحتها */
-        padding-top: 120px; /* مسافة من فوق عشان الهيدر */
-        padding-bottom: 20px;
-        background-position: center top; /* تظبيط الصورة */
-        display: flex;
+    .nav-menu ul {
         flex-direction: column;
-        justify-content: flex-start; /* يبدأ الكلام من فوق مش من النص */
-    }
-
-    /* 2. إصلاح الكلام والخطوط */
-    .hero-content {
-        width: 100%;
-        padding: 0 20px; /* هوامش عشان الكلام ميتكتبش على الحرف */
-        margin-bottom: 40px; /* مسافة تفصله عن الشريط الأبيض */
-    }
-    
-    .hero-content h1 {
-        font-size: 1.8rem; /* تصغير العنوان */
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    /* 3. إصلاح الأزرار (تحت بعض) */
-    .hero-btns {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        margin-top: 25px;
-    }
-    
-    .hero-btns .btn {
-        width: 100%; /* الزرار بعرض الشاشة */
-        padding: 12px;
-        font-size: 1rem;
-        display: block;
-    }
-
-    /* 4. الحل الجذري للشريط الأبيض (إلغاء الطفو) */
-    .hero-footer {
-        position: relative !important; /* يرجع لمكانه الطبيعي تحت الكلام */
-        bottom: auto !important;
-        margin-top: auto; /* يزق نفسه لتحت */
+        position: fixed;
+        right: -100%;
+        top: 60px;
         width: 100%;
         background: #fff;
-    }
-    
-    /* تصغير اللوجوهات في الشريط */
-    .clients-track .slide {
-        width: 100px; 
-    }
-}/* =================================================
-   📱 تصميم الموبايل الاحترافي (مقترح الشريك التقني)
-   ================================================= */
-@media (max-width: 768px) {
-
-    /* 1. ضبط الحاوية الرئيسية (مساحات مريحة) */
-    .hero {
-        height: auto !important; /* طول مرن حسب المحتوى */
-        min-height: 100vh; /* يملأ الشاشة */
-        padding-top: 110px; /* مسافة من فوق للهيدر */
-        padding-bottom: 40px; /* مسافة من تحت */
-        padding-left: 24px;  /* ✅ مسافة من الشمال */
-        padding-right: 24px; /* ✅ مسافة من اليمين */
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* سنتر الكلام في نص الشاشة */
-        text-align: center; /* محاذاة النص في المنتصف للموبايل أشيك */
-    }
-
-    /* 2. تحسين قراءة النصوص (Overlay أغمق) */
-    .overlay {
-        background: rgba(0, 34, 68, 0.85); /* تغميق الخلفية عشان الكلام يوضح */
-    }
-
-    .hero-content {
-        padding: 0; /* إلغاء الهوامش الداخلية الزائدة */
-        margin-bottom: 40px; /* مسافة تفصل الكلام عن الزراير */
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 1.75rem; /* حجم خط مثالي للموبايل */
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        opacity: 0.9;
-    }
-
-    /* 3. تصميم الأزرار (تحت خالص وواضحة) */
-    .hero-btns {
-        margin-top: 30px; /* زق الزراير لتحت */
-        flex-direction: column; /* زرار فوق زرار */
-        gap: 12px;
-        width: 100%;
-    }
-
-    .btn {
-        width: 100%; /* الزرار ياخد العرض كامل */
-        padding: 14px; /* زرار "تخين" سهل الضغط */
-        font-size: 1.1rem;
-    }
-
-    /* 4. شريط العملاء (مفصول تماماً في الأسفل) */
-    .hero-footer {
-        position: relative !important;
-        margin-top: 50px; /* مسافة كبيرة تفصله عن الزراير */
-        background: #fff;
-        width: calc(100% + 48px); /* خدعة عشان الشريط يلمس الحواف رغم الهوامش */
-        margin-left: -24px;
-        margin-right: -24px;
         padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
+        gap: 0;
     }
-    
-    .clients-track .slide { width: 90px; } /* لوجوهات صغيرة وشيك */
+    .nav-menu ul.active { right: 0; }
+    .nav-menu ul li { width: 100%; text-align: center; }
+    .nav-menu ul li a { display: block; padding: 15px; border-bottom: 1px solid #eee; }
+    .btn-nav { display: inline-block; margin-top: 10px; width: 80%; }
+
+    /* Hamburger Animation */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Hero Fixes */
+    .hero { height: auto; min-height: 100vh; padding-top: 80px; }
+    .hero-content h1 { font-size: 1.8rem; line-height: 1.3; }
+    .hero-btns { flex-direction: column; width: 100%; gap: 10px; }
+    .btn { width: 100%; }
+    .hero-footer { margin-top: 30px; padding: 20px 0; }
+    .clients-track .slide { width: 100px; }
 }
