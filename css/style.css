@@ -1,194 +1,77 @@
-/* =========================================
-   1. تحديثات الصفحة الرئيسية (Home Updates)
-   ========================================= */
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-/* تحسين الأزرار في الهيرو */
-.hero-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 30px;
+:root {
+    --primary: #002244;
+    --secondary: #f4a261;
+    --light: #f4f6f8;
+    --dark: #333;
 }
 
-.hero-btns .btn {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 50px; /* شكل دائري أكثر عصرية */
-    transition: all 0.3s ease;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+body { direction: rtl; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-/* تأثير النبض للزرار المهم */
-.pulse-effect {
-    animation: pulse-animation 2s infinite;
-    box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7);
-}
+/* Header */
+header { background: #fff; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+header .logo a { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; margin-right: 20px;}
+header nav ul { display: flex; gap: 20px; align-items: center; justify-content: center;}
+header nav ul li a { color: var(--dark); font-weight: 600; transition: 0.3s; }
+header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
+.btn-nav { background: var(--primary); color: #fff !important; padding: 8px 20px; border-radius: 5px; }
 
-@keyframes pulse-animation {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(244, 162, 97, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(244, 162, 97, 0); }
+/* Hero Section */
+.hero { 
+    height: 100vh; 
+    background: url('../assets/images/hero4.jpeg') no-repeat center center/cover; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: #fff; 
 }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 34, 68, 0.7); }
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6; }
 
-/* ستايل شريط العملاء */
-.hero-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 10px 0;
-    border-top: 1px solid #eee;
-    z-index: 10;
-}
-.section-header-mini { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 5px; }
-.section-header-mini .trusted-by { font-weight: bold; color: #002244; font-size: 0.9rem; margin:0; }
-.section-header-mini .line { width: 20px; height: 2px; background: #f4a261; }
+/* Hero Buttons */
+.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap;}
+.btn { padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; border: none;}
+.btn-primary { background: var(--secondary); color: #fff; }
+.btn-outline { border: 2px solid #fff; color: #fff; background: transparent; }
+.btn:hover { transform: translateY(-3px); }
+.pulse-effect { animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(244, 162, 97, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(244, 162, 97, 0); } 100% { box-shadow: 0 0 0 0 rgba(244, 162, 97, 0); } }
 
-.clients-slider-wrapper { overflow: hidden; white-space: nowrap; }
-.clients-track { display: flex; animation: scroll 30s linear infinite; }
-.clients-track .slide { width: 120px; padding: 0 10px; flex-shrink: 0; }
-.clients-track img { width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
+/* Client Slider */
+.hero-footer { position: absolute; bottom: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px 0; border-top: 1px solid #ddd; z-index: 10; }
+.section-header-mini { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
+.section-header-mini .line { width: 30px; height: 3px; background: var(--secondary); }
+.section-header-mini .trusted-by { color: var(--primary); font-weight: bold; margin: 0; }
+.clients-slider-wrapper { overflow: hidden; white-space: nowrap; width: 100%; }
+.clients-track { display: flex; animation: scroll 25s linear infinite; }
+.clients-track .slide { width: 150px; padding: 0 15px; flex-shrink: 0; }
+.clients-track img { width: 100%; height: 50px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
 .clients-track .slide:hover img { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-150px * 9)); } }
 
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* Features */
+.about { padding: 60px 0; background: #fff; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+.section-title { text-align: center; color: var(--primary); margin-bottom: 40px; font-size: 2rem; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+.feature { padding: 20px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; }
+.feature:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-5px); }
+.feature i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
 
-/* تعديلات الموبايل (Responsive) */
+/* Responsive */
 @media (max-width: 768px) {
-    .hero-btns {
-        flex-direction: column; /* الأزرار تحت بعض */
-        width: 100%;
-    }
-    .hero-btns .btn {
-        width: 100%; /* الزرار ياخد العرض كامل */
-        text-align: center;
-    }
-    .hero-content h1 { font-size: 1.8rem; }
-    .hero-content p { font-size: 1rem; padding: 0 10px; }
-    .hero-footer { position: relative; } /* الشريط ميبقاش عائم على الموبايل عشان المساحة */
+    header nav ul { display: none; } /* يمكن إضافة قائمة هامبرجر لاحقاً */
+    .hero-content h1 { font-size: 2rem; }
+    .hero-btns { flex-direction: column; width: 100%; }
+    .btn { width: 100%; }
+    .hero-footer { padding: 10px 0; position: relative; } /* الشريط لا يغطي المحتوى في الموبايل */
 }
-
-/* =========================================
-   2. ستايل المعمل الذكي (Tool UI)
-   ========================================= */
-.tool-body {
-    background: #f4f6f8;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* منع السكرول للصفحة كلها */
-}
-
-.lab-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* منطقة البريفيو */
-.preview-zone {
-    flex: 1; /* تاخد المساحة المتاحة */
-    background: #e0e5ec;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    position: relative;
-    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05);
-}
-
-.mockup-stage {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-}
-
-.product-base { width: 100%; height: 100%; object-fit: contain; }
-.logo-layer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 50%; cursor: move; }
-
-/* منطقة التحكم */
-.controls-zone {
-    background: #fff;
-    padding: 20px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-    overflow-y: auto; /* سكرول هنا بس */
-    max-height: 50vh; /* تاخد نص الشاشة بحد أقصى */
-}
-
-.control-card {
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.control-card label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.big-select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    background: #fff;
-}
-
-.upload-btn-custom {
-    display: block;
-    background: #f8f9fa;
-    border: 2px dashed #ccc;
-    text-align: center;
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #555;
-    transition: 0.3s;
-}
-.upload-btn-custom:hover { border-color: var(--secondary); color: var(--secondary); }
-
-.range-group { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.range-group input { flex: 1; margin-right: 10px; }
-
-.blend-btns { display: flex; gap: 10px; }
-.blend-btn {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-}
-.blend-btn.active { background: var(--secondary); color: #fff; border-color: var(--secondary); }
-
-.big-action-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.back-btn-floating {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    z-index: 100;
-}
-/* New Moon Update Fix */
