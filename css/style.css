@@ -180,4 +180,67 @@ header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
         padding: 0 20px; /* هوامش عشان الكلام ميلزقش في الحواف */
         width: 100%;
     }
+}/* ==============================================
+   📱 إصلاح شامل لواجهة الموبايل (Hero Mobile Fix)
+   ============================================== */
+@media (max-width: 768px) {
+    
+    /* 1. إصلاح الخلفية والمساحات */
+    .hero {
+        height: auto !important; /* إلغاء الطول الثابت */
+        min-height: 100vh; /* الصفحة تاخد طول الشاشة براحتها */
+        padding-top: 120px; /* مسافة من فوق عشان الهيدر */
+        padding-bottom: 20px;
+        background-position: center top; /* تظبيط الصورة */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* يبدأ الكلام من فوق مش من النص */
+    }
+
+    /* 2. إصلاح الكلام والخطوط */
+    .hero-content {
+        width: 100%;
+        padding: 0 20px; /* هوامش عشان الكلام ميتكتبش على الحرف */
+        margin-bottom: 40px; /* مسافة تفصله عن الشريط الأبيض */
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem; /* تصغير العنوان */
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* 3. إصلاح الأزرار (تحت بعض) */
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 25px;
+    }
+    
+    .hero-btns .btn {
+        width: 100%; /* الزرار بعرض الشاشة */
+        padding: 12px;
+        font-size: 1rem;
+        display: block;
+    }
+
+    /* 4. الحل الجذري للشريط الأبيض (إلغاء الطفو) */
+    .hero-footer {
+        position: relative !important; /* يرجع لمكانه الطبيعي تحت الكلام */
+        bottom: auto !important;
+        margin-top: auto; /* يزق نفسه لتحت */
+        width: 100%;
+        background: #fff;
+    }
+    
+    /* تصغير اللوجوهات في الشريط */
+    .clients-track .slide {
+        width: 100px; 
+    }
 }
