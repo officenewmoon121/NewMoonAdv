@@ -74,4 +74,86 @@ header nav ul li a:hover, header nav ul li a.active { color: var(--secondary); }
     .hero-btns { flex-direction: column; width: 100%; }
     .btn { width: 100%; }
     .hero-footer { padding: 10px 0; position: relative; } /* الشريط لا يغطي المحتوى في الموبايل */
+}/* =======================================================
+   📱 تحديثات الموبايل والتابلت (Mobile & Tablet Patch)
+   ======================================================= */
+
+/* --- 1. تحسينات عامة للموبايل (شاشات أقل من 768px) --- */
+@media (max-width: 768px) {
+    
+    /* الهيدر والقائمة */
+    header .logo a { font-size: 1.2rem; justify-content: center; margin: 0; }
+    header nav ul { 
+        gap: 10px; 
+        padding: 10px; 
+        flex-wrap: wrap; /* يخلي الروابط تنزل تحت بعض لو مفيش مكان */
+        justify-content: center;
+    }
+    header nav ul li a { font-size: 0.9rem; }
+    .btn-nav { padding: 5px 15px; font-size: 0.9rem; }
+
+    /* الواجهة الرئيسية (Hero) */
+    .hero { height: auto; min-height: 80vh; padding-top: 20px; align-items: flex-start; }
+    .hero-content { padding-top: 100px; padding-bottom: 150px; } /* مساحة عشان الكلام ميركبش فوق بعض */
+    .hero-content h1 { font-size: 1.8rem; line-height: 1.3; }
+    .hero-content p { font-size: 1rem; padding: 0 10px; }
+    
+    /* أزرار الهيرو */
+    .hero-btns { flex-direction: column; width: 100%; gap: 10px; }
+    .btn { width: 100%; display: block; padding: 12px; }
+
+    /* شريط العملاء */
+    .hero-footer { position: relative; background: #fff; padding: 20px 0; }
+    .clients-track .slide { width: 100px; } /* تصغير اللوجوهات شوية */
+
+    /* قسم المميزات والخدمات */
+    .features-grid, .services-grid { grid-template-columns: 1fr; gap: 20px; } /* عمود واحد */
+    .section-title { font-size: 1.5rem; margin-bottom: 25px; }
+}
+
+/* --- 2. تحسينات المعمل الذكي للموبايل (Tool Mobile) --- */
+@media (max-width: 768px) {
+    .tool-body { 
+        height: 100vh; /* ملء الشاشة */
+        overflow: hidden; /* منع السكرول للصفحة كلها */
+        position: fixed; top: 0; left: 0; width: 100%; 
+    }
+    
+    /* منطقة العرض (صورة المج) */
+    .preview-zone { 
+        height: 45vh; /* تاخد 45% من الشاشة */
+        padding: 10px;
+        align-items: flex-end; /* تنزل الصورة لتحت شوية */
+    }
+    .mockup-stage { width: 220px; height: 220px; } /* تصغير مساحة العمل */
+
+    /* منطقة التحكم (الزراير) */
+    .controls-zone { 
+        height: 55vh; /* تاخد باقي الشاشة */
+        border-radius: 25px 25px 0 0; 
+        padding: 15px; 
+        padding-bottom: 80px; /* مساحة عشان آخر زرار يبان */
+    }
+    
+    .tool-title { font-size: 1.2rem; margin-bottom: 10px; }
+    .control-card { padding: 10px; margin-bottom: 8px; }
+    .control-card label { font-size: 0.85rem; margin-bottom: 5px; }
+    
+    /* تكبير عناصر اللمس */
+    .range-group input[type=range] { height: 25px; } /* تكبير الشريط */
+    .big-action-btn { padding: 12px; font-size: 1rem; }
+    
+    /* زر الخروج */
+    .back-btn-floating { top: 10px; left: 10px; right: auto; width: 35px; height: 35px; }
+}
+
+/* --- 3. تحسينات للتابلت والآيباد (Tablets) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-btns { flex-direction: row; } /* الأزرار جنب بعض عادي */
+    .features-grid { grid-template-columns: repeat(2, 1fr); } /* عمودين */
+    
+    /* المعمل في التابلت */
+    .preview-zone { height: 50vh; }
+    .controls-zone { height: 50vh; }
 }
