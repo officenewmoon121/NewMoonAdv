@@ -1,63 +1,160 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نيو مون | الرئيسية</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>نيو مون | حلول توريد وطباعة احترافية للشركات</title>
+    <meta name="description" content="نيو مون — استوديو توريدات وطباعة B2B: هدايا دعائية، يونيفورم، تجهيز معارض وطباعة UV.">
+
+    <!-- FONTS & ICONS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/companies.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
+
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html" class="active">الرئيسية</a></li>
-                    <li><a href="about.html">عن الشركة</a></li>
-                    <li><a href="services.html">خدماتنا</a></li>
-                    <li><a href="portfolio.html">أعمالنا</a></li>
-                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
-                    <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>نصنع واجهة تليق بقيمة علامتك التجارية</h1>
-            <p>خبرة 25 عاماً في خدمة كبرى الشركات.</p>
-            <div class="hero-btns">
-                <a href="tool.html" class="btn btn-primary pulse-effect">صمم هديتك بنفسك</a>
-                <a href="services.html" class="btn btn-outline">خدماتنا</a>
-            </div>
-        </div>
-        <div class="hero-footer">
-            <div class="clients-track">
-    <div class="slide"><img src="assets/images/samsung.jpg" alt="Samsung"></div>
-    <div class="slide"><img src="assets/images/etisalat.jpg" alt="Etisalat"></div>
-    <div class="slide"><img src="assets/images/pfizer.jpg" alt="Pfizer"></div>
-    <div class="slide"><img src="assets/images/buc.jpg" alt="BUC"></div>
-    <div class="slide"><img src="assets/images/jamjoom.jpg" alt="Jamjoom"></div>
-    <div class="slide"><img src="assets/images/sedico.jpg" alt="SEDICO"></div>
-    <div class="slide"><img src="assets/images/glc.jpg" alt="GLC"></div>
-    <div class="slide"><img src="assets/images/ghataty.jpg" alt="Ghataty"></div>
-    <div class="slide"><img src="assets/images/indomie.jpg" alt="Indomie"></div>
-    
-    <div class="slide"><img src="assets/images/samsung.jpg" alt="Samsung"></div>
-    <div class="slide"><img src="assets/images/etisalat.jpg" alt="Etisalat"></div>
-    <div class="slide"><img src="assets/images/pfizer.jpg" alt="Pfizer"></div>
-    <div class="slide"><img src="assets/images/buc.jpg" alt="BUC"></div>
-    <div class="slide"><img src="assets/images/jamjoom.jpg" alt="Jamjoom"></div>
-</div>
-            </div>
-        </div>
-    </section>
+<div id="navbar"></div>
 
-    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
-    <script src="js/main.js"></script>
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+
+<!-- HERO SECTION -->
+<section class="hero" style="background-image:url('assets/images/hero.webp');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <h1>ابدأ تصميم منتج شركتك الآن</h1>
+        <p>جرب استوديو نيو مون: صمم، اطبع واطلب عينة خلال دقائق.</p>
+        <div class="hero-ctas">
+            <a class="btn btn-primary" href="studio.html"><i class="fas fa-magic"></i> ابدأ تصميم منتجك</a>
+            <a class="btn btn-outline" href="products.html">تصفح الكتالوج <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section partners-carousel-section">
+    <div class="container">
+        <h2>شركاء النجاح</h2>
+        <p class="partners-desc">بعض الشركات التي تعاملت معنا — ثقة ونتائج.</p>
+
+        <div class="partners-carousel">
+            <div class="carousel-track" id="partners-track"></div>
+        </div>
+
+        <div class="center">
+            <a href="contact.html" class="btn" style="background:var(--gold);color:#081226">تواصل للحصول على شراكة</a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section">
+    <div class="container">
+        <h2 class="section-title">خدماتنا</h2>
+
+        <div class="services-grid premium">
+
+            <div class="service-card premium-card">
+                <div class="icon-box"><i class="fas fa-gift"></i></div>
+                <h3>الهدايا الدعائية</h3>
+                <p>تصميم وتنفيذ هدايا ترويجية مبتكرة تعكس هوية شركتك بأعلى جودة.</p>
+                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+            </div>
+
+            <div class="service-card premium-card">
+                <div class="icon-box"><i class="fas fa-user-tie"></i></div>
+                <h3>الزي الموحد</h3>
+                <p>تصميم وإنتاج يونيفورم احترافي بجودة ممتازة.</p>
+                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+            </div>
+
+            <div class="service-card premium-card">
+                <div class="icon-box"><i class="fas fa-store"></i></div>
+                <h3>تجهيز المعارض</h3>
+                <p>تجهيز Booths وتنفيذ لوجستي للفعاليات.</p>
+                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section bg-soft">
+    <div class="container">
+        <h2>سابقة أعمالنا</h2>
+        <div class="portfolio-grid" id="portfolio-grid"></div>
+
+        <div class="center">
+            <a href="portfolio.html" class="btn" style="background:var(--gold);color:#081226">شاهد المزيد</a>
+        </div>
+    </div>
+</section>
+
+<!-- TOOL CTA -->
+<section class="section">
+    <div class="container tool-cta">
+        <div>
+            <h3>استوديو نيو مون</h3>
+            <p>جرّب المعمل الذكي لتصميم المنتجات واطلب عينتك خلال دقائق.</p>
+        </div>
+        <div>
+            <a href="studio.html" class="btn btn-primary">جرّب الاستوديو الآن</a>
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+    <div class="container">
+        <h2>جاهز نوفّر لشركتك حلول توريد وطباعة احترافية؟</h2>
+        <a href="contact.html" class="btn btn-primary">اطلب عرض سعر</a>
+    </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- JS -->
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+(function loadPortfolio(){
+    const grid = document.getElementById('portfolio-grid');
+    if(!grid) return;
+    const max = 8;
+    for(let i=1;i<=max;i++){
+        const art = document.createElement('article');
+        art.className = 'portfolio-item';
+        art.innerHTML = `
+            <img loading="lazy" src="assets/Ready_Designs/work_${i}.webp" alt="مشروع ${i}">
+            <div class="portfolio-caption"><h4>مشروع ${i}</h4><p>وصف قصير للمشروع ${i}</p></div>
+        `;
+        grid.appendChild(art);
+    }
+})();
+</script>
+
 </body>
 </html>

@@ -1,44 +1,128 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نيو مون | أعمالنا</title>
+    <title>سابقة الأعمال | New Moon</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="about.html">عن الشركة</a></li>
-                    <li><a href="services.html">خدماتنا</a></li>
-                    <li><a href="portfolio.html" class="active">أعمالنا</a></li>
-                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
-                    <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
-                </ul>
-            </nav>
+
+<!-- NAVBAR INCLUDE -->
+<div id="navbar"></div>
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+<!-- HERO -->
+<section class="portfolio-hero" style="background-image:url('assets/images/portfolio_hero.webp')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1>سابقة الأعمال</h1>
+        <p>نقدّم حلولًا إبداعية وهويات بصرية نفخر بها.</p>
+    </div>
+</section>
+
+<!-- FILTERS -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">اختر نوع الأعمال</h2>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="branding">هويات بصرية</button>
+            <button class="filter-btn" data-filter="printing">طباعة</button>
+            <button class="filter-btn" data-filter="uniform">زي موحد</button>
+            <button class="filter-btn" data-filter="exhibits">تجهيزات معارض</button>
         </div>
-    </header>
+    </div>
+</section>
 
-    <section class="page-header"><h1>معرض الأعمال</h1></section>
-    <section class="portfolio"><div class="container portfolio-grid" id="portfolio-container"></div></section>
+<!-- PORTFOLIO GRID -->
+<section class="section">
+    <div class="container portfolio-grid" id="portfolioGrid">
 
-    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
-    
-    <script src="js/gallery-data.js"></script>
-    <script>
-        const container = document.getElementById('portfolio-container');
-        if(container && typeof portfolioItems !== 'undefined') {
-            portfolioItems.forEach(item => {
-                container.innerHTML += `<div class="portfolio-item"><img src="${item.image}" alt="${item.title}"><h3>${item.title}</h3><p>${item.desc}</p></div>`;
-            });
-        }
-    </script>
-    <script src="js/main.js"></script>
+        <!-- LIGHTBOX -->
+        <div id="lightbox" class="lightbox">
+            <span class="close-btn">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <div class="nav-btn prev">&lt;</div>
+            <div class="nav-btn next">&gt;</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>عايز شغلك يظهر في قسم الأعمال؟</h2>
+        <p>تواصل معنا ودع فريق NEW MOON يخرج أفضل ما لديك.</p>
+        <a href="contact.html" class="btn-primary">ابدأ الآن</a>
+    </div>
+</section>
+
+<!-- FOOTER INCLUDE -->
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- JS -->
+<script src="js/nav.js"></script>
+<script src="js/portfolio.js"></script>
+
+<!-- JS البديل للـ PHP — توليد الأعمال -->
+<script>
+(function loadPortfolio(){
+    const grid = document.getElementById('portfolioGrid');
+    const max = 20;
+    const categories = ["branding", "printing", "uniform", "exhibits"];
+
+    for(let i=1; i<=max; i++){
+        let type = categories[Math.floor(Math.random() * categories.length)];
+
+        const item = document.createElement("div");
+        item.className = "portfolio-item fade-item";
+        item.dataset.category = type;
+        item.style = `--i:${i};`;
+
+        item.innerHTML = `
+            <img src="assets/portfolio_webp/p_${i}.webp"
+                 alt="عمل ${i}"
+                 onerror="this.src='assets/portfolio/p_${i}.jpg'">
+
+            <div class="portfolio-caption">
+                <h3>عمل رقم ${i}</h3>
+                <p>${type.toUpperCase()} Project</p>
+            </div>
+        `;
+
+        item.onclick = function(){
+            document.getElementById("lightbox-img").src =
+                this.querySelector("img").src;
+            document.getElementById("lightbox").classList.add("active");
+        };
+
+        grid.appendChild(item);
+    }
+})();
+
+// Lightbox Close
+document.querySelector(".close-btn").onclick = () => {
+    document.getElementById("lightbox").classList.remove("active");
+};
+</script>
+
 </body>
 </html>

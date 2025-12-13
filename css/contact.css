@@ -1,0 +1,197 @@
+/* =======================================
+   HERO SECTION
+======================================= */
+.contact-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.contact-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-hero h1 {
+    font-size: 46px;
+    margin-bottom: 10px;
+    animation: fadeUp .9s ease forwards;
+}
+
+.contact-hero p {
+    font-size: 18px;
+    animation: fadeUp 1.3s ease forwards;
+}
+
+/* =======================================
+   CONTACT GRID
+======================================= */
+.contact-section .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.contact-form,
+.contact-info {
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    animation: fadeUp .9s ease forwards;
+}
+
+.contact-form h2,
+.contact-info h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* =======================================
+   FORM
+======================================= */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Cairo", sans-serif;
+    transition: .3s ease;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+    box-shadow: 0 0 6px rgba(201,167,92,0.35);
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 130px;
+}
+
+/* =======================================
+   CONTACT INFO
+======================================= */
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-box i {
+    font-size: 22px;
+    color: var(--gold);
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #25d366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.whatsapp-btn:hover {
+    background: #1eb858;
+}
+
+/* =======================================
+   MAP
+======================================= */
+.map-section iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+.btn-primary {
+    background: var(--gold);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #e2c47a;
+}
+
+/* =======================================
+   ANIMATIONS
+======================================= */
+.fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .7s ease forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+@media(max-width: 900px){
+    .contact-section .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px){
+    .contact-hero {
+        padding: 100px 0;
+    }
+    .contact-hero h1 {
+        font-size: 32px;
+    }
+}

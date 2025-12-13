@@ -3,32 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نيو مون | من نحن</title>
+    <title>من نحن | New Moon</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ملفات CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="about.html" class="active">عن الشركة</a></li>
-                    <li><a href="services.html">خدماتنا</a></li>
-                    <li><a href="portfolio.html">أعمالنا</a></li>
-                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
-                    <li><a href="contact.html" class="btn-nav">اتصل بنا</a></li>
-                </ul>
-            </nav>
+
+<div id="navbar"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+
+<!-- HERO SECTION -->
+<header class="about-hero" style="background-image:url('assets/images/about_hero.webp')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1>من نحن</h1>
+        <p>شريكك الأول في حلول الشركات والهدايا الدعائية والهوية المؤسسية.</p>
+    </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="section about-section">
+    <div class="container about-grid">
+
+        <div class="about-text">
+            <h2>من هي NEW MOON؟</h2>
+            <p>
+                شركة <b>New Moon Corporate Solutions</b> تقدم حلولًا متكاملة للشركات في
+                الهدايا الدعائية، الزي الموحد، الطباعة المتقدمة، وتجهيزات المعارض.
+            </p>
+
+            <p>
+                نفتخر بخدمة مئات الشركات في مصر والوطن العربي من خلال منتجات وخدمات
+                تساعدهم على بناء هوية قوية وحضور مؤثر.
+            </p>
         </div>
-    </header>
 
-    <section class="page-header"><h1>من نحن؟</h1><p>25 عاماً من الخبرة</p></section>
-    <section class="about"><div class="container"><p>نحن شركة رائدة في مجال الدعاية والإعلان...</p></div></section>
+        <div class="about-img">
+            <img src="assets/images/about_team.webp" alt="فريق New Moon">
+        </div>
 
-    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
-    <script src="js/main.js"></script>
+    </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="section vm-section">
+    <div class="container vm-grid">
+
+        <div class="vm-box">
+            <i class="fas fa-eye"></i>
+            <h3>رؤيتنا</h3>
+            <p>أن نكون الشركة الأولى في مصر في تقديم حلول الشركات بجودة عالمية.</p>
+        </div>
+
+        <div class="vm-box">
+            <i class="fas fa-bullseye"></i>
+            <h3>رسالتنا</h3>
+            <p>توفير خدمات مبتكرة تساعد الشركات على تحسين هويتها وبناء علاقة قوية مع عملائها.</p>
+        </div>
+
+        <div class="vm-box">
+            <i class="fas fa-handshake"></i>
+            <h3>قيمنا</h3>
+            <p>الالتزام • الجودة • الشفافية • السرعة • دعم الشركات في كل مرحلة.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section timeline-section">
+    <div class="container">
+        <h2 class="section-title">رحلتنا</h2>
+
+        <div class="timeline">
+
+            <div class="t-item">
+                <span class="t-year">2019</span>
+                <p>تأسيس الشركة كبداية في عالم الطباعة والهدايا.</p>
+            </div>
+
+            <div class="t-item">
+                <span class="t-year">2021</span>
+                <p>إطلاق قسم تجهيزات المعارض واليونيفورم.</p>
+            </div>
+
+            <div class="t-item">
+                <span class="t-year">2023</span>
+                <p>التوسع والتعامل مع شركات وهيئات كبرى.</p>
+            </div>
+
+            <div class="t-item">
+                <span class="t-year">2025</span>
+                <p>إطلاق منصة NEW MOON Studio الرقمية.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section">
+    <div class="container">
+        <h2 class="section-title">لماذا تختار NEW MOON؟</h2>
+
+        <div class="why-grid">
+
+            <div class="why-box">
+                <i class="fas fa-bolt"></i>
+                <h3>تنفيذ سريع</h3>
+                <p>نسلّم في وقت قياسي مع ضمان أعلى جودة.</p>
+            </div>
+
+            <div class="why-box">
+                <i class="fas fa-star"></i>
+                <h3>جودة ممتازة</h3>
+                <p>نستخدم أفضل خامات وطباعة احترافية.</p>
+            </div>
+
+            <div class="why-box">
+                <i class="fas fa-users"></i>
+                <h3>خبرة كبيرة</h3>
+                <p>سنوات من العمل مع شركات كبرى.</p>
+            </div>
+
+            <div class="why-box">
+                <i class="fas fa-headset"></i>
+                <h3>دعم مستمر</h3>
+                <p>متابعة لكل عميل خطوة بخطوة.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>جاهز نساعد شركتك تبني هويتها؟</h2>
+        <a href="contact.html" class="btn-primary">تواصل معنا الآن</a>
+    </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<!-- JS -->
+<script>
+    const nav = document.getElementById("navbar");
+    window.addEventListener("scroll", () =>
+        nav.classList.toggle("sticky", window.scrollY > 80)
+    );
+
+    document.getElementById("navToggle").onclick = () =>
+        document.getElementById("navMenu").classList.toggle("active");
+</script>
+
 </body>
 </html>

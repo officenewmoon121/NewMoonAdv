@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الشركات | New Moon</title>
+
+    <!-- FONTS & ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/companies.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+<!-- HERO -->
+<section class="companies-hero" style="background-image:url('assets/images/companies_hero.webp')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1>شركاء النجاح</h1>
+        <p>نفخر بالتعاون مع نخبة من الشركات في مختلف القطاعات.</p>
+    </div>
+</section>
+
+<!-- COMPANIES GRID -->
+<section class="section companies-section">
+    <div class="container">
+        <h2 class="section-title">عملاؤنا</h2>
+
+        <div class="companies-grid" id="companiesGrid"></div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>هل ترغب في الانضمام لشركائنا؟</h2>
+        <p>اترك لنا التفاصيل ودع فريق NEW MOON يهتم بالباقي.</p>
+        <a href="contact.html" class="btn-primary">ابدأ الآن</a>
+    </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<!-- JS -->
+<script src="js/nav.js"></script>
+
+<script>
+// بديل للـ PHP Loop — إنشاء الشعارات تلقائياً
+(function loadCompanies(){
+    const grid = document.getElementById("companiesGrid");
+    let max = 40;
+
+    for(let i=1; i<=max; i++){
+        const box = document.createElement("div");
+        box.className = "company-box fade-item";
+        box.style = `--i:${i};`;
+
+        box.innerHTML = `
+            <img src="assets/clients_webp/client_${i}.webp"
+                 alt="شركة ${i}"
+                 onerror="this.src='assets/clients/client_${i}.png'">
+        `;
+
+        grid.appendChild(box);
+    }
+})();
+</script>
+
+</body>
+</html>

@@ -1,43 +1,127 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نيو مون | اتصل بنا</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container header-container">
-            <div class="logo"><a href="index.html"><i class="fas fa-moon"></i> NEW MOON</a></div>
-            <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="about.html">عن الشركة</a></li>
-                    <li><a href="services.html">خدماتنا</a></li>
-                    <li><a href="portfolio.html">أعمالنا</a></li>
-                    <li><a href="tool.html" style="color:var(--secondary);">المعمل</a></li>
-                    <li><a href="contact.html" class="active btn-nav">اتصل بنا</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <title>تواصل معنا | New Moon</title>
 
-    <section class="page-header"><h1>تواصل معنا</h1></section>
-    <section class="contact">
-        <div class="container">
-            <form class="contact-form">
-                <input type="text" placeholder="الاسم" class="form-input">
-                <input type="text" placeholder="الهاتف" class="form-input">
-                <textarea rows="5" placeholder="الرسالة" class="form-input"></textarea>
-                <button class="btn btn-primary">إرسال</button>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<script>
+fetch("nav.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
+
+<!-- HERO -->
+<section class="contact-hero" style="background-image:url('assets/images/contact_hero.webp')">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1>تواصل معنا</h1>
+        <p>يسعدنا مساعدتك والإجابة على جميع استفساراتك.</p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section contact-section">
+    <div class="container contact-grid">
+
+        <!-- FORM -->
+        <div class="contact-form fade-item">
+            <h2>ارسِل رسالة</h2>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>الاسم كامل</label>
+                    <input type="text" name="name" placeholder="اكتب اسمك" required>
+                </div>
+
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="email" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="text" name="phone" placeholder="01123456789">
+                </div>
+
+                <div class="form-group">
+                    <label>الرسالة</label>
+                    <textarea name="message" placeholder="أدخل رسالتك هنا" required></textarea>
+                </div>
+
+                <button class="btn-primary" type="submit">إرسال</button>
             </form>
         </div>
-    </section>
 
-    <footer style="background:#002244; color:#ccc; text-align:center; padding:20px 0;"><p>© 2025 نيو مون</p></footer>
-    <script src="js/main.js"></script>
+        <!-- CONTACT INFO -->
+        <div class="contact-info fade-item">
+            <h2>معلومات التواصل</h2>
+
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <p>01000000000</p>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <p>info@newmoon.com</p>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>القاهرة – مصر</p>
+            </div>
+
+            <a href="https://wa.me/201000000000" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!..."
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+
+<!-- JS -->
+<script src="js/nav.js"></script>
+<script src="js/contact.js"></script>
+
+<script>
+const nav = document.getElementById("navbar");
+window.addEventListener("scroll",()=> nav.classList.toggle("sticky", window.scrollY > 80));
+
+document.getElementById("navToggle").onclick = () =>
+    document.getElementById("navMenu").classList.toggle("active");
+</script>
+
 </body>
 </html>

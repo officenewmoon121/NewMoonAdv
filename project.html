@@ -1,0 +1,144 @@
+<?php
+// ==============================
+// GET CODE FROM URL
+// ==============================
+$code = $_GET['code'] ?? null;
+
+if (!$code) {
+    die("<h2 style='text-align:center;margin-top:50px'>❌ رقم المشروع غير موجود.</h2>");
+}
+
+// ==============================
+// IMAGE FOLDER
+// ==============================
+$baseFolder = "assets/Ready_Designs/our_work";
+$mainImage = null;
+$extraImages = [];
+
+$files = glob($baseFolder . "/*.{jpg,jpeg,png,webp}", GLOB_BRACE);
+
+// ابحث عن صورة لها نفس الكود
+foreach ($files as $file) {
+    if (strpos($file, $code) !== false) {
+        $mainImage = $file;
+        break;
+    }
+}
+
+// في حالة عدم العثور → fallback حسب آخر 3 أرقام
+if (!$mainImage) {
+    $prefix = substr($code, -3);
+    foreach ($files as $file) {
+        if (strpos($file, $prefix) !== false) {
+            $mainImage = $file;
+            break;
+        }
+    }
+}
+
+// اجمع الصور الإضافية بنفس البادئة
+$prefix = substr($code, -3);
+foreach ($files as $file) {
+    if ($file !== $mainImage && strpos($file, $prefix) !== false) {
+        $extraImages[] = $file;
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $code ?> | تفاصيل مشروع | New Moon</title>
+
+    <meta name="description" content="تفاصيل مشروع <?= $code ?> من تنفيذ شركة New Moon — هدايا دعائية، يونيفورم، طباعة UV، تجهيز معارض.">
+    <meta property="og:title" content="<?= $code ?> - New Moon">
+    <meta property="og:image" content="<?= $mainImage ?>">
+
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body>
+
+<?php include "nav.php"; ?>
+
+<!-- HERO -->
+<header class="project-hero" style="background-image:url('<?= $mainImage ?>')">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+        <h1><?= $code ?></h1>
+        <p>تفاصيل المشروع وصور إضافية تم تنفيذها بواسطة New Moon</p>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="project-section">
+    <div class="container project-grid">
+
+        <!-- MAIN IMAGE -->
+        <div class="project-main">
+            <img src="<?= $mainImage ?>" alt="<?= $code ?>">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="project-details">
+            <h2>تفاصيل المشروع</h2>
+
+            <p>
+                هذا المشروع هو أحد أعمال شركة <b>New Moon</b> في مجال
+                <span class="highlight">الهدايا الدعائية / الطباعة / تجهيزات الشركات</span>.
+                تم تنفيذ العمل بجودة عالية بناءً على متطلبات العميل.
+            </p>
+
+            <ul class="details-list">
+                <li><i class="fas fa-tag"></i> كود المشروع: <?= $code ?></li>
+                <li><i class="fas fa-building"></i> القطاع: شركات / هيئات</li>
+                <li><i class="fas fa-calendar"></i> التنفيذ: 2025</li>
+            </ul>
+
+            <a class="btn-wa"
+               href="https://wa.me/201000000000?text=أريد عرض سعر لمشروع <?= $code ?>"
+               target="_blank">
+                <i class="fab fa-whatsapp"></i> اطلب عرض سعر الآن
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXTRA IMAGES -->
+<?php if (!empty($extraImages)): ?>
+<section class="extra-section">
+    <div class="container">
+        <h2 class="section-title">صور إضافية من المشروع</h2>
+
+        <div class="extra-grid">
+            <?php foreach ($extraImages as $img): ?>
+                <img src="<?= $img ?>" class="extra-img" onclick="openExtraModal('<?= $img ?>')">
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- MODAL -->
+<div id="extraModal" class="lightbox">
+    <span class="close-btn" onclick="closeExtraModal()">&times;</span>
+    <img id="extraModalImg" class="lightbox-img">
+</div>
+
+<?php include "footer.php"; ?>
+
+<script>
+function openExtraModal(src){
+    document.getElementById("extraModalImg").src = src;
+    document.getElementById("extraModal").style.display = "flex";
+}
+function closeExtraModal(){
+    document.getElementById("extraModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
