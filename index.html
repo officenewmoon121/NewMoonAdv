@@ -2,159 +2,339 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>نيو مون | حلول توريد وطباعة احترافية للشركات</title>
-    <meta name="description" content="نيو مون — استوديو توريدات وطباعة B2B: هدايا دعائية، يونيفورم، تجهيز معارض وطباعة UV.">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- SEO -->
+    <title>نيو مون | شريكك الموثوق في الحلول المؤسسية - 25 عاماً من الخبرة</title>
+    <meta name="description" content="نيو مون - 25 عاماً من الخبرة في توريد الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية. صمم منتجك في دقائق مع استوديو نيو مون الذكي.">
+    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة UV, تجهيز معارض, شركات أدوية, نيو مون">
+    <meta name="author" content="New Moon Corporate Solutions">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="نيو مون | شريكك الموثوق في الحلول المؤسسية">
+    <meta property="og:description" content="25 عاماً من الخبرة في خدمة أكبر الشركات المصرية">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newmoon.com">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 
-    <!-- FONTS & ICONS -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- CSS FILES -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/companies.css">
-    <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "New Moon Corporate Solutions",
+      "image": "assets/images/logo.png",
+      "description": "شركة متخصصة في الهدايا الدعائية واليونيفورم وتجهيز المعارض",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "177 أحمد عصمت، جسر السويس، الألف مسكن",
+        "addressLocality": "القاهرة",
+        "addressCountry": "EG"
+      },
+      "telephone": "+20-128-008-1544",
+      "email": "Officenewmoon121@gmail.com",
+      "openingHours": "Sa-Th 09:00-18:00",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61569383031991",
+        "https://www.instagram.com/new_moonagency/",
+        "https://www.tiktok.com/@newmoonadv",
+        "https://linkedin.com/in/new-moon-a93a1739a"
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="loader">
+        <i class="fas fa-moon"></i>
+        <div class="loading-text">NEW MOON</div>
+    </div>
+</div>
+
+<!-- Cookie Consent -->
+<div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+        <p><i class="fas fa-cookie-bite"></i> نستخدم ملفات الارتباط (Cookies) لتحسين تجربتك على موقعنا.</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()" class="btn-accept">قبول</button>
+            <button onclick="rejectCookies()" class="btn-reject">رفض</button>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
 <div id="navbar"></div>
 
-<script>
-    fetch("nav.html?" + Date.now())
-      .then(res => res.text())
-      .then(data => document.getElementById("navbar").innerHTML = data)
-      .catch(err => console.error('Nav loading error:', err));
-    </script>
-
-
-<!-- HERO SECTION -->
-<section class="hero" style="background-image:url('assets/images/hero.webp');">
+<!-- Hero Section -->
+<section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-        <h1>ابدأ تصميم منتج شركتك الآن</h1>
-        <p>جرب استوديو نيو مون: صمم، اطبع واطلب عينة خلال دقائق.</p>
-        <div class="hero-ctas">
-            <a class="btn btn-primary" href="studio.html"><i class="fas fa-magic"></i> ابدأ تصميم منتجك</a>
-            <a class="btn btn-outline" href="products.html">تصفح الكتالوج <i class="fas fa-arrow-left"></i></a>
+        <div class="hero-badge">🏆 25 عاماً من التميز</div>
+        <h1 class="hero-title">
+            صمم منتجك الاحترافي في <span class="text-gold">دقائق</span>
+        </h1>
+        <p class="hero-subtitle">
+            استوديو نيو مون الذكي - صمم، اطبع، واطلب عينتك خلال دقائق
+        </p>
+        <div class="hero-buttons">
+            <a href="studio.html" class="btn btn-primary btn-large">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>ابدأ التصميم مجاناً</span>
+            </a>
+            <a href="products.html" class="btn btn-outline btn-large">
+                <span>تصفح الكتالوج</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </div>
 </section>
 
-<!-- PARTNERS -->
-<section class="section partners-carousel-section">
+<!-- Trust Bar -->
+<section class="trust-bar">
     <div class="container">
-        <h2>شركاء النجاح</h2>
-        <p class="partners-desc">بعض الشركات التي تعاملت معنا — ثقة ونتائج.</p>
-
-        <div class="partners-carousel">
-            <div class="carousel-track" id="partners-track"></div>
-        </div>
-
-        <div class="center">
-            <a href="contact.html" class="btn" style="background:var(--gold);color:#081226">تواصل للحصول على شراكة</a>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section services-section">
-    <div class="container">
-        <h2 class="section-title">خدماتنا</h2>
-
-        <div class="services-grid premium">
-
-            <div class="service-card premium-card">
-                <div class="icon-box"><i class="fas fa-gift"></i></div>
-                <h3>الهدايا الدعائية</h3>
-                <p>تصميم وتنفيذ هدايا ترويجية مبتكرة تعكس هوية شركتك بأعلى جودة.</p>
-                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+        <div class="trust-items">
+            <div class="trust-item">
+                <i class="fas fa-star"></i>
+                <span>ISO 9001 Certified</span>
             </div>
-
-            <div class="service-card premium-card">
-                <div class="icon-box"><i class="fas fa-user-tie"></i></div>
-                <h3>الزي الموحد</h3>
-                <p>تصميم وإنتاج يونيفورم احترافي بجودة ممتازة.</p>
-                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+            <div class="trust-item">
+                <i class="fas fa-award"></i>
+                <span>25 Years Experience</span>
             </div>
-
-            <div class="service-card premium-card">
-                <div class="icon-box"><i class="fas fa-store"></i></div>
-                <h3>تجهيز المعارض</h3>
-                <p>تجهيز Booths وتنفيذ لوجستي للفعاليات.</p>
-                <a href="services.html" class="more-link">عرض التفاصيل →</a>
+            <div class="trust-item">
+                <i class="fas fa-users"></i>
+                <span>500+ Happy Clients</span>
             </div>
-
+            <div class="trust-item">
+                <i class="fas fa-shipping-fast"></i>
+                <span>48h Delivery</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="section bg-soft">
+<!-- Stats Section -->
+<section class="stats-section">
     <div class="container">
-        <h2>سابقة أعمالنا</h2>
-        <div class="portfolio-grid" id="portfolio-grid"></div>
-
-        <div class="center">
-            <a href="portfolio.html" class="btn" style="background:var(--gold);color:#081226">شاهد المزيد</a>
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-number" data-count="25">0</div>
+                <div class="stat-label">سنة خبرة</div>
+            </div>
+            
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-label">عميل راضي</div>
+            </div>
+            
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="stat-number" data-count="48">0</div>
+                <div class="stat-label">ساعة تسليم</div>
+            </div>
+            
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-briefcase-medical"></i>
+                </div>
+                <div class="stat-number">#1</div>
+                <div class="stat-label">تخصص طبي</div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TOOL CTA -->
-<section class="section">
-    <div class="container tool-cta">
-        <div>
-            <h3>استوديو نيو مون</h3>
-            <p>جرّب المعمل الذكي لتصميم المنتجات واطلب عينتك خلال دقائق.</p>
-        </div>
-        <div>
-            <a href="studio.html" class="btn btn-primary">جرّب الاستوديو الآن</a>
-        </div>
-    </div>
-</section>
-
-<!-- BOTTOM CTA -->
-<section class="bottom-cta">
+<!-- Clients Carousel -->
+<section class="clients-section">
     <div class="container">
-        <h2>جاهز نوفّر لشركتك حلول توريد وطباعة احترافية؟</h2>
-        <a href="contact.html" class="btn btn-primary">اطلب عرض سعر</a>
+        <h2 class="section-title">شركاء النجاح</h2>
+        <p class="section-subtitle">يثقون بنا لتقديم أفضل الحلول المؤسسية</p>
+        
+        <div class="clients-carousel">
+            <div class="clients-track" id="clientsTrack"></div>
+        </div>
+        
+        <div class="text-center" style="margin-top: 2rem;">
+            <a href="companies.html" class="btn btn-outline">
+                <span>شاهد جميع الشركاء</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
     </div>
 </section>
 
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>جاهز لنبدأ مشروعك التالي؟</h2>
+            <p>احصل على استشارة مجانية وعرض سعر مخصص لشركتك</p>
+            <div class="cta-buttons">
+                <a href="tel:+201280081544" class="btn btn-white">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل بنا</span>
+                </a>
+                <a href="https://wa.me/201280081544" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="contact.html" class="btn btn-white">
+                    <i class="fas fa-envelope"></i>
+                    <span>أرسل رسالة</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
 <div id="footer"></div>
 
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/201280081544" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top" aria-label="العودة لأعلى">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
 <script>
-fetch("footer.html")
-  .then(response => response.text())
+// Load Nav & Footer
+fetch("nav.html?" + Date.now())
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data)
+  .then(() => {
+      if(typeof initNav === 'function') initNav();
+  });
+
+fetch("footer.html?" + Date.now())
+  .then(res => res.text())
   .then(data => document.getElementById("footer").innerHTML = data);
-</script>
 
-<!-- JS -->
-<script src="js/nav.js"></script>
-<script src="js/main.js"></script>
+// Loading Screen
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+    }, 800);
+});
 
-<script>
-(function loadPortfolio(){
-    const grid = document.getElementById('portfolio-grid');
-    if(!grid) return;
-    const max = 8;
-    for(let i=1;i<=max;i++){
-        const art = document.createElement('article');
-        art.className = 'portfolio-item';
-        art.innerHTML = `
-            <img loading="lazy" src="assets/Ready_Designs/work_${i}.webp" alt="مشروع ${i}">
-            <div class="portfolio-caption"><h4>مشروع ${i}</h4><p>وصف قصير للمشروع ${i}</p></div>
-        `;
-        grid.appendChild(art);
+// Clients Carousel
+const clientsData = Array.from({length: 37}, (_, i) => ({
+    img: `assets/clients_webp/client_${i + 1}.webp`,
+    name: `Client ${i + 1}`
+}));
+
+// Duplicate for infinite loop
+const allClients = [...clientsData, ...clientsData];
+
+const track = document.getElementById('clientsTrack');
+allClients.forEach(client => {
+    const div = document.createElement('div');
+    div.className = 'client-logo';
+    div.innerHTML = `<img src="${client.img}" alt="${client.name}" loading="lazy">`;
+    track.appendChild(div);
+});
+
+// Counter Animation
+const counters = document.querySelectorAll('.stat-number[data-count]');
+const speed = 200;
+
+const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-count');
+    const count = +counter.innerText;
+    const inc = target / speed;
+    
+    if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(() => animateCounter(counter), 1);
+    } else {
+        counter.innerText = target + '+';
     }
-})();
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => observer.observe(counter));
+
+// Cookie Consent
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'true');
+    document.getElementById('cookieConsent').style.display = 'none';
+}
+
+function rejectCookies() {
+    localStorage.setItem('cookieConsent', 'false');
+    document.getElementById('cookieConsent').style.display = 'none';
+}
+
+if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => {
+        document.getElementById('cookieConsent').classList.add('show');
+    }, 2000);
+}
+
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Scroll Indicator
+document.querySelector('.scroll-indicator').addEventListener('click', () => {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+});
 </script>
 
 </body>
