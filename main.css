@@ -1,0 +1,35 @@
+/* ====================================================
+   NEW MOON - MAIN CSS FILE
+   هذا الملف يستورد كل مكونات الـ CSS
+   ==================================================== */
+
+/* ====== CORE ====== */
+@import url('variables.css');
+@import url('base.css');
+
+/* ====== COMPONENTS ====== */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/forms.css');
+
+/* ====== LAYOUTS ====== */
+@import url('layouts/hero.css');
+@import url('layouts/sections.css');
+
+/* ====== ANIMATIONS ====== */
+@import url('animations.css');
+
+/* ====================================================
+   USAGE - طريقة الاستخدام في أي صفحة HTML:
+   
+   ✅ الطريقة الموصى بها (ملف واحد):
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/pages/contact.css">
+   
+   ❌ الطريقة القديمة (ملفات كتيرة):
+   <link rel="stylesheet" href="css/variables.css">
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/buttons.css">
+   ... (10+ ملفات)
+   
+   ==================================================== */

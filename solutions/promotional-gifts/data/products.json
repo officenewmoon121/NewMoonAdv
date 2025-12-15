@@ -1,0 +1,5 @@
+[
+  { "id":"pen", "name":"قلم دعائي معدني", "desc":"نقش ليزر أو طباعة", "image":"images/pen.jpg" },
+  { "id":"mug", "name":"كوب مطبوع", "desc":"مناسب للمكاتب", "image":"images/mug.jpg" },
+  { "id":"vip", "name":"هدايا VIP", "desc":"حلول فاخرة للعملاء", "image":"images/vip.jpg" }
+]

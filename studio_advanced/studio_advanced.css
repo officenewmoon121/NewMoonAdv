@@ -1,0 +1,293 @@
+/* =======================================================
+   NM Studio – FINAL ENTERPRISE EDITION
+   Advanced UI (Figma / Canva Style)
+======================================================= */
+
+:root {
+    --bg: #f2f4f7;
+    --panel-bg: #ffffff;
+    --toolbar-bg: #ffffff;
+    --border: #d0d7e1;
+    --navy: #0f172a;
+    --gold: #c5a059;
+    --gray: #64748b;
+
+    --layer-bg: #eef2f6;
+    --layer-active: #dbe4ee;
+
+    --font: 'Cairo', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* =====================================
+   TOP TOOLBAR
+===================================== */
+
+.top-toolbar {
+    height: 60px;
+    background: var(--toolbar-bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    user-select: none;
+}
+
+.top-toolbar .tool-btn,
+.top-toolbar .export-btn,
+.top-toolbar .zoom-btn,
+.top-toolbar .save-btn,
+.top-toolbar .load-btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 8px 12px;
+    margin-right: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+}
+.top-toolbar button:hover {
+    background: #f0f0f0;
+}
+
+.zoom-btn {
+    width: 34px;
+}
+
+#zoom-level {
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* =====================================
+   STUDIO LAYOUT
+===================================== */
+
+.studio-layout {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* =====================================
+   RIGHT PANEL (TABS PANEL)
+===================================== */
+
+.right-panel {
+    width: 330px;
+    background: var(--panel-bg);
+    border-left: 1px solid var(--border);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    background: #f7f9fc;
+    border: none;
+    border-right: 1px solid var(--border);
+    cursor: pointer;
+    font-weight: 600;
+}
+.tab:last-child {
+    border-right: none;
+}
+.tab.active {
+    background: var(--panel-bg);
+    border-bottom: 2px solid var(--gold);
+}
+
+.tab-content {
+    padding: 15px;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* =====================================
+   LAYERS LIST
+===================================== */
+
+#layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.layer-row {
+    background: var(--layer-bg);
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+.layer-row:hover {
+    background: #e7ebf2;
+}
+.layer-row.active {
+    background: var(--layer-active);
+    border-color: var(--gold);
+}
+
+.layer-icons {
+    display: flex;
+    gap: 10px;
+}
+.layer-icons i {
+    cursor: pointer;
+    color: var(--gray);
+}
+.layer-icons i:hover {
+    color: var(--navy);
+}
+
+/* =====================================
+   PANEL ELEMENTS (INPUTS)
+===================================== */
+
+label {
+    display: block;
+    margin: 10px 0 4px;
+    font-weight: 700;
+}
+
+input[type="range"],
+input[type="color"],
+select {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.panel-btn {
+    width: 100%;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.panel-btn:hover {
+    background: #1b253a;
+}
+
+/* =====================================
+   WORKSPACE (CANVAS)
+===================================== */
+
+.workspace {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #e9ecf1;
+}
+
+#workspace-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transform-origin: center center;
+}
+
+/* المنتج */
+#product-base {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+}
+
+/* الطبقات */
+#layers-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* نصوص & لوجوهات */
+.text-layer,
+.logo-layer {
+    position: absolute;
+    user-select: none;
+    cursor: move;
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+#grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    display: none;
+    z-index: 2;
+}
+
+/* =====================================
+   PRINT AREA
+===================================== */
+
+#print-area {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    border: 2px dashed var(--gold);
+    background: rgba(255, 228, 141, 0.1);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+.right-panel::-webkit-scrollbar {
+    width: 6px;
+}
+.right-panel::-webkit-scrollbar-thumb {
+    background: #cbd3dd;
+    border-radius: 10px;
+}

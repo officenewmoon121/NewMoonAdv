@@ -1,0 +1,50 @@
+{
+  "name": "New Moon Corporate Solutions",
+  "short_name": "New Moon",
+  "description": "شريكك الموثوق في الحلول المؤسسية - 25 عاماً من الخبرة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081226",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "ar",
+  "dir": "rtl",
+  "shortcuts": [
+    {
+      "name": "المنتجات",
+      "short_name": "منتجات",
+      "description": "تصفح كتالوج المنتجات",
+      "url": "/products.html",
+      "icons": [{ "src": "assets/favicon/favicon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "الاستوديو",
+      "short_name": "استوديو",
+      "description": "صمم منتجك الآن",
+      "url": "/studio.html",
+      "icons": [{ "src": "assets/favicon/favicon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "تواصل معنا",
+      "short_name": "تواصل",
+      "description": "اتصل بنا مباشرة",
+      "url": "/contact.html",
+      "icons": [{ "src": "assets/favicon/favicon-96x96.png", "sizes": "96x96" }]
+    }
+  ]
+}

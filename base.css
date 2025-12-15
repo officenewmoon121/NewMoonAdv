@@ -1,0 +1,145 @@
+/* ====================================================
+   BASE STYLES - الأساسيات
+   ==================================================== */
+
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--light-bg);
+  color: var(--dark-blue);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ====== IMAGES ====== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ====== LINKS ====== */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-normal);
+}
+
+/* ====== LISTS ====== */
+ul, ol {
+  list-style: none;
+}
+
+/* ====== UTILITIES ====== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-2xl);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* ====== SECTIONS ====== */
+.section {
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--dark-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: var(--text-xl);
+  color: var(--gray-dark);
+  margin-bottom: var(--spacing-3xl);
+}
+
+/* ====== BACKGROUNDS ====== */
+.bg-white {
+  background: var(--white);
+}
+
+.bg-light {
+  background: var(--light-bg);
+}
+
+.bg-dark {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+}
+
+/* ====== SPACING UTILITIES ====== */
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .container {
+      padding: 0 var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 0 var(--spacing-md);
+  }
+  
+  .section {
+      padding: 3rem 1rem;
+  }
+  
+  .section-title {
+      font-size: var(--text-3xl);
+  }
+  
+  .section-subtitle {
+      font-size: var(--text-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+      font-size: var(--text-2xl);
+  }
+}

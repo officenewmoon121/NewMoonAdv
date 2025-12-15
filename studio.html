@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NM Studio PRO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="studio_pro.css">
+
+    <script src="https://kit.fontawesome.com/a2e860f58f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- زر رجوع -->
+    <a class="back-btn" href="index.html">
+        <i class="fas fa-arrow-right"></i> رجوع
+    </a>
+
+    <div class="studio">
+
+        <!-- =======================
+            منطقة المعاينة
+        ======================== -->
+        <div class="preview-wrapper">
+
+            <div id="canvas-area">
+                <img id="product-base" src="assets/products/mug/base.webp" class="product-base">
+                <div id="layers-container"></div>
+            </div>
+
+            <div class="export-row">
+                <button id="save-jpg" class="btn primary">تحميل JPG</button>
+                <button id="save-pdf" class="btn secondary">تصدير PDF</button>
+                <button id="save-project" class="btn save">حفظ المشروع</button>
+                <button id="load-project" class="btn load">استرجاع مشروع</button>
+            </div>
+
+        </div>
+
+        <!-- =======================
+            لوحة التحكم
+        ======================== -->
+        <div class="control-panel">
+
+            <div class="panel-block">
+                <label>اختر المنتج</label>
+                <select id="product-select">
+                    <option value="mug">مُج</option>
+                    <option value="tshirt">تيشرت</option>
+                    <option value="bag">شنطة</option>
+                </select>
+            </div>
+
+            <div class="panel-block">
+                <label>ألوان المنتج</label>
+                <div id="color-options" class="color-row"></div>
+            </div>
+
+            <div class="panel-block">
+                <label>رفع لوجو</label>
+                <input type="file" id="upload-logo" accept="image/*">
+            </div>
+
+            <div class="panel-block">
+                <label>إضافة نص</label>
+                <button id="add-text" class="btn text-btn">+ إضافة نص</button>
+            </div>
+
+            <div class="panel-block">
+                <label>أدوات الطبقة</label>
+
+                <div class="control-item">
+                    <span>الحجم</span>
+                    <input type="range" id="scale-range" min="0.2" max="3" step="0.05" value="1">
+                </div>
+
+                <div class="control-item">
+                    <span>الدوران</span>
+                    <input type="range" id="rotate-range" min="-180" max="180" value="0">
+                </div>
+
+                <div class="layer-tools">
+                    <button id="duplicate-layer" class="btn tool">نسخ</button>
+                    <button id="flip-h" class="btn tool">قلب أفقي</button>
+                    <button id="flip-v" class="btn tool">قلب رأسي</button>
+                    <button id="delete-layer" class="btn danger">حذف</button>
+                </div>
+
+            </div>
+
+            <div class="panel-block layers-block">
+                <label>الطبقات</label>
+                <div id="layers-list"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- مكتبات -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- سكربت الاستوديو -->
+    <script src="studio_pro.js"></script>
+
+</body>
+</html>

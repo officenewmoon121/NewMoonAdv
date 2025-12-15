@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الهدايا الدعائية للشركات | NEW MOON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="هدايا دعائية للشركات: أقلام، أكواب، هدايا VIP بطباعة احترافية | NEW MOON">
+  <link rel="stylesheet" href="../../css/solutions.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo">
+      <strong>NEW MO<span class="moon">🌙</span>ON</strong>
+      <small>Corporate Solutions</small>
+    </div>
+    <nav class="main-nav">
+      <a href="../../index.html">الرئيسية</a>
+      <a href="../../products.html">المنتجات</a>
+      <a class="active" href="#">الهدايا الدعائية</a>
+      <a href="../../contact.html">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>هدايا دعائية تعكس قوة علامتك</h1>
+    <p>منتجات عملية بطباعة احترافية للشركات والمعارض</p>
+    <a href="#products" class="btn-primary">شاهد المنتجات</a>
+  </div>
+</section>
+
+<!-- SMART WHY / USES -->
+<div class="smart-info">
+  <div class="info-item">
+    <button class="info-btn">لماذا الهدايا؟</button>
+    <div class="info-bubble">
+      <ul>
+        <li>تعزيز تذكّر العلامة</li>
+        <li>بناء ولاء العملاء</li>
+        <li>رفع الاحترافية</li>
+      </ul>
+    </div>
+  </div>
+  <div class="info-item">
+    <button class="info-btn">أشهر الاستخدامات</button>
+    <div class="info-bubble">
+      <ul>
+        <li>المعارض والمؤتمرات</li>
+        <li>هدايا VIP</li>
+        <li>إطلاق المنتجات</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS (Dynamic) -->
+<section id="products" class="products-section">
+  <div class="container">
+    <h2 class="section-title">منتجات الهدايا الدعائية</h2>
+    <div id="products-grid" class="products-grid"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sales-cta">
+  <div class="container">
+    <h2>جاهز تبدأ؟</h2>
+    <p>خلّي هداياك تحكي عن علامتك</p>
+    <div class="cta-buttons">
+      <a href="../../contact.html" class="cta-primary">اطلب عرض سعر</a>
+      <a href="../../studio.html?from=promotional-gifts" class="cta-secondary">جرّب التصميم</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2025 New Moon</p>
+</footer>
+
+<a href="https://wa.me/201234567890" class="whatsapp-btn" target="_blank">واتساب</a>
+
+<script>
+fetch('data/products.json')
+  .then(r => r.json())
+  .then(list => {
+    const grid = document.getElementById('products-grid');
+    list.forEach(p => {
+      grid.innerHTML += `
+        <a class="product-card" href="product-details.html?id=${p.id}&from=promotional-gifts">
+          <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <span class="hint">يوجد استوديو للتجربة</span>
+        </a>`;
+    });
+  });
+</script>
+
+</body>
+</html>

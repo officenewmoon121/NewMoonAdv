@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NM Studio — Final Enterprise Edition</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- النسخة النهائية من الواجهة -->
+    <link rel="stylesheet" href="studio_advanced.css">
+</head>
+
+<body>
+
+    <!-- ============ شريط الأدوات العلوي (Toolbar) ============ -->
+    <header class="top-toolbar">
+
+        <div class="left-tools">
+            <button class="tool-btn" id="move-tool"><i class="fas fa-arrows-alt"></i></button>
+            <button class="tool-btn" id="add-text-btn"><i class="fas fa-font"></i> نص</button>
+            <button class="tool-btn" id="add-logo-btn"><i class="fas fa-image"></i> لوجو</button>
+
+            <button class="tool-btn" id="undo-btn"><i class="fas fa-undo"></i></button>
+            <button class="tool-btn" id="redo-btn"><i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="center-tools">
+            <button id="zoom-out" class="zoom-btn">−</button>
+            <span id="zoom-level">100%</span>
+            <button id="zoom-in" class="zoom-btn">+</button>
+
+            <button id="fit-screen" class="tool-btn"><i class="fas fa-expand"></i></button>
+        </div>
+
+        <div class="right-tools">
+            <button id="export-jpg" class="export-btn">JPG</button>
+            <button id="export-png" class="export-btn">PNG</button>
+            <button id="export-pdf" class="export-btn">PDF</button>
+
+            <button id="save-project" class="save-btn">حفظ</button>
+            <button id="load-project" class="load-btn">استرجاع</button>
+        </div>
+
+    </header>
+
+    <!-- ============ تخطيط الاستوديو الرئيسي ============ -->
+    <div class="studio-layout">
+
+        <!-- ============ اللوحة اليمنى — Panels ============ -->
+        <aside class="right-panel">
+
+            <div class="tabs">
+                <button class="tab active" data-tab="layers">الطبقات</button>
+                <button class="tab" data-tab="text">النص</button>
+                <button class="tab" data-tab="effects">التأثيرات</button>
+                <button class="tab" data-tab="canvas">الكانفاس</button>
+            </div>
+
+            <!-- محتوى التابز -->
+
+            <!-- Tab 1 — Layers -->
+            <div class="tab-content active" id="layers">
+                <div id="layers-list"></div>
+            </div>
+
+            <!-- Tab 2 — Text Settings -->
+            <div class="tab-content" id="text">
+                <label>الخط</label>
+                <select id="text-font">
+                    <option value="Cairo">Cairo</option>
+                    <option value="sans-serif">Sans</option>
+                    <option value="serif">Serif</option>
+                </select>
+
+                <label>الحجم</label>
+                <input type="range" id="text-size" min="10" max="120" value="40">
+
+                <label>اللون</label>
+                <input type="color" id="text-color">
+
+                <label>Outline (حد)</label>
+                <input type="color" id="text-outline-color">
+                <input type="range" id="text-outline-size" min="0" max="20" value="0">
+
+                <label>Shadow (ظل)</label>
+                <input type="color" id="text-shadow-color">
+                <input type="range" id="text-shadow-blur" min="0" max="20" value="0">
+
+            </div>
+
+            <!-- Tab 3 — Effects -->
+            <div class="tab-content" id="effects">
+                <label>الشفافية</label>
+                <input type="range" id="layer-opacity" min="0" max="1" step="0.05" value="1">
+
+                <label>الضبابية (Blur)</label>
+                <input type="range" id="layer-blur" min="0" max="10" value="0">
+
+                <button id="flip-horizontal" class="panel-btn">قلب أفقي</button>
+                <button id="flip-vertical" class="panel-btn">قلب رأسي</button>
+                <button id="auto-fit" class="panel-btn">ملاءمة تلقائية</button>
+                <button id="auto-center" class="panel-btn">تمركز تلقائي</button>
+            </div>
+
+            <!-- Tab 4 — Canvas -->
+            <div class="tab-content" id="canvas">
+                <label>Grid</label>
+                <input type="checkbox" id="show-grid">
+
+                <label>منطقة الطباعة</label>
+                <input type="checkbox" id="show-print-area" checked>
+
+                <label>خلفية المعاينة</label>
+                <input type="color" id="canvas-bg" value="#f5f5f5">
+            </div>
+
+        </aside>
+
+        <!-- ============ منطقة العمل ============ -->
+        <main class="workspace">
+
+            <div id="workspace-container">
+
+                <!-- Grid -->
+                <div id="grid-overlay"></div>
+
+                <!-- Print Area -->
+                <div id="print-area"></div>
+
+                <!-- المنتج -->
+                <img id="product-base" src="assets/products/mug/base.webp">
+
+                <!-- الطبقات -->
+                <div id="layers-container"></div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- مكتبات الرسم والتصدير -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://kit.fontawesome.com/a2e860f58f.js" crossorigin="anonymous"></script>
+
+    <!-- سكربت الاستوديو النهائي -->
+    <script src="studio_advanced.js"></script>
+
+</body>
+
+</html>
