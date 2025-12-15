@@ -408,3 +408,123 @@ img {
         font-size: 4rem;
     }
 }
+
+/* ====================================================
+   INDEX PAGE TWEAKS (Hero, Stats, Trust Bar, Clients)
+   ==================================================== */
+
+/* Hero adjustments */
+.hero-section {
+    min-height: 85vh !important; /* كان 100vh */
+    margin-top: 80px; /* عشان Header */
+}
+
+/* Stats improvements */
+.stat-icon-wrapper {
+    width: 70px !important; /* كان 100px */
+    height: 70px !important;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.stat-icon-wrapper i {
+    font-size: 1.8rem !important; /* كان 3rem */
+    color: #081226;
+}
+
+/* Trust Bar improvements */
+.trust-item i {
+    font-size: 1.2rem !important; /* كان أكبر */
+    color: #D4AF37;
+    margin-left: 8px;
+}
+
+/* Clients Carousel - سرعة محسنة */
+.clients-carousel {
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.clients-track {
+    display: flex;
+    gap: 3rem;
+    animation: scrollClients 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollClients {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50%)); }
+}
+
+.clients-carousel:hover .clients-track {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    flex-shrink: 0;
+    width: 140px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* نجعل الشعارات أوضح بشكل افتراضي */
+    filter: none;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover img {
+    /* تأثير بسيط عند الـ Hover فقط */
+    transform: scale(1.03);
+}
+
+/* تحسين زر "شاهد جميع الشركاء" داخل قسم العملاء */
+.clients-section .text-center .btn-outline {
+    background: #fff;
+    color: #081226;
+    border-color: #081226;
+}
+
+.clients-section .text-center .btn-outline:hover {
+    background: #D4AF37;
+    border-color: #D4AF37;
+    color: #081226;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh !important;
+    }
+    
+    .stat-icon-wrapper {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .stat-icon-wrapper i {
+        font-size: 1.5rem !important;
+    }
+}
