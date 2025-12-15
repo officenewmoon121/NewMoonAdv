@@ -212,8 +212,7 @@
 fetch("nav.html?" + Date.now())
   .then(res => res.text())
   .then(data => document.getElementById("navbar").innerHTML = data)
-  .then(() => {
-      if(typeof initNav === 'function') initNav();
+  .then(() => {if(typeof initNav === 'function') initNav();
   });
 
 fetch("footer.html?" + Date.now())
