@@ -1,174 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنتجات | NEW MOON</title>
-
+    <title>المنتجات | نيو مون - كتالوج شامل</title>
+    <meta name="description" content="تصفح كتالوج نيو مون الشامل - هدايا دعائية، يونيفورم، طباعة UV، تجهيز معارض">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* ====== تصميم احترافي فخم ====== */
-
-        .products-hero {
-            background-image:url('assets/images/products_hero.webp');
-            background-size:cover;
-            background-position:center;
-            padding:120px 0;
-            position:relative;
-            color:#fff;
-            text-align:center;
-        }
-
-        .products-hero .overlay {
-            position:absolute;
-            inset:0;
-            background:rgba(0,0,0,0.55);
-        }
-
-        .products-hero .hero-content {
-            position:relative;
-            z-index:2;
-        }
-
-        /* Filters */
-        .filters {
-            display:flex;
-            gap:15px;
-            flex-wrap:wrap;
-            margin-bottom:20px;
-        }
-
-        .filters input, .filters select {
-            padding:12px 16px;
-            border-radius:8px;
-            border:1px solid #ddd;
-            font-size:16px;
-            flex:1;
-            min-width:200px;
-        }
-
-        .filters button {
-            padding:12px 22px;
-            background:var(--gold);
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
-            font-weight:bold;
-            color:#081226;
-        }
-
-        /* Products Grid */
-        .products-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
-            gap:22px;
-            margin-top:25px;
-        }
-
-        .product-card {
-            background:#fff;
-            border-radius:14px;
-            overflow:hidden;
-            box-shadow:0 6px 20px rgba(0,0,0,0.12);
-            transition:0.25s;
-        }
-
-        .product-card:hover {
-            transform:translateY(-6px);
-            box-shadow:0 10px 25px rgba(0,0,0,0.18);
-        }
-
-        .product-card img {
-            width:100%;
-            height:220px;
-            object-fit:cover;
-        }
-
-        .product-info {
-            padding:15px 18px;
-        }
-
-        .product-info h3 {
-            margin:0 0 10px 0;
-            font-size:18px;
-            font-weight:700;
-        }
-
-        .product-info p {
-            font-size:14px;
-            opacity:0.8;
-        }
-
-        .details-btn {
-            margin-top:12px;
-            display:inline-block;
-            padding:10px 16px;
-            border:1px solid var(--gold);
-            border-radius:6px;
-            color:var(--gold);
-            font-weight:600;
-            transition:0.2s;
-        }
-
-        .details-btn:hover {
-            background:var(--gold);
-            color:#081226;
-        }
-
-        /* Pagination */
-        .pagination {
-            margin-top:35px;
-            text-align:center;
-        }
-
-        .pagination button {
-            padding:10px 16px;
-            margin:4px;
-            border:none;
-            background:#ddd;
-            border-radius:6px;
-            cursor:pointer;
-        }
-
-        .pagination .active {
-            background:var(--gold);
-            color:#081226;
-            font-weight:bold;
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- NAV INCLUDE -->
+<!-- Navigation -->
 <div id="navbar"></div>
-<script>
-fetch("nav.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("navbar").innerHTML = data);
-</script>
 
-<!-- HERO SECTION -->
+<!-- Hero -->
 <section class="products-hero">
-    <div class="overlay"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-content">
         <h1>كتالوج المنتجات</h1>
-        <p>اختار من بين مجموعة منتجات NEW MOON المتنوعة.</p>
+        <p>اختر من بين مجموعة نيو مون المتنوعة</p>
     </div>
 </section>
 
-<!-- FILTERS + PRODUCTS -->
-<section class="section">
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
     <div class="container">
+        <a href="index.html">الرئيسية</a>
+        <span>/</span>
+        <span>المنتجات</span>
+    </div>
+</div>
 
-        <!-- FILTERS -->
-        <div class="filters">
-            <input type="text" id="searchBox" placeholder="ابحث عن منتج…">
-
+<!-- Filters + Products -->
+<section class="products-section">
+    <div class="container">
+        
+        <!-- Filters -->
+        <div class="filters-bar">
+            <input type="text" id="searchBox" placeholder="ابحث عن منتج...">
             <select id="categoryFilter">
                 <option value="">كل الأقسام</option>
                 <option value="gifts">هدايا دعائية</option>
@@ -177,32 +56,59 @@ fetch("nav.html")
                 <option value="uv">طباعة UV</option>
                 <option value="office">توريدات مكتبية</option>
             </select>
-
-            <button onclick="applyFilters()">تطبيق الفلاتر</button>
+            <button onclick="applyFilters()" class="btn-filter">
+                <i class="fas fa-filter"></i>
+                تطبيق
+            </button>
         </div>
-
-        <!-- RESULTS COUNT -->
-        <p id="resultsCount">عدد النتائج: ...</p>
-
-        <!-- PRODUCTS -->
+        
+        <!-- Results Count -->
+        <p id="resultsCount" class="results-count">جاري التحميل...</p>
+        
+        <!-- Products Grid -->
         <div id="productsContainer" class="products-grid"></div>
-
-        <!-- PAGINATION -->
+        
+        <!-- Pagination -->
         <div id="pagination" class="pagination"></div>
-
+        
     </div>
 </section>
 
-<!-- FOOTER INCLUDE -->
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>لم تجد ما تبحث عنه؟</h2>
+        <p>تواصل معنا وسنساعدك في إيجاد المنتج المثالي</p>
+        <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
+    </div>
+</section>
+
+<!-- Footer -->
 <div id="footer"></div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/201280081544" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
 <script>
-fetch("footer.html")
+// Load Nav & Footer
+fetch("nav.html?" + Date.now())
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data)
+  .then(() => { if(typeof initNav === 'function') initNav(); });
+
+fetch("footer.html?" + Date.now())
   .then(res => res.text())
   .then(data => document.getElementById("footer").innerHTML = data);
-</script>
 
-<!-- JS: PRODUCT LOADER -->
-<script>
+// Products Logic
 let products = [];
 let filtered = [];
 let itemsPerPage = 12;
@@ -216,6 +122,10 @@ function loadProducts() {
             filtered = products;
             renderProducts();
             renderPagination();
+        })
+        .catch(err => {
+            document.getElementById('productsContainer').innerHTML = 
+                '<p style="text-align:center; padding:3rem;">حدث خطأ في تحميل المنتجات</p>';
         });
 }
 
@@ -224,12 +134,9 @@ function applyFilters() {
     const category = document.getElementById("categoryFilter").value;
 
     filtered = products.filter(p => {
-        const matchSearch =
-            p.name.toLowerCase().includes(search) ||
-            p.desc.toLowerCase().includes(search);
-
+        const matchSearch = p.name.toLowerCase().includes(search) || 
+                          p.desc.toLowerCase().includes(search);
         const matchCat = category ? p.category === category : true;
-
         return matchSearch && matchCat;
     });
 
@@ -239,43 +146,54 @@ function applyFilters() {
 }
 
 function renderProducts() {
-    const box = document.getElementById("productsContainer");
-    box.innerHTML = "";
-
-    document.getElementById("resultsCount").innerText =
-        "عدد النتائج: " + filtered.length;
+    const container = document.getElementById("productsContainer");
+    container.innerHTML = "";
+    
+    document.getElementById("resultsCount").innerText = 
+        `عدد النتائج: ${filtered.length}`;
 
     const start = (currentPage - 1) * itemsPerPage;
     const pageItems = filtered.slice(start, start + itemsPerPage);
 
+    if (pageItems.length === 0) {
+        container.innerHTML = '<p class="no-results">لا توجد منتجات تطابق البحث</p>';
+        return;
+    }
+
     pageItems.forEach(p => {
-        box.innerHTML += `
-            <div class="product-card">
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="product-image">
                 <img src="${p.img}" alt="${p.name}">
-                <div class="product-info">
-                    <h3>${p.name}</h3>
-                    <p>${p.desc}</p>
-                    <a class="details-btn" href="product.html?id=${p.id}">
-                        تفاصيل المنتج
-                    </a>
-                </div>
+            </div>
+            <div class="product-info">
+                <h3>${p.name}</h3>
+                <p>${p.desc}</p>
+                <a href="product-details.html?id=${p.id}" class="btn-details">
+                    تفاصيل المنتج
+                    <i class="fas fa-arrow-left"></i>
+                </a>
             </div>
         `;
+        container.appendChild(card);
     });
 }
 
 function renderPagination() {
     const total = filtered.length;
     const pages = Math.ceil(total / itemsPerPage);
-
     const pag = document.getElementById("pagination");
     pag.innerHTML = "";
 
+    if (pages <= 1) return;
+
     for (let i = 1; i <= pages; i++) {
-        pag.innerHTML += `
-            <button class="${i === currentPage ? 'active' : ''}"
-                onclick="goToPage(${i})">${i}</button>
-        `;
+        const btn = document.createElement('button');
+        btn.className = i === currentPage ? 'active' : '';
+        btn.innerText = i;
+        btn.onclick = () => goToPage(i);
+        pag.appendChild(btn);
     }
 }
 
@@ -283,10 +201,214 @@ function goToPage(num) {
     currentPage = num;
     renderProducts();
     renderPagination();
+    window.scrollTo({ top: 400, behavior: 'smooth' });
 }
 
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 300);
+});
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Init
 loadProducts();
 </script>
+
+<style>
+/* Products Page Styles */
+.products-hero {
+    background: linear-gradient(135deg, #081226 0%, #1E3A5F 100%);
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+    text-align: center;
+    color: #fff;
+}
+
+.products-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.breadcrumbs {
+    background: #f5f7fa;
+    padding: 1rem 0;
+}
+
+.breadcrumbs a {
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+.breadcrumbs span {
+    margin: 0 0.5rem;
+    color: #666;
+}
+
+.products-section {
+    padding: 3rem 0;
+}
+
+.filters-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filters-bar input,
+.filters-bar select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-filter {
+    padding: 0.75rem 2rem;
+    background: #D4AF37;
+    color: #081226;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-filter:hover {
+    background: #F4D03F;
+}
+
+.results-count {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    height: 220px;
+    overflow: hidden;
+    background: #f5f7fa;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: #081226;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.btn-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+}
+
+.btn-details:hover {
+    gap: 0.75rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+    background: #f5f7fa;
+}
+
+.pagination button.active {
+    background: #D4AF37;
+    color: #081226;
+    border-color: #D4AF37;
+}
+
+@media (max-width: 768px) {
+    .products-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .products-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+    }
+    
+    .filters-bar input,
+    .filters-bar select,
+    .btn-filter {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+</style>
 
 </body>
 </html>
