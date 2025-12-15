@@ -49,31 +49,7 @@
     overflow: hidden;
 }
 
-.clients-carousel {
-    position: relative;
-    overflow: hidden;
-    padding: var(--spacing-2xl) 0;
-}
-
-.clients-track {
-    display: flex;
-    gap: 3rem;
-    animation: scroll 40s linear infinite;
-    width: max-content;
-}
-
-.clients-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+/* تم إلغاء حركة سلايدر العملاء، يتم التحكم في هذا القسم من خلال css/style.css */
 
 /* ====== CTA SECTION ====== */
 .cta-section {

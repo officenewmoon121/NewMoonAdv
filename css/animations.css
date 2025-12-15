@@ -368,8 +368,13 @@
 }
 
 /* ====== SECTIONS ====== */
-.trust-bar, .stats-section, .clients-section, .cta-section {
-    padding: 4rem 2rem;
+/* تقليل المسافة الرأسية لتناسب معايير التصميم الحديثة */
+.stats-section {
+    padding: 2.5rem 2rem;
+}
+
+.clients-section, .cta-section {
+    padding: 3.5rem 2rem;
 }
 
 .section-title {

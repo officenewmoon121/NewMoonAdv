@@ -133,14 +133,12 @@ img {
 
 .clients-track {
     display: flex;
-    gap: 3rem;
-    animation: scroll 40s linear infinite;
-    width: max-content;
+    justify-content: flex-end; /* نخليهم ناحية اليمين */
+    gap: 1.5rem; /* مسافة بين الخمس لوجوهات */
+    width: 100%;
 }
 
-.clients-track:hover {
-    animation-play-state: paused;
-}
+/* إيقاف أي أنيميشن قديم على مسار العملاء */
 
 .client-logo {
     background: #fff;
@@ -154,23 +152,13 @@ img {
     justify-content: center;
 }
 
+/* نخلي الشعارات واضحة بدون جري سكيل بشكل افتراضي */
 .client-logo img {
     height: 60px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: all 0.3s ease;
-}
-
-.client-logo:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.client-logo:hover img {
-    filter: grayscale(0%);
     opacity: 1;
+    transition: all 0.3s ease;
 }
 
 @keyframes scroll {
@@ -309,6 +297,29 @@ img {
     font-weight: 600;
 }
 
+/* ====================================================
+   HOME PAGE LAYOUT TWEAKS (Trust + Stats)
+   ==================================================== */
+
+/* نقلل المساحة الرأسية تحت الهيرو */
+.trust-bar, .stats-section {
+    padding: 2rem 1.5rem; /* كان 4rem 2rem من animations.css */
+}
+
+/* تصغير الكروت شوية عشان ما ياخدوش ارتفاع كبير */
+.stats-grid .stat-card {
+    padding: 1.5rem 1.5rem;
+}
+
+/* تصغير الأيقونات والأرقام نسبياً */
+.stats-grid .stat-number {
+    font-size: 2.4rem;
+}
+
+.stats-grid .stat-label {
+    font-size: 1rem;
+}
+
 /* ====== RESPONSIVE UTILITIES ====== */
 @media (max-width: 1024px) {
     .stats-grid {
@@ -416,7 +427,6 @@ img {
 /* Hero adjustments */
 .hero-section {
     min-height: 85vh !important; /* كان 100vh */
-    margin-top: 80px; /* عشان Header */
 }
 
 /* Stats improvements */
@@ -444,36 +454,45 @@ img {
     margin-left: 8px;
 }
 
-/* Clients Carousel - سرعة محسنة */
+/* تخفيف ارتفاع أقسام الثقة والإحصائيات لتقليل المساحة الفارغة */
+.trust-bar {
+    padding: 1.5rem 2rem 0.5rem;
+}
+
+.stats-section {
+    padding: 1.5rem 2rem 2.5rem;
+}
+
+.stats-grid {
+    gap: 2rem;
+}
+
+/* Clients Section - 5 شعارات ثابتة بعرض الصفحة */
 .clients-carousel {
-    overflow: hidden;
+    overflow: visible;
     padding: 2rem 0;
 }
 
 .clients-track {
     display: flex;
-    gap: 3rem;
-    animation: scrollClients 30s linear infinite;
-    width: max-content;
+    justify-content: flex-end; /* نخليهم لازقين ناحية يمين الصفحة */
+    gap: 1.5rem; /* نقلل المسافة بينهم شوية */
+    width: 100%;
 }
 
-@keyframes scrollClients {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50%)); }
-}
-
-.clients-carousel:hover .clients-track {
-    animation-play-state: paused;
+/* نخلي شعارات العملاء أقرب فعلياً لحافة الصفحة من اليمين */
+.clients-section .container {
+    padding-right: 0;
 }
 
 .client-logo {
     flex-shrink: 0;
-    width: 140px;
-    height: 80px;
+    width: 110px;   /* عرض أصغر عشان نعرض لوجوهات أكتر فى السطر */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.75rem;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -492,7 +511,7 @@ img {
     /* نجعل الشعارات أوضح بشكل افتراضي */
     filter: none;
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .client-logo:hover img {

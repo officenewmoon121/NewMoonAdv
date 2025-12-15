@@ -105,7 +105,7 @@
             </div>
             <div class="trust-item">
                 <i class="fas fa-shipping-fast"></i>
-                <span>48h Delivery</span>
+                <span>72h Delivery</span>
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
                 <div class="stat-icon-wrapper">
                     <i class="fas fa-bolt"></i>
                 </div>
-                <div class="stat-number" data-count="48">0</div>
+                <div class="stat-number" data-count="72">0</div>
                 <div class="stat-label">ساعة تسليم</div>
             </div>
             
@@ -227,17 +227,26 @@ window.addEventListener('load', function() {
     }, 800);
 });
 
-// Clients Carousel
-const clientsData = Array.from({length: 37}, (_, i) => ({
-    img: `assets/clients_webp/client_${i + 1}.webp`,
-    name: `Client ${i + 1}`
+// Clients Logos - عرض أول 5 لوجوهات ثابتة بعرض الصفحة
+const clientFiles = [
+    'client_1.webp','client_2.webp','client_3.webp','client_4.webp','client_5.webp',
+    'client_6.webp','client_7.webp','client_8.webp','client_9.webp','client_10.webp',
+    'client_11.webp','client_12.webp','client_13.webp','client_14.webp','client_15.webp',
+    'client_16.webp','client_17.webp','client_18.webp','client_19.webp','client_20.webp',
+    'client_21.webp','client_22.webp','client_23.webp','client_24.webp','client_25.webp',
+    'client_26.webp','client_27.webp','client_28.webp','client_29.webp','client_30.webp',
+    'client_31.webp','client_32.webp','client_33.webp','client_34.webp','client_35.webp',
+    'client_36.webp','client_37.webp'
+];
+
+const clientsData = clientFiles.map((file, index) => ({
+    img: `assets/clients_webp/${file}`,
+    name: `Client ${index + 1}`
 }));
 
-// Duplicate for infinite loop
-const allClients = [...clientsData, ...clientsData];
-
 const track = document.getElementById('clientsTrack');
-allClients.forEach(client => {
+// نستخدم أول 5 فقط لعرضهم بشكل ثابت
+clientsData.slice(0, 5).forEach(client => {
     const div = document.createElement('div');
     div.className = 'client-logo';
     div.innerHTML = `<img src="${client.img}" alt="${client.name}" loading="lazy">`;
