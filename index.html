@@ -1,66 +1,301 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <!-- SEO -->
     <title>نيو مون | شريكك الموثوق في الحلول المؤسسية - 25 عاماً من الخبرة</title>
-    <meta name="description" content="نيو مون - 25 عاماً من الخبرة في توريد الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية. تخصص طبي مميز.">
-    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة UV, تجهيز معارض, شركات أدوية, نيو مون">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="نيو مون | شريكك الموثوق في الحلول المؤسسية">
-    <meta property="og:description" content="25 عاماً من الخبرة في خدمة أكبر الشركات المصرية">
-    <meta property="og:type" content="website">
+    <meta name="description" content="نيو مون - 25 عاماً من الخبرة في توريد الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية">
+    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة UV, تجهيز معارض, نيو مون">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
     
-    <!-- Fonts & Icons -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- CSS -->
+    <!-- CSS Files - LOAD ORDER IS CRITICAL -->
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQD95TNNBC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-MQD95TNNBC');
-    </script>
+    <!-- CRITICAL: Mobile Navigation Override - MUST BE LAST -->
+    <style>
+        /* ═══════════════════════════════════════
+           CRITICAL MOBILE NAVIGATION STYLES
+           Priority: MAXIMUM (!important)
+           Load: LAST (to override everything)
+        ═══════════════════════════════════════ */
+        
+        /* Desktop Default State */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 9999;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            z-index: 10001;
+        }
+        
+        .site-logo i {
+            font-size: 1.8rem;
+            color: #D4AF37;
+        }
+        
+        .logo-content h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        .logo-content p {
+            font-size: 0.65rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Navigation List - Desktop */
+        .nav-list {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-list a {
+            color: #081226;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-list a:hover {
+            color: #D4AF37;
+        }
+        
+        .nav-cta {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            color: #081226 !important;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Mobile Toggle - Hidden on Desktop */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: #081226;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* ═══════════════════════════════════════
+           MOBILE MODE (≤ 1024px)
+        ═══════════════════════════════════════ */
+        @media screen and (max-width: 1024px) {
+            
+            /* STEP 1: Show Hamburger */
+            .mobile-toggle {
+                display: flex !important;
+            }
+            
+            /* STEP 2: Transform Menu to Drawer */
+            .nav-list {
+                /* Layout */
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+                width: 260px !important;
+                max-width: 85vw !important;
+                height: 100vh !important;
+                
+                /* Visual */
+                background: #fff !important;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3) !important;
+                
+                /* Structure */
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 5rem 1.5rem 2rem !important;
+                gap: 0 !important;
+                
+                /* Behavior */
+                overflow-y: auto !important;
+                z-index: 10000 !important;
+                
+                /* CRITICAL: Hidden by Default */
+                transform: translateX(100%) !important;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+            
+            /* STEP 3: Show Menu When Open */
+            .nav-list.open {
+                transform: translateX(0) !important;
+            }
+            
+            /* STEP 4: Style Menu Items */
+            .nav-list li {
+                width: 100% !important;
+            }
+            
+            .nav-list a {
+                display: block !important;
+                padding: 1.2rem 0 !important;
+                border-bottom: 1px solid #f0f0f0 !important;
+                font-size: 1.05rem !important;
+            }
+            
+            .nav-cta {
+                margin-top: 1rem !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            
+            .header-container {
+                padding: 0.75rem 1rem !important;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .nav-list {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        
+        /* Overlay Backdrop */
+        .nav-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .nav-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Prevent Body Scroll When Menu Open */
+        body.menu-locked {
+            overflow: hidden !important;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Loading Screen -->
-<div id="loadingScreen" class="loading-screen">
-    <div class="loader">
-        <i class="fas fa-moon"></i>
-        <div class="loading-text">NEW MOON</div>
+<!-- ═══════════════════════════════════════
+     NAVIGATION HEADER
+═══════════════════════════════════════ -->
+<header class="site-header">
+    <div class="header-container">
+        
+        <!-- Logo -->
+        <a href="index.html" class="site-logo">
+            <i class="fas fa-moon"></i>
+            <div class="logo-content">
+                <h1>NEW MOON</h1>
+                <p>Corporate Solutions</p>
+            </div>
+        </a>
+        
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle" id="menuBtn" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <ul class="nav-list" id="navMenu">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="portfolio.html">سابقة الأعمال</a></li>
+            <li><a href="companies.html">الشركات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+            <li>
+                <a href="studio.html" class="nav-cta">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <span>استوديو نيو مون</span>
+                </a>
+            </li>
+        </ul>
+        
     </div>
-</div>
+</header>
 
-<!-- Cookie Consent -->
-<div id="cookieConsent" class="cookie-consent">
-    <div class="cookie-content">
-        <p><i class="fas fa-cookie-bite"></i> نستخدم ملفات الارتباط (Cookies) لتحسين تجربتك على موقعنا.</p>
-        <div class="cookie-buttons">
-            <button onclick="acceptCookies()" class="btn-accept">قبول</button>
-            <button onclick="rejectCookies()" class="btn-reject">رفض</button>
-        </div>
-    </div>
-</div>
+<!-- Overlay Backdrop (appears when menu opens) -->
+<div class="nav-backdrop" id="backdrop"></div>
 
-<!-- Navigation -->
-<div id="navbar"></div>
-
-<!-- Hero Section -->
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
 <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -81,13 +316,12 @@
                 <i class="fas fa-arrow-left"></i>
             </a>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
     </div>
 </section>
 
-<!-- Trust Bar -->
+<!-- ═══════════════════════════════════════
+     TRUST BAR
+═══════════════════════════════════════ -->
 <section class="trust-bar">
     <div class="container">
         <div class="trust-items">
@@ -111,35 +345,34 @@
     </div>
 </section>
 
-<!-- Stats Section -->
+<!-- ═══════════════════════════════════════
+     STATS SECTION
+═══════════════════════════════════════ -->
 <section class="stats-section">
     <div class="container">
         <div class="stats-grid">
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="stat-card">
                 <div class="stat-icon-wrapper">
                     <i class="fas fa-trophy"></i>
                 </div>
-                <div class="stat-number" data-count="25">0</div>
+                <div class="stat-number">25+</div>
                 <div class="stat-label">سنة خبرة</div>
             </div>
-            
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-card">
                 <div class="stat-icon-wrapper">
                     <i class="fas fa-users"></i>
                 </div>
-                <div class="stat-number" data-count="500">0</div>
+                <div class="stat-number">500+</div>
                 <div class="stat-label">عميل راضي</div>
             </div>
-            
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-card">
                 <div class="stat-icon-wrapper">
                     <i class="fas fa-bolt"></i>
                 </div>
-                <div class="stat-number" data-count="72">0</div>
+                <div class="stat-number">72</div>
                 <div class="stat-label">ساعة تسليم</div>
             </div>
-            
-            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-card">
                 <div class="stat-icon-wrapper">
                     <i class="fas fa-briefcase-medical"></i>
                 </div>
@@ -150,26 +383,9 @@
     </div>
 </section>
 
-<!-- Clients Carousel -->
-<section class="clients-section">
-    <div class="container">
-        <h2 class="section-title">شركاء النجاح</h2>
-        <p class="section-subtitle">يثقون بنا لتقديم أفضل الحلول المؤسسية</p>
-        
-        <div class="clients-carousel">
-            <div class="clients-track" id="clientsTrack"></div>
-        </div>
-        
-        <div class="text-center" style="margin-top: 2rem;">
-            <a href="companies.html" class="btn btn-outline">
-                <span>شاهد جميع الشركاء</span>
-                <i class="fas fa-arrow-left"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
+<!-- ═══════════════════════════════════════
+     CTA SECTION
+═══════════════════════════════════════ -->
 <section class="cta-section">
     <div class="container">
         <div class="cta-content">
@@ -184,141 +400,90 @@
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
-                <a href="contact.html" class="btn btn-white">
-                    <i class="fas fa-envelope"></i>
-                    <span>أرسل رسالة</span>
-                </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<div id="footer"></div>
-
-<!-- WhatsApp Floating Button -->
+<!-- WhatsApp Float Button -->
 <a href="https://wa.me/201280081544" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- Back to Top -->
-<button id="backToTop" class="back-to-top" aria-label="العودة لأعلى">
-    <i class="fas fa-arrow-up"></i>
-</button>
-
-<!-- Scripts -->
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT - MOBILE MENU LOGIC
+     
+     ALGORITHM:
+     1. Get DOM elements
+     2. Check if elements exist
+     3. Attach event listeners
+     4. Toggle classes on interaction
+     5. Manage body scroll lock
+═══════════════════════════════════════ -->
 <script>
-// Load Nav & Footer
-fetch("nav.html?" + Date.now())
-  .then(res => res.text())
-  .then(data => document.getElementById("navbar").innerHTML = data)
-  .then(() => {
-      if(typeof initNav === 'function') initNav();
-  });
-
-fetch("footer.html?" + Date.now())
-  .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
-
-// Loading Screen
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-    }, 800);
-});
-
-// Clients Logos - عرض أول 5 لوجوهات ثابتة بعرض الصفحة
-const clientFiles = [
-    'client_1.webp','client_2.webp','client_3.webp','client_4.webp','client_5.webp',
-    'client_6.webp','client_7.webp','client_8.webp','client_9.webp','client_10.webp',
-    'client_11.webp','client_12.webp','client_13.webp','client_14.webp','client_15.webp',
-    'client_16.webp','client_17.webp','client_18.webp','client_19.webp','client_20.webp',
-    'client_21.webp','client_22.webp','client_23.webp','client_24.webp','client_25.webp',
-    'client_26.webp','client_27.webp','client_28.webp','client_29.webp','client_30.webp',
-    'client_31.webp','client_32.webp','client_33.webp','client_34.webp','client_35.webp',
-    'client_36.webp','client_37.webp'
-];
-
-const clientsData = clientFiles.map((file, index) => ({
-    img: `assets/clients_webp/${file}`,
-    name: `Client ${index + 1}`
-}));
-
-const track = document.getElementById('clientsTrack');
-// نستخدم أول 5 فقط لعرضهم بشكل ثابت
-clientsData.slice(0, 5).forEach(client => {
-    const div = document.createElement('div');
-    div.className = 'client-logo';
-    div.innerHTML = `<img src="${client.img}" alt="${client.name}" loading="lazy">`;
-    track.appendChild(div);
-});
-
-// Counter Animation
-const counters = document.querySelectorAll('.stat-number[data-count]');
-const speed = 200;
-
-const animateCounter = (counter) => {
-    const target = +counter.getAttribute('data-count');
-    const count = +counter.innerText;
-    const inc = target / speed;
+(function() {
+    'use strict';
     
-    if (count < target) {
-        counter.innerText = Math.ceil(count + inc);
-        setTimeout(() => animateCounter(counter), 1);
-    } else {
-        counter.innerText = target + '+';
+    // ═══ STEP 1: Get Elements ═══
+    var menuBtn = document.getElementById('menuBtn');
+    var navMenu = document.getElementById('navMenu');
+    var backdrop = document.getElementById('backdrop');
+    var body = document.body;
+    
+    // ═══ STEP 2: Validate Elements ═══
+    if (!menuBtn || !navMenu || !backdrop) {
+        console.error('Navigation elements not found');
+        return;
     }
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
+    
+    // ═══ STEP 3: Hamburger Click Event ═══
+    menuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var isOpen = navMenu.classList.contains('open');
+        
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
         }
     });
-}, { threshold: 0.5 });
-
-counters.forEach(counter => observer.observe(counter));
-
-// Cookie Consent
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'true');
-    document.getElementById('cookieConsent').style.display = 'none';
-}
-
-function rejectCookies() {
-    localStorage.setItem('cookieConsent', 'false');
-    document.getElementById('cookieConsent').style.display = 'none';
-}
-
-if (!localStorage.getItem('cookieConsent')) {
-    setTimeout(() => {
-        document.getElementById('cookieConsent').classList.add('show');
-    }, 2000);
-}
-
-// Back to Top
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-    } else {
-        backToTop.classList.remove('show');
+    
+    // ═══ STEP 4: Backdrop Click Event ═══
+    backdrop.addEventListener('click', closeMenu);
+    
+    // ═══ STEP 5: Menu Links Click Event ═══
+    var links = navMenu.getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', closeMenu);
     }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Scroll Indicator
-document.querySelector('.scroll-indicator').addEventListener('click', () => {
-    window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth'
+    
+    // ═══ STEP 6: ESC Key Event ═══
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            closeMenu();
+        }
     });
-});
+    
+    // ═══ FUNCTIONS ═══
+    
+    function openMenu() {
+        navMenu.classList.add('open');
+        menuBtn.classList.add('open');
+        backdrop.classList.add('show');
+        body.classList.add('menu-locked');
+    }
+    
+    function closeMenu() {
+        navMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        backdrop.classList.remove('show');
+        body.classList.remove('menu-locked');
+    }
+    
+    console.log('✅ Navigation initialized successfully');
+})();
 </script>
 
 </body>
