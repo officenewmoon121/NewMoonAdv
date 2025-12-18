@@ -1,0 +1,261 @@
+/* ============================
+   NM STUDIO PRO — CSS
+   Clean Fullscreen Version
+   ============================ */
+
+:root {
+    --bg: #f5f7fa;
+    --navy: #0f172a;
+    --gold: #c5a059;
+    --white: #ffffff;
+
+    --panel-bg: #ffffff;
+    --panel-border: #d0d4dd;
+
+    --btn-primary: #c5a059;
+    --btn-secondary: #334155;
+    --btn-danger: #dc2626;
+
+    --layer-bg: #f1f5f9;
+    --layer-active: #e2e8f0;
+
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* زر الرجوع */
+.back-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    padding: 10px 18px;
+    background: var(--navy);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    z-index: 30;
+}
+.back-btn:hover {
+    background: #1e293b;
+}
+
+/* ============================
+   STUDIO LAYOUT
+============================ */
+
+.studio {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ============================
+   PREVIEW AREA
+============================ */
+
+.preview-wrapper {
+    flex: 1.1;
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid var(--panel-border);
+}
+
+#canvas-area {
+    position: relative;
+    width: 530px;
+    height: 530px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-base {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#layers-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* التصدير */
+.export-row {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+/* أزرار */
+.btn {
+    padding: 9px 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.primary { background: var(--btn-primary); color: #081226; }
+.secondary { background: var(--btn-secondary); color: #fff; }
+.save { background: #0ea5e9; color: #fff; }
+.load { background: #14b8a6; color: #fff; }
+.danger { background: var(--btn-danger); color: #fff; }
+
+.btn:hover {
+    opacity: .9;
+}
+
+/* ============================
+   CONTROL PANEL
+============================ */
+
+.control-panel {
+    width: 340px;
+    background: var(--panel-bg);
+    border-left: 1px solid var(--panel-border);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.panel-block {
+    margin-bottom: 25px;
+}
+
+.panel-block label {
+    font-weight: 700;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ألوان المنتج */
+.color-row {
+    display: flex;
+    gap: 10px;
+}
+
+.color-option {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.color-option.active {
+    border-color: var(--gold);
+}
+
+/* التحكم في الطبقة */
+.control-item {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ============================
+   LAYERS PANEL
+============================ */
+
+.layers-block {
+    border-top: 1px solid var(--panel-border);
+    padding-top: 12px;
+}
+
+#layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.layer-row {
+    padding: 8px 12px;
+    background: var(--layer-bg);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.layer-row.active {
+    background: var(--layer-active);
+    border: 2px solid var(--gold);
+}
+
+.layer-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.layer-icons i {
+    cursor: pointer;
+    font-size: .9rem;
+    color: #475569;
+}
+
+.layer-icons i:hover {
+    color: var(--navy);
+}
+
+/* نصوص الطبقات */
+.text-layer {
+    position: absolute;
+    font-size: 26px;
+    font-weight: 700;
+    cursor: move;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* لوجوهات */
+.logo-layer {
+    position: absolute;
+    max-width: 200px;
+    cursor: move;
+    user-select: none;
+}
+
+/* Snap Lines */
+.snap-line {
+    position: absolute;
+    background: var(--gold);
+    opacity: 0.7;
+    z-index: 9000;
+}
+
+.snap-line.vertical {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+}
+
+.snap-line.horizontal {
+    height: 2px;
+    width: 100%;
+    top: 50%;
+}
+
+/* سكرول لطيف */
+.control-panel::-webkit-scrollbar {
+    width: 6px;
+}
+.control-panel::-webkit-scrollbar-thumb {
+    background: #c8cdd4;
+    border-radius: 10px;
+}

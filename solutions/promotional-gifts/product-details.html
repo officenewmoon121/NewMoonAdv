@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المنتج | NEW MOON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/solutions.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo"><strong>NEW MO<span class="moon">🌙</span>ON</strong></div>
+    <nav class="main-nav">
+      <a href="#" id="back-link">رجوع</a>
+    </nav>
+  </div>
+</header>
+
+<section class="product-details">
+  <div class="container details-grid">
+    <img id="pd-img" src="" alt="">
+    <div>
+      <h1 id="pd-name"></h1>
+      <p id="pd-desc"></p>
+      <ul>
+        <li>طباعة احترافية</li>
+        <li>خامات عالية</li>
+        <li>تسليم سريع</li>
+      </ul>
+      <div class="details-actions">
+        <a href="../../contact.html" class="cta-primary">اطلب عرض سعر</a>
+        <a id="studio-link" class="cta-secondary">جرّب التصميم</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const params=new URLSearchParams(location.search);
+const id=params.get('id');
+const from=params.get('from')||'';
+fetch('data/products.json').then(r=>r.json()).then(list=>{
+  const p=list.find(x=>x.id===id)||list[0];
+  document.getElementById('pd-img').src=p.image;
+  document.getElementById('pd-name').textContent=p.name;
+  document.getElementById('pd-desc').textContent=p.desc;
+});
+document.getElementById('studio-link').href=`../../studio.html?from=${from}`;
+document.getElementById('back-link').href= from ? `promotional-gifts.html` : '../../index.html';
+</script>
+
+</body>
+</html>

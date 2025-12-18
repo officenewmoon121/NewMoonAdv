@@ -1,0 +1,36 @@
+# robots.txt for NEW MOON Corporate Solutions
+# https://newmoonadv.com/robots.txt
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow CSS and JS for better indexing
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://newmoonadv.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Block specific bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+# 
+# User-agent: SemrushBot
+# Disallow: /
+
+# ============================================
+# Notes:
+# ============================================
+# - Replace "https://newmoon.com" with your actual domain
+# - Update after deploying to production
+# - Test with: https://www.google.com/webmasters/tools/robots-testing-tool
+# ============================================

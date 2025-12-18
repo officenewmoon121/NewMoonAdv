@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "ميدالية معدنية",
+    "desc": "ميدالية محفور عليها لوجو الشركة — مناسبة للهدايا الدعائية.",
+    "category": "gifts",
+    "img": "assets/products/gifts/keychain1.webp"
+  },
+  {
+    "id": 2,
+    "name": "قلم معدني فاخر",
+    "desc": "قلم بجودة ممتازة مع نقش الليزر.",
+    "category": "gifts",
+    "img": "assets/products/gifts/pen1.webp"
+  },
+  {
+    "id": 3,
+    "name": "أجندة جلد 2025",
+    "desc": "أجندة جلد مع إمكانية طباعة لوجو الشركة.",
+    "category": "gifts",
+    "img": "assets/products/gifts/notebook1.webp"
+  },
+  {
+    "id": 10,
+    "name": "تيشيرت بولو رجال",
+    "desc": "يونيفورم شركات بجودة عالية مع تطريز اللوجو.",
+    "category": "uniform",
+    "img": "assets/products/uniform/polo1.webp"
+  },
+  {
+    "id": 11,
+    "name": "يونيفورم كامل — عمال",
+    "desc": "بدلة عمل مقاومة للتلف ومناسبة للاستخدام اليومي.",
+    "category": "uniform",
+    "img": "assets/products/uniform/work1.webp"
+  },
+  {
+    "id": 12,
+    "name": "مريلة مطاعم",
+    "desc": "مناسبة للمطاعم والكافيهات مع تطريز اللوجو.",
+    "category": "uniform",
+    "img": "assets/products/uniform/apron1.webp"
+  },
+  {
+    "id": 20,
+    "name": "Roll Up Banner",
+    "desc": "رول أب بجودة عالية مقاس 200×85 سم.",
+    "category": "exhibition",
+    "img": "assets/products/exhibition/rollup1.webp"
+  },
+  {
+    "id": 21,
+    "name": "Backdrop معرض",
+    "desc": "تصميم وطباعة Backdrop للفعاليات والمؤتمرات.",
+    "category": "exhibition",
+    "img": "assets/products/exhibition/backdrop1.webp"
+  },
+  {
+    "id": 22,
+    "name": "ستاند عرض أكريليك",
+    "desc": "ستاند عرض منتجات للشركات والمحلات.",
+    "category": "exhibition",
+    "img": "assets/products/exhibition/stand1.webp"
+  },
+  {
+    "id": 30,
+    "name": "طباعة UV على الخشب",
+    "desc": "ألواح خشب مطبوعة UV بجودة ممتازة.",
+    "category": "uv",
+    "img": "assets/products/uv/wood1.webp"
+  },
+  {
+    "id": 31,
+    "name": "طباعة UV على الأكريليك",
+    "desc": "لوحة أكريليك مطبوعة بتقنية UV للأسماء والمكاتب.",
+    "category": "uv",
+    "img": "assets/products/uv/acrylic1.webp"
+  },
+  {
+    "id": 32,
+    "name": "طباعة UV على المعادن",
+    "desc": "طباعة عالية الدقة على الألومنيوم والمعادن.",
+    "category": "uv",
+    "img": "assets/products/uv/metal1.webp"
+  },
+  {
+    "id": 40,
+    "name": "دفاتر الشركة",
+    "desc": "دفاتر طباعة أوفست مخصصة للشركات.",
+    "category": "office",
+    "img": "assets/products/office/books1.webp"
+  },
+  {
+    "id": 41,
+    "name": "ملفات وشُنط شركات",
+    "desc": "ملفات بلاستيك أو كرتون مطبوعة باسم الشركة.",
+    "category": "office",
+    "img": "assets/products/office/folder1.webp"
+  },
+  {
+    "id": 42,
+    "name": "كروت شخصية",
+    "desc": "تصميم وطباعة كروت شركات بجودة عالية.",
+    "category": "office",
+    "img": "assets/products/office/cards1.webp"
+  }
+]

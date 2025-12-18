@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preloader and Animation Styles -->
+    <style>
+/* ═══ BUTTONS ═══ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 300ms ease;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4AF37, #F4D03F);
+    color: #081226;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #D4AF37;
+    color: #D4AF37;
+}
+
+.btn-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+}
+
+.btn-white {
+    background: #fff;
+    color: #081226;
+}
+
+.btn-white:hover {
+    background: #D4AF37;
+    color: #081226;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+.btn-whatsapp:hover {
+    background: #1FB855;
+    transform: translateY(-2px);
+}
+
+/* ═══ TRUST BAR ═══ */
+.trust-bar {
+    background: rgba(212, 175, 55, 0.05);
+    padding: 2rem 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #081226;
+}
+
+.trust-item i {
+    font-size: 2rem;
+    color: #D4AF37;
+}
+
+.trust-item span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ═══ STATS SECTION ═══ */
+.stats-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 300ms ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #D4AF37, #F4D03F);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.stat-icon-wrapper i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #081226;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #081226, #1a2332);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* ═══ CTA SECTION ═══ */
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a2332 0%, #081226 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ═══ WHATSAPP FLOAT ═══ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 9997;
+    transition: all 300ms ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* ═══════════════════════════════════════
+   MOBILE OPTIMIZATIONS
+═══════════════════════════════════════ */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+        min-height: 85vh;
+        padding: 7rem 0 3rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+    
+    /* Trust Bar - Horizontal Scroll */
+    .trust-bar {
+        padding: 1.5rem 0;
+    }
+    
+    .trust-items {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding: 1rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+    }
+    
+    .trust-items::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .trust-item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        min-width: 180px;
+        padding: 1rem 1.5rem;
+        background: rgba(212, 175, 55, 0.08);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .trust-item i {
+        font-size: 1.5rem;
+    }
+    
+    .trust-item span {
+        font-size: 0.85rem;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+        padding: 3rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+    }
+    
+    .stat-card {
+        padding: 2rem 1rem;
+    }
+    
+    .stat-icon-wrapper {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .stat-icon-wrapper i {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+        margin-top: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 28px;
+    }
+    
+    /* Footer Optimizations */
+    .footer-grid {
+        gap: 2.5rem;
+    }
+    
+    .footer-company {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+    
+    .footer-tagline {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+    
+    /* Quick Links - 2 Columns */
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 1rem;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+        font-size: 14px;
+        padding: 0.5rem 0;
+    }
+    
+    /* Contact Info - Cards */
+    .footer-contact li {
+        background: rgba(255,255,255,0.05);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+    
+    /* Services - 2 Columns */
+    .footer-services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .footer-services li {
+        font-size: 13px;
+        margin-bottom: 0;
+        padding: 0.8rem;
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px;
+    }
+}
+
+/* Extra Small (≤ 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-services {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active {
+        transform: scale(0.97);
+    }
+    
+    .stat-card:hover {
+        transform: none;
+    }
+}
+
+/* iOS Safe Area */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .whatsapp-float {
+        bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+        /* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #07152A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-image {
+    width: 75px; /* حجم مناسب للصورة */
+    height: auto;
+    border-radius: 50%; /* دائري جميل للصورة */
+    box-shadow: 0 4px 15px rgba(244, 208, 63, 0.6); /* تأثير فني */
+    animation: rotate 1.5s infinite ease-in-out; /* حركة دوران للصورة */
+}
+
+/* حركة دوران للصورة */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+        /* Global Styles */
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: #07152A;
+            color: #FFFFFF;
+            padding: 40px 20px;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1 1 30%;
+            max-width: 350px;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            font-size: 1.8rem;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <img src="images/favicon2.png" alt="جاري التحميل..." class="loading-image">
+</div>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <!-- SEO -->
+    <title>نيو مون | شريكك الموثوق في الحلول المؤسسية - 25 عاماً من الخبرة</title>
+    <meta name="description" content="نيو مون - 25 عاماً من الخبرة في توريد الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية">
+    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة UV, تجهيز معارض, نيو مون">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files - LOAD ORDER IS CRITICAL -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- CRITICAL: Mobile Navigation Override - MUST BE LAST -->
+    <style>
+        /* ═══════════════════════════════════════
+           CRITICAL MOBILE NAVIGATION STYLES
+           Priority: MAXIMUM (!important)
+           Load: LAST (to override everything)
+        ═══════════════════════════════════════ */
+        
+        /* Desktop Default State */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 9999;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            z-index: 10001;
+        }
+        
+        .site-logo i {
+            font-size: 1.8rem;
+            color: #D4AF37;
+        }
+        
+        .logo-content h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        .logo-content p {
+            font-size: 0.65rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Navigation List - Desktop */
+        .nav-list {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-list a {
+            color: #081226;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-list a:hover {
+            color: #D4AF37;
+        }
+        
+        .nav-cta {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            color: #081226 !important;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Mobile Toggle - Hidden on Desktop */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: #081226;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* ═══════════════════════════════════════
+           MOBILE MODE (≤ 1024px)
+        ═══════════════════════════════════════ */
+        @media screen and (max-width: 1024px) {
+            
+            /* STEP 1: Show Hamburger */
+            .mobile-toggle {
+                display: flex !important;
+            }
+            
+            /* STEP 2: Transform Menu to Drawer */
+            .nav-list {
+                /* Layout */
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+                width: 260px !important;
+                max-width: 85vw !important;
+                height: 100vh !important;
+                
+                /* Visual */
+                background: #fff !important;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3) !important;
+                
+                /* Structure */
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 5rem 1.5rem 2rem !important;
+                gap: 0 !important;
+                
+                /* Behavior */
+                overflow-y: auto !important;
+                z-index: 10000 !important;
+                
+                /* CRITICAL: Hidden by Default */
+                transform: translateX(100%) !important;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+            
+            /* STEP 3: Show Menu When Open */
+            .nav-list.open {
+                transform: translateX(0) !important;
+            }
+            
+            /* STEP 4: Style Menu Items */
+            .nav-list li {
+                width: 100% !important;
+            }
+            
+            .nav-list a {
+                display: block !important;
+                padding: 1.2rem 0 !important;
+                border-bottom: 1px solid #f0f0f0 !important;
+                font-size: 1.05rem !important;
+            }
+            
+            .nav-cta {
+                margin-top: 1rem !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            
+            .header-container {
+                padding: 0.75rem 1rem !important;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .nav-list {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        
+        /* Overlay Backdrop */
+        .nav-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .nav-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Prevent Body Scroll When Menu Open */
+        body.menu-locked {
+            overflow: hidden !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION HEADER
+═══════════════════════════════════════ -->
+<header class="site-header">
+    <div class="header-container">
+        
+        <!-- Logo -->
+        <a href="index.html" class="site-logo">
+            <i class="fas fa-moon"></i>
+            <div class="logo-content">
+                <h1>NEW MOON</h1>
+                <p>Corporate Solutions</p>
+            </div>
+        </a>
+        
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle" id="menuBtn" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <ul class="nav-list" id="navMenu">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="portfolio.html">سابقة الأعمال</a></li>
+            <li><a href="companies.html">الشركات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+            <li>
+                <a href="studio.html" class="nav-cta">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <span>استوديو نيو مون</span>
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</header>
+
+<!-- Overlay Backdrop (appears when menu opens) -->
+<div class="nav-backdrop" id="backdrop"></div>
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-badge">🏆 25 عاماً من التميز</div>
+        <h1 class="hero-title">
+            صمم منتجك الاحترافي في <span class="text-gold">دقائق</span>
+        </h1>
+        <p class="hero-subtitle">
+            استوديو نيو مون الذكي - صمم، اطبع، واطلب عينتك خلال دقائق
+        </p>
+        <div class="hero-buttons">
+            <a href="studio.html" class="btn btn-primary btn-large">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>ابدأ التصميم مجاناً</span>
+            </a>
+            <a href="products.html" class="btn btn-outline btn-large">
+                <span>تصفح الكتالوج</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TRUST BAR
+═══════════════════════════════════════ -->
+<section class="trust-bar">
+    <div class="container">
+        <div class="trust-items">
+            <div class="trust-item">
+                <i class="fas fa-star"></i>
+                <span>ISO 9001 Certified</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-award"></i>
+                <span>25 Years Experience</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-users"></i>
+                <span>500+ Happy Clients</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-shipping-fast"></i>
+                <span>72h Delivery</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     STATS SECTION
+═══════════════════════════════════════ -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-number">25+</div>
+                <div class="stat-label">سنة خبرة</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">عميل راضي</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="stat-number">72</div>
+                <div class="stat-label">ساعة تسليم</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                    <i class="fas fa-briefcase-medical"></i>
+                </div>
+                <div class="stat-number">#1</div>
+                <div class="stat-label">تخصص طبي</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA SECTION
+═══════════════════════════════════════ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>جاهز لنبدأ مشروعك التالي؟</h2>
+            <p>احصل على استشارة مجانية وعرض سعر مخصص لشركتك</p>
+            <div class="cta-buttons">
+                <a href="tel:+201280081544" class="btn btn-white">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل بنا</span>
+                </a>
+                <a href="https://wa.me/201280081544" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/201280081544" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT - MOBILE MENU LOGIC
+     
+     ALGORITHM:
+     1. Get DOM elements
+     2. Check if elements exist
+     3. Attach event listeners
+     4. Toggle classes on interaction
+     5. Manage body scroll lock
+═══════════════════════════════════════ -->
+<script>
+(function() {
+    'use strict';
+    
+    // ═══ STEP 1: Get Elements ═══
+    var menuBtn = document.getElementById('menuBtn');
+    var navMenu = document.getElementById('navMenu');
+    var backdrop = document.getElementById('backdrop');
+    var body = document.body;
+    
+    // ═══ STEP 2: Validate Elements ═══
+    if (!menuBtn || !navMenu || !backdrop) {
+        console.error('Navigation elements not found');
+        return;
+    }
+    
+    // ═══ STEP 3: Hamburger Click Event ═══
+    menuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var isOpen = navMenu.classList.contains('open');
+        
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+    
+    // ═══ STEP 4: Backdrop Click Event ═══
+    backdrop.addEventListener('click', closeMenu);
+    
+    // ═══ STEP 5: Menu Links Click Event ═══
+    var links = navMenu.getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', closeMenu);
+    }
+    
+    // ═══ STEP 6: ESC Key Event ═══
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            closeMenu();
+        }
+    });
+    
+    // ═══ FUNCTIONS ═══
+    
+    function openMenu() {
+        navMenu.classList.add('open');
+        menuBtn.classList.add('open');
+        backdrop.classList.add('show');
+        body.classList.add('menu-locked');
+    }
+    
+    function closeMenu() {
+        navMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        backdrop.classList.remove('show');
+        body.classList.remove('menu-locked');
+    }
+    
+    console.log('✅ Navigation initialized successfully');
+})();
+</script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>New Moon | شريكك الموثوق في الحلول المؤسسية - 25 عاماً من الخبرة</title>
+    <meta name="title" content="New Moon | شريكك الموثوق في الحلول المؤسسية">
+    <meta name="description" content="نيو مون - 25 عاماً من الخبرة في توريد الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية UV. ISO 9001 Certified">
+    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة UV, تجهيز معارض, نيو مون, New Moon, الهدايا المكتبية">
+    <meta name="author" content="New Moon Corporate Solutions">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Arabic">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newmoonadv.com/">
+    <meta property="og:title" content="New Moon | 25 عاماً من التميز في الحلول المؤسسية">
+    <meta property="og:description" content="شريكك الموثوق في الهدايا الدعائية، اليونيفورم، والمطبوعات الاحترافية">
+    <meta property="og:image" content="https://newmoonadv.com/images/og-image.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:site_name" content="New Moon">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://newmoonadv.com/">
+    <meta property="twitter:title" content="New Moon | الحلول المؤسسية">
+    <meta property="twitter:description" content="25 عاماً من الخبرة والتميز">
+    <meta property="twitter:image" content="https://newmoonadv.com/images/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://newmoonadv.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts - Cairo (Arabic) & Roboto (English) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Schema.org Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "New Moon Corporate Solutions",
+      "alternateName": "نيو مون",
+      "url": "https://newmoonadv.com",
+      "logo": "https://newmoonadv.com/images/logo.png",
+      "description": "شركة متخصصة في الهدايا الدعائية، اليونيفورم، تجهيز المعارض والطباعة الاحترافية منذ 25 عاماً",
+      "foundingDate": "2000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "177 أحمد عصمت، جسر السويس",
+        "addressLocality": "اللف، مسكن",
+        "addressRegion": "القاهرة",
+        "addressCountry": "EG"
+      },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+20-128-008-1544",
+        "contactType": "sales",
+        "availableLanguage": ["ar", "en"]
+      }],
+      "sameAs": [
+        "https://www.facebook.com/newmoon",
+        "https://www.instagram.com/newmoon",
+        "https://www.linkedin.com/company/newmoon",
+        "https://www.tiktok.com/@newmoon"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500"
+      }
+    }
+    </script>
+    
+    <!-- Critical CSS - Brand System -->
+    <style>
+        /* ═══════════════════════════════════════
+           BRAND DESIGN SYSTEM
+           MyBrand Identity Implementation
+        ═══════════════════════════════════════ */
+        /* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #07152A; /* خلفية داكنة */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-image {
+    width: 100px; /* حجم الصورة */
+    height: auto;
+    animation: fade-in 1.5s infinite ease-in-out; /* تأثير الحركة */
+}
+
+/* تأثير الحركة للصورة */
+@keyframes fade-in {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+        :root {
+            /* Brand Colors */
+            --brand-gold: #D4AF37;
+            --brand-gold-light: #F4D03F;
+            --brand-gold-dark: #B8941C;
+            --deep-navy: #081226;
+            --navy-medium: #1a2332;
+            --navy-light: #2d3748;
+            
+            /* Gradients */
+            --gradient-gold: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+            --gradient-navy: linear-gradient(135deg, var(--navy-medium) 0%, var(--deep-navy) 100%);
+            
+            /* Typography */
+            --font-arabic: 'Cairo', sans-serif;
+            --font-english: 'Roboto', sans-serif;
+            
+            /* Spacing System (8px grid) */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 50px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.25);
+            
+            /* Animation Timing */
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-arabic);
+            background: #fff;
+            color: var(--deep-navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        /* ═══════════════════════════════════════
+           HEADER & NAVIGATION
+        ═══════════════════════════════════════ */
+        
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 9999;
+            transition: all var(--transition-normal);
+        }
+        
+        .site-header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.75rem var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            z-index: 10001;
+            transition: transform var(--transition-fast);
+        }
+        
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .site-logo i {
+            font-size: 1.8rem;
+            color: var(--brand-gold);
+        }
+        
+        .logo-content h1 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin: 0;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            font-family: var(--font-english);
+            letter-spacing: 1px;
+        }
+        
+        .logo-content p {
+            font-size: 0.65rem;
+            color: #666;
+            margin: 0;
+            font-family: var(--font-english);
+            font-weight: 500;
+        }
+        
+        /* Navigation */
+        .nav-list {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav-list a {
+            color: var(--deep-navy);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color var(--transition-normal);
+            position: relative;
+        }
+        
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width var(--transition-normal);
+        }
+        
+        .nav-list a:hover {
+            color: var(--brand-gold);
+        }
+        
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+        
+        /* CTA Button - 3D Style */
+        .nav-cta {
+            padding: 10px 20px;
+            background: var(--gradient-gold);
+            color: var(--deep-navy) !important;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left var(--transition-slow);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+        
+        .nav-cta:active {
+            transform: translateY(0);
+        }
+        
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--deep-navy);
+            border-radius: 3px;
+            transition: all var(--transition-normal);
+        }
+        
+        .mobile-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 1024px) {
+            .mobile-toggle {
+                display: flex !important;
+            }
+            
+            .nav-list {
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+                width: 280px !important;
+                max-width: 85vw !important;
+                height: 100vh !important;
+                background: #fff !important;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.3) !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 5rem var(--space-md) var(--space-lg) !important;
+                gap: 0 !important;
+                overflow-y: auto !important;
+                z-index: 10000 !important;
+                transform: translateX(100%) !important;
+                transition: transform var(--transition-slow) !important;
+            }
+            
+            .nav-list.open {
+                transform: translateX(0) !important;
+            }
+            
+            .nav-list li {
+                width: 100% !important;
+            }
+            
+            .nav-list a {
+                display: block !important;
+                padding: 1.2rem 0 !important;
+                border-bottom: 1px solid #f0f0f0 !important;
+                font-size: 1.05rem !important;
+            }
+            
+            .nav-cta {
+                margin-top: var(--space-md) !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+        }
+        
+        .nav-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-normal), visibility var(--transition-normal);
+        }
+        
+        .nav-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        body.menu-locked {
+            overflow: hidden !important;
+        }
+        
+        /* ═══════════════════════════════════════
+           FOOTER - EXACT DESIGN FROM IMAGE
+        ═══════════════════════════════════════ */
+        
+        .site-footer {
+            background: var(--gradient-navy);
+            color: #fff;
+            padding: var(--space-2xl) 0 var(--space-lg);
+            font-family: var(--font-arabic);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, var(--brand-gold) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        /* Column 1: Company */
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--brand-gold);
+            margin-bottom: var(--space-md);
+            letter-spacing: 2px;
+            font-family: var(--font-english);
+        }
+        
+        .footer-tagline {
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            transition: all var(--transition-normal);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--brand-gold);
+            color: var(--navy-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Column Headings */
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-gold);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Quick Links */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            transition: all var(--transition-normal);
+        }
+        
+        .footer-links a:hover {
+            color: var(--brand-gold);
+            padding-right: 5px;
+        }
+        
+        .footer-links i {
+            font-size: 10px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .footer-links a:hover i {
+            transform: translateX(-3px);
+        }
+        
+        /* Contact Info */
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: var(--space-md);
+            font-size: 14px;
+        }
+        
+        .footer-contact i {
+            color: var(--brand-gold);
+            font-size: 16px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .footer-contact strong {
+            color: var(--brand-gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .footer-contact a:hover {
+            color: var(--brand-gold);
+        }
+        
+        /* Services List */
+        .footer-services {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-services li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            transition: color var(--transition-fast);
+        }
+        
+        .footer-services li:hover {
+            color: var(--brand-gold);
+        }
+        
+        .footer-services i {
+            color: var(--brand-gold);
+            font-size: 14px;
+        }
+        
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+        
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .footer-bottom-links a:hover {
+            color: var(--brand-gold);
+        }
+        
+        .footer-bottom-links span {
+            color: rgba(255,255,255,0.3);
+        }
+        
+        /* Responsive Footer */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+═══════════════════════════════════════ -->
+<header class="site-header" role="banner">
+    <div class="header-container">
+        <a href="index.html" class="site-logo" aria-label="New Moon الصفحة الرئيسية">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+            <div class="logo-content">
+                <h1>NEW MOON</h1>
+                <p>Corporate Solutions</p>
+            </div>
+        </a>
+        
+        <button class="mobile-toggle" id="menuBtn" aria-label="القائمة" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav role="navigation" aria-label="القائمة الرئيسية">
+            <ul class="nav-list" id="navMenu">
+                <li><a href="index.html" aria-current="page">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="portfolio.html">سابقة الأعمال</a></li>
+                <li><a href="companies.html">الشركات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+                <li>
+                    <a href="studio.html" class="nav-cta">
+                        <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
+                        <span>استوديو نيو مون</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="nav-backdrop" id="backdrop" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════ -->
+<main role="main">
+    <!-- Add your content sections here -->
+</main>
+
+<!-- ═══════════════════════════════════════
+     FOOTER - EXACT FROM IMAGE
+═══════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+        <div class="footer-grid">
+            
+            <!-- Column 1: Company Info -->
+            <div class="footer-col footer-company">
+                <h2 class="footer-logo">NEW MOON</h2>
+                <p class="footer-tagline">
+                    شريكك الموثوق في الحلول المؤسسية<br>
+                    منذ 25 عاماً، نقدم حلولاً متكاملة<br>
+                    للشركات في الهدايا الدعائية، اليونيفورم،<br>
+                    تجهيز المعارض والطباعة الاحترافية.
+                </p>
+                <div class="footer-social" role="navigation" aria-label="وسائل التواصل الاجتماعي">
+                    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h3 class="footer-heading">روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> الرئيسية</a></li>
+                    <li><a href="products.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> المنتجات</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> الخدمات</a></li>
+                    <li><a href="portfolio.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> سابقة الأعمال</a></li>
+                    <li><a href="companies.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> الشركات</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> من نحن</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-left" aria-hidden="true"></i> تواصل معنا</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col">
+                <h3 class="footer-heading">معلومات التواصل</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <strong>العنوان:</strong><br>
+                            177 أحمد عصمت، جسر السويس<br>
+                            اللف، مسكن، القاهرة، مصر
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <div>
+                            <strong>الهاتف:</strong><br>
+                            <a href="tel:01280081544">01280081544</a><br>
+                            <a href="tel:01212678999">01212678999</a><br>
+                            <a href="tel:0224997707">0224997707</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <strong>البريد الإلكتروني:</strong><br>
+                            <a href="mailto:Officenewmoon121@gmail.com">Officenewmoon121@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <strong>ساعات العمل:</strong><br>
+                            السبت – الخميس: 9 صباحاً - 6 مساءً
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Column 4: Services -->
+            <div class="footer-col">
+                <h3 class="footer-heading">خدماتنا</h3>
+                <ul class="footer-services">
+                    <li><i class="fas fa-gift" aria-hidden="true"></i> الهدايا الدعائية</li>
+                    <li><i class="fas fa-tshirt" aria-hidden="true"></i> الزي الموحد</li>
+                    <li><i class="fas fa-store" aria-hidden="true"></i> تجهيز المعارض</li>
+                    <li><i class="fas fa-print" aria-hidden="true"></i> طباعة UV</li>
+                    <li><i class="fas fa-briefcase" aria-hidden="true"></i> التوريدات المكتبية</li>
+                    <li><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> استوديو التصميم</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear">2025</span> New Moon Corporate Solutions. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">سياسة الخصوصية</a>
+                <span>|</span>
+                <a href="terms.html">الشروط والأحكام</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════
+     JAVASCRIPT
+     DRY Principle Implementation
+═══════════════════════════════════════ -->
+<script>
+(function() {
+    'use strict';
+    
+    // Mobile Menu Controller
+    const MenuController = {
+        elements: {
+            btn: document.getElementById('menuBtn'),
+            menu: document.getElementById('navMenu'),
+            backdrop: document.getElementById('backdrop'),
+            body: document.body
+        },
+        
+        init() {
+            if (!this.validateElements()) return;
+            this.attachEvents();
+            console.log('✅ Navigation initialized');
+        },
+        
+        validateElements() {
+            const { btn, menu, backdrop } = this.elements;
+            if (!btn || !menu || !backdrop) {
+                console.error('Navigation elements not found');
+                return false;
+            }
+            return true;
+        },
+        
+        attachEvents() {
+            const { btn, menu, backdrop } = this.elements;
+            
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggle();
+            });
+            
+            backdrop.addEventListener('click', () => this.close());
+            
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => this.close());
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') this.close();
+            });
+        },
+        
+        toggle() {
+            this.elements.menu.classList.contains('open') ? this.close() : this.open();
+        },
+        
+        open() {
+            const { menu, btn, backdrop, body } = this.elements;
+            menu.classList.add('open');
+            btn.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            backdrop.classList.add('show');
+            backdrop.setAttribute('aria-hidden', 'false');
+            body.classList.add('menu-locked');
+        },
+        
+        close() {
+            const { menu, btn, backdrop, body } = this.elements;
+            menu.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+            backdrop.classList.remove('show');
+            backdrop.setAttribute('aria-hidden', 'true');
+            body.classList.remove('menu-locked');
+        }
+    };
+    
+    // Header Scroll Effect
+    const HeaderScroll = {
+        init() {
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.site-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+    };
+    
+    // Update Current Year
+    const updateYear = () => {
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    };
+    
+    // Lazy Load Images
+    const LazyLoader = {
+        init() {
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('img[data-src]').forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+        }
+    };
+    
+    // Smooth Scroll
+    const SmoothScroll = {
+        init() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+    };
+    
+    // Performance Monitor
+    const PerformanceMonitor = {
+        init() {
+            if ('PerformanceObserver' in window) {
+                try {
+                    const perfObserver = new PerformanceObserver((list) => {
+                        list.getEntries().forEach(entry => {
+                            if (entry.entryType === 'largest-contentful-paint') {
+                                console.log('LCP:', entry.startTime, 'ms');
+                            }
+                        });
+                    });
+                    perfObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+                } catch (e) {
+                    console.log('Performance monitoring not supported');
+                }
+            }
+        }
+    };
+    
+    // Initialize All
+    document.addEventListener('DOMContentLoaded', () => {
+        MenuController.init();
+        HeaderScroll.init();
+        updateYear();
+        LazyLoader.init();
+        SmoothScroll.init();
+        PerformanceMonitor.init();
+    });
+    
+})();
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+
+    preloader.style.opacity = '0'; // تقليل الشفافية
+    preloader.style.visibility = 'hidden'; // إخفائها
+    preloader.style.transition = 'opacity 0.8s ease, visibility 0.8s ease';
+});
+</script>
+
+</body>
+</html>
