@@ -1,0 +1,212 @@
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+/* Dark Mode Variables */
+:root[data-theme="dark"] {
+    --primary-gold: #F4D03F;
+    --gold-light: #FFE66D;
+    --dark-blue: #FFFFFF;
+    --medium-blue: #E5E7EB;
+    --white: #1F2937;
+    --light-bg: #111827;
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --card-bg: #1F2937;
+    --border-color: #374151;
+}
+
+/* Body Dark Mode */
+body[data-theme="dark"] {
+    background: #0F172A;
+    color: #F9FAFB;
+}
+
+/* Navigation Dark Mode */
+.navbar[data-theme="dark"] {
+    background: rgba(17, 24, 39, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar[data-theme="dark"] .nav-link {
+    color: #F9FAFB;
+}
+
+.navbar[data-theme="dark"] .nav-link:hover {
+    color: #F4D03F;
+}
+
+/* Cards Dark Mode */
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-card {
+    background: #1F2937;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .product-card:hover,
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .testimonial-card:hover,
+[data-theme="dark"] .blog-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Text Dark Mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #F9FAFB;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .product-info p {
+    color: #D1D5DB;
+}
+
+/* Inputs Dark Mode */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: #1F2937;
+    color: #F9FAFB;
+    border-color: #374151;
+}
+
+[data-theme="dark"] input::placeholder {
+    color: #9CA3AF;
+}
+
+/* Buttons Dark Mode */
+[data-theme="dark"] .btn-outline {
+    color: #F4D03F;
+    border-color: #F4D03F;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background: #F4D03F;
+    color: #0F172A;
+}
+
+/* Footer Dark Mode */
+[data-theme="dark"] footer {
+    background: linear-gradient(to bottom, #0F172A 0%, #1F2937 100%);
+}
+
+/* Breadcrumbs Dark Mode */
+[data-theme="dark"] .breadcrumbs {
+    background: #1F2937;
+}
+
+[data-theme="dark"] .breadcrumbs a {
+    color: #F4D03F;
+}
+
+[data-theme="dark"] .breadcrumbs span {
+    color: #9CA3AF;
+}
+
+/* Stats Dark Mode */
+[data-theme="dark"] .stat-card {
+    background: #1F2937;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ Dark Mode */
+[data-theme="dark"] .faq-item {
+    background: #1F2937;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .faq-question:hover {
+    background: #374151;
+}
+
+/* Company Boxes Dark Mode */
+[data-theme="dark"] .company-box {
+    background: #1F2937;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   DARK MODE TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+    position: fixed;
+    bottom: 100px;
+    left: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #F4D03F 0%, #D4AF37 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.5);
+}
+
+.theme-toggle i {
+    font-size: 1.3rem;
+    color: #081226;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(20deg);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: linear-gradient(135deg, #374151 0%, #1F2937 100%);
+}
+
+[data-theme="dark"] .theme-toggle i {
+    color: #F4D03F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 80px;
+        left: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS
+   ============================================ */
+
+body,
+.navbar,
+.product-card,
+.service-card,
+.testimonial-card,
+.blog-card,
+.stat-card,
+.faq-item,
+.company-box,
+input,
+select,
+textarea,
+.btn-outline {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

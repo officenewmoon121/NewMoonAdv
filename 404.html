@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 - الصفحة غير موجودة | نيو مون</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="error-page">
+    <div class="error-content">
+        <div style="margin-bottom: 2rem;">
+            <i class="fas fa-moon" style="font-size: 5rem; color: #D4AF37; animation: moonSpin 3s ease-in-out infinite;"></i>
+        </div>
+        
+        <h1>404</h1>
+        <h2>عذراً، الصفحة غير موجودة</h2>
+        <p>يبدو أن الصفحة التي تبحث عنها قد تم نقلها أو حذفها</p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="index.html" class="btn btn-primary btn-large">
+                <i class="fas fa-home"></i>
+                <span>العودة للرئيسية</span>
+            </a>
+            <a href="contact.html" class="btn btn-outline btn-large">
+                <i class="fas fa-envelope"></i>
+                <span>تواصل معنا</span>
+            </a>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">أو ابحث في:</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="products.html" style="color: #D4AF37; text-decoration: none;">المنتجات</a>
+                <a href="services.html" style="color: #D4AF37; text-decoration: none;">الخدمات</a>
+                <a href="portfolio.html" style="color: #D4AF37; text-decoration: none;">سابقة الأعمال</a>
+                <a href="companies.html" style="color: #D4AF37; text-decoration: none;">الشركات</a>
+                <a href="about.html" style="color: #D4AF37; text-decoration: none;">من نحن</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes moonSpin {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+    color: #081226;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #081226;
+}
+</style>
+
+</body>
+</html>
