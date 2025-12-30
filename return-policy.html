@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>سياسات الاسترجاع | نيو مون</title>
+    <meta name="description" content="سياسات الاسترجاع والاستبدال في نيو مون - شروط واضحة وشفافة">
+    <meta name="theme-color" content="#081226">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/core/responsive.css">
+    <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/whatsapp-float.css">
+    <link rel="stylesheet" href="css/components/dev-banner.css">
+    <link rel="stylesheet" href="css/components/feedback-form.css">
+    <link rel="stylesheet" href="css/components/feedback-notification.css">
+    
+    <style>
+        .policy-page {
+            padding: var(--spacing-2xl) 0;
+            background: var(--white);
+        }
+
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .policy-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 2px solid var(--gray-light);
+        }
+
+        .policy-header h1 {
+            color: var(--dark-blue);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .policy-header p {
+            color: var(--gray);
+            font-size: var(--text-lg);
+        }
+
+        .policy-content {
+            line-height: 1.8;
+        }
+
+        .policy-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .policy-section h2 {
+            color: var(--primary-gold);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .policy-section h3 {
+            color: var(--dark-blue);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .policy-section p {
+            color: var(--dark-blue);
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .policy-section ul {
+            margin: var(--spacing-md) 0;
+            padding-right: var(--spacing-xl);
+        }
+
+        .policy-section li {
+            color: var(--dark-blue);
+            font-size: var(--text-base);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.8;
+        }
+
+        .policy-section li::marker {
+            color: var(--primary-gold);
+        }
+
+        .policy-highlight {
+            background: rgba(212, 175, 55, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border-right: 4px solid var(--primary-gold);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .policy-contact {
+            background: var(--gray-light);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-2xl);
+            text-align: center;
+        }
+
+        .policy-contact h3 {
+            color: var(--dark-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .policy-contact a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .policy-contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .policy-header h1 {
+                font-size: var(--text-2xl);
+            }
+
+            .policy-section h2 {
+                font-size: var(--text-xl);
+            }
+
+            .policy-section h3 {
+                font-size: var(--text-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dev Banner -->
+    <div id="devBanner" data-component="dev-banner"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" data-component="loading"></div>
+
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="policy-page">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>سياسات الاسترجاع والاستبدال</h1>
+                <p>شروط واضحة وشفافة لضمان رضاكم</p>
+            </div>
+
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h2>1. سياسة الاسترجاع</h2>
+                    
+                    <h3>1.1 المنتجات القابلة للاسترجاع</h3>
+                    <p>يمكن استرجاع المنتجات في الحالات التالية:</p>
+                    <ul>
+                        <li>وجود عيب في التصنيع أو الطباعة</li>
+                        <li>عدم مطابقة المنتج للمواصفات المتفق عليها</li>
+                        <li>تلف المنتج أثناء الشحن (يجب الإبلاغ خلال 48 ساعة)</li>
+                        <li>خطأ في الطلب من جانبنا</li>
+                    </ul>
+
+                    <div class="policy-highlight">
+                        <strong>ملاحظة مهمة:</strong> المنتجات المخصصة حسب الطلب (Custom Orders) غير قابلة للاسترجاع إلا في حالة وجود عيب في التصنيع.
+                    </div>
+
+                    <h3>1.2 شروط الاسترجاع</h3>
+                    <ul>
+                        <li>يجب إبلاغنا خلال <strong>7 أيام</strong> من استلام المنتج</li>
+                        <li>المنتج يجب أن يكون في حالته الأصلية (غير مستخدم)</li>
+                        <li>يجب إرجاع جميع الملحقات والعبوات الأصلية</li>
+                        <li>يجب تقديم إثبات الشراء (فاتورة أو رقم الطلب)</li>
+                    </ul>
+
+                    <h3>1.3 إجراءات الاسترجاع</h3>
+                    <ol>
+                        <li>تواصل معنا عبر <a href="contact.html">صفحة التواصل</a> أو WhatsApp</li>
+                        <li>قدم تفاصيل الطلب وسبب الاسترجاع</li>
+                        <li>سنقوم بمراجعة طلبك خلال 48 ساعة</li>
+                        <li>بعد الموافقة، سنزودك بتفاصيل إرجاع المنتج</li>
+                        <li>سيتم استرجاع المبلغ خلال 5-7 أيام عمل بعد استلام المنتج</li>
+                    </ol>
+                </div>
+
+                <div class="policy-section">
+                    <h2>2. سياسة الاستبدال</h2>
+                    
+                    <h3>2.1 حالات الاستبدال</h3>
+                    <p>نوفر استبدال المنتجات في الحالات التالية:</p>
+                    <ul>
+                        <li>وجود عيب في المنتج</li>
+                        <li>عدم مطابقة الحجم أو اللون للمواصفات المتفق عليها</li>
+                        <li>خطأ في الشحن (تم إرسال منتج خاطئ)</li>
+                    </ul>
+
+                    <h3>2.2 شروط الاستبدال</h3>
+                    <ul>
+                        <li>يجب الإبلاغ خلال <strong>14 يوم</strong> من الاستلام</li>
+                        <li>المنتج يجب أن يكون غير مستخدم</li>
+                        <li>يجب إرجاع المنتج الأصلي قبل إرسال البديل</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>3. تكاليف الشحن</h2>
+                    <ul>
+                        <li><strong>في حالة وجود عيب أو خطأ من جانبنا:</strong> نتحمل تكاليف الشحن</li>
+                        <li><strong>في حالة الاسترجاع بطلب من العميل:</strong> العميل يتحمل تكاليف الشحن</li>
+                        <li><strong>الاستبدال:</strong> نتحمل تكاليف الشحن في حالة وجود عيب</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>4. استرجاع المبالغ</h2>
+                    <h3>4.1 طرق الاسترجاع</h3>
+                    <ul>
+                        <li>نفس طريقة الدفع الأصلية (في حالة الدفع الإلكتروني)</li>
+                        <li>تحويل بنكي (في حالة الدفع النقدي أو الشيك)</li>
+                    </ul>
+
+                    <h3>4.2 مدة الاسترجاع</h3>
+                    <p>سيتم استرجاع المبلغ خلال <strong>5-7 أيام عمل</strong> بعد:</p>
+                    <ul>
+                        <li>استلام المنتج المرتجع</li>
+                        <li>التحقق من حالة المنتج</li>
+                        <li>الموافقة على الاسترجاع</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>5. المنتجات غير القابلة للاسترجاع</h2>
+                    <p>لا يمكن استرجاع أو استبدال المنتجات التالية:</p>
+                    <ul>
+                        <li>المنتجات المخصصة حسب الطلب (Custom Orders) - إلا في حالة وجود عيب</li>
+                        <li>المنتجات المستخدمة أو التالفة بسبب سوء الاستخدام</li>
+                        <li>المنتجات التي تم تعديلها بعد الاستلام</li>
+                        <li>المنتجات التي تم تجاوز فترة الاسترجاع (7 أيام)</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>6. ضمان الجودة</h2>
+                    <p>نحن ملتزمون بتقديم منتجات عالية الجودة. في حالة وجود أي مشكلة:</p>
+                    <ul>
+                        <li>نوفر ضمان على جميع المنتجات ضد عيوب التصنيع</li>
+                        <li>نوفر خدمة صيانة وإصلاح للمنتجات المعطلة</li>
+                        <li>نوفر دعم فني مستمر</li>
+                    </ul>
+                </div>
+
+                <div class="policy-contact">
+                    <h3>هل لديك استفسار؟</h3>
+                    <p>تواصل معنا عبر:</p>
+                    <p>
+                        <a href="contact.html">صفحة التواصل</a> | 
+                        <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer">WhatsApp</a> | 
+                        <a href="tel:01280081544">01280081544</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Feedback Form Component -->
+    <div id="feedbackFormContainer" data-component="feedback-form"></div>
+
+    <!-- Feedback Notification -->
+    <div id="feedbackNotificationContainer" data-component="feedback-notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/core/component-loader.js"></script>
+    <script src="js/core/loading.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.load('loading', 'loadingScreen');
+            ComponentLoader.load('header', 'header');
+            ComponentLoader.load('footer', 'footer');
+            ComponentLoader.load('dev-banner', 'devBanner');
+            ComponentLoader.load('feedback-form', 'feedbackFormContainer');
+            ComponentLoader.load('feedback-notification', 'feedbackNotificationContainer');
+        });
+    </script>
+    
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/feedback.js"></script>
+</body>
+</html>
+

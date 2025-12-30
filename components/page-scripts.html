@@ -1,0 +1,24 @@
+<!-- 
+    NEW MOON V1 - Page Scripts Template
+    استخدم هذا كـ template للـ scripts في كل الصفحات
+-->
+
+<!-- JavaScript -->
+<!-- Component Loader MUST be loaded first -->
+<script src="js/core/component-loader.js"></script>
+<script src="js/core/loading.js"></script>
+<script src="js/core/page-template.js"></script>
+
+<!-- Load Components -->
+<script>
+    // Load common components
+    document.addEventListener('DOMContentLoaded', function() {
+        ComponentLoader.load('loading', 'loadingScreen');
+        ComponentLoader.load('header', 'header');
+        ComponentLoader.load('footer', 'footer');
+    });
+</script>
+
+<!-- Navigation Logic (will initialize when header loads) -->
+<script src="js/components/navigation.js"></script>
+

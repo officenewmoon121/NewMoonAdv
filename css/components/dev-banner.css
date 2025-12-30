@@ -1,0 +1,109 @@
+/* ====================================================
+   NEW MOON V1 - DEV BANNER COMPONENT (Small Notification)
+   ==================================================== */
+
+.dev-banner {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background: linear-gradient(135deg, var(--primary-gold) 0%, #f4c430 100%);
+    color: var(--dark-blue);
+    padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) var(--spacing-lg);
+    z-index: 10001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+    font-size: var(--text-xs);
+    max-width: 280px;
+    animation: slideInLeft 0.5s ease-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dev-banner.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+.dev-banner-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.dev-banner-content i {
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+.dev-banner-content span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* No navbar adjustment needed - small notification */
+body:has(.dev-banner) .site-header {
+    top: 0;
+}
+
+.dev-banner-close {
+    background: transparent;
+    border: none;
+    color: var(--dark-blue);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    margin-right: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.dev-banner-close:hover {
+    background: rgba(8, 18, 38, 0.1);
+    transform: rotate(90deg);
+}
+
+.dev-banner-close i {
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .dev-banner {
+        top: 70px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+        padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) var(--spacing-md);
+        font-size: 10px;
+    }
+    
+    .dev-banner-content span {
+        white-space: normal;
+    }
+    
+    .dev-banner-close {
+        width: 18px;
+        height: 18px;
+    }
+}
+

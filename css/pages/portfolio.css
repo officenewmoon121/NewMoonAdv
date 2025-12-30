@@ -1,0 +1,57 @@
+/* ====================================================
+   NEW MOON V1 - PORTFOLIO PAGE STYLES
+   ==================================================== */
+
+.portfolio-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+    padding-top: var(--navbar-height);
+    text-align: center;
+}
+
+.portfolio-hero-content {
+    max-width: 900px;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.portfolio-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+.portfolio-content {
+    padding: var(--spacing-3xl) 0;
+    background: var(--light-bg);
+}
+
+.portfolio-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.portfolio-intro h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-intro p {
+    font-size: var(--text-lg);
+    color: var(--gray-dark);
+    line-height: 1.8;
+}
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>استوديو نيو مون | صمم منتجك الاحترافي في دقائق</title>
+    <meta name="description" content="استوديو نيو مون الذكي - صمم، اطبع، واطلب عينتك خلال دقائق. حلول تصميم احترافية لجميع احتياجاتك">
+    <meta name="keywords" content="استوديو نيو مون, تصميم, طباعة, منتجات دعائية, تصميم جرافيك">
+    <meta name="theme-color" content="#081226">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- html2canvas for Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/core/responsive.css">
+    <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/studio-hero.css">
+    <link rel="stylesheet" href="css/components/studio-placeholder.css">
+    <link rel="stylesheet" href="css/components/studio-builder.css">
+    <link rel="stylesheet" href="css/components/whatsapp-float.css">
+    <link rel="stylesheet" href="css/components/dev-banner.css">
+    <link rel="stylesheet" href="css/components/feedback-form.css">
+    <link rel="stylesheet" href="css/components/feedback-notification.css">
+    <link rel="stylesheet" href="css/pages/studio.css">
+</head>
+<body>
+
+    <!-- Dev Banner -->
+    <div id="devBanner" data-component="dev-banner"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" data-component="loading"></div>
+
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main id="site-content">
+        
+        <!-- Studio Hero -->
+        <section class="studio-hero">
+            <div class="container studio-hero-content">
+                <h1>
+                    استوديو <span class="text-gold">نيو مون</span> الذكي
+                </h1>
+                <p>
+                    منصة تصميم احترافية متكاملة تمكنك من إنشاء منتجاتك الدعائية
+                    بجودة عالمية. صمم، راجع، واطلب عينتك خلال دقائق - كل شيء في مكان واحد.
+                </p>
+                
+                <div class="studio-features">
+                    <div class="studio-feature">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        <h3>تصميم فوري</h3>
+                        <p>واجهة بديهية تمكنك من التصميم في دقائق</p>
+                    </div>
+                    <div class="studio-feature">
+                        <i class="fas fa-palette"></i>
+                        <h3>نظام ألوان متقدم</h3>
+                        <p>لوحة ألوان احترافية مع دعم Pantone</p>
+                    </div>
+                    <div class="studio-feature">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>إدارة طبقات ذكية</h3>
+                        <p>نظام طبقات متقدم للتحكم الكامل</p>
+                    </div>
+                    <div class="studio-feature">
+                        <i class="fas fa-eye"></i>
+                        <h3>معاينة فورية</h3>
+                        <p>معاينة مباشرة عالية الدقة للتصميم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Content -->
+        <section class="studio-content">
+            <div class="container">
+                <div class="studio-section">
+                    <h2 class="section-title">ابدأ التصميم الآن</h2>
+                    <p class="studio-intro-text">
+                        استوديو نيو مون يوفر لك أدوات احترافية لتصميم منتجاتك بسهولة
+                        اختر المنتج الذي تريده وابدأ التصميم الآن
+                    </p>
+                    
+                    <!-- Studio Builder -->
+                    <div class="studio-builder">
+                        <!-- Studio Tabs -->
+                        <div class="studio-tabs">
+                            <button class="studio-tab active" data-tab="products">المنتجات</button>
+                            <button class="studio-tab" data-tab="design">التصميم</button>
+                            <button class="studio-tab" data-tab="preview">معاينة</button>
+                        </div>
+
+                        <!-- Products Tab -->
+                        <div class="studio-tab-content active" id="products-tab">
+                            <h3 class="studio-tab-title">اختر نوع المنتج</h3>
+                            <div class="product-categories">
+                                <div class="product-category" data-product="gift">
+                                    <i class="fas fa-gift"></i>
+                                    <h4>هدايا دعائية</h4>
+                                </div>
+                                <div class="product-category" data-product="uniform">
+                                    <i class="fas fa-tshirt"></i>
+                                    <h4>يونيفورم</h4>
+                                </div>
+                                <div class="product-category" data-product="print">
+                                    <i class="fas fa-print"></i>
+                                    <h4>مطبوعات</h4>
+                                </div>
+                                <div class="product-category" data-product="card">
+                                    <i class="fas fa-id-card"></i>
+                                    <h4>بطاقات</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Design Tab -->
+                        <div class="studio-tab-content" id="design-tab">
+                            <h3 class="studio-tab-title">أدوات التصميم</h3>
+                            
+                            <div class="design-tools-grid">
+                                <div class="design-tool-section">
+                                    <h4><i class="fas fa-palette"></i> الألوان</h4>
+                                    <div class="tool-group">
+                                        <label for="colorPicker">اللون الأساسي:</label>
+                                        <input type="color" value="#D4AF37" id="colorPicker" name="colorPicker" title="اختيار اللون الأساسي" aria-label="اختيار اللون الأساسي">
+                                    </div>
+                                    <div class="tool-group">
+                                        <label for="secondaryColor">اللون الثانوي:</label>
+                                        <input type="color" value="#081226" id="secondaryColor" name="secondaryColor" title="اختيار اللون الثانوي" aria-label="اختيار اللون الثانوي">
+                                    </div>
+                                </div>
+
+                                <div class="design-tool-section">
+                                    <h4><i class="fas fa-font"></i> النص</h4>
+                                    <div class="tool-group">
+                                        <label for="textInput">النص:</label>
+                                        <input type="text" placeholder="أدخل النص" id="textInput" name="textInput" title="إدخال النص" aria-label="إدخال النص">
+                                    </div>
+                                    <div class="tool-group">
+                                        <label for="fontSelect">الخط:</label>
+                                        <select id="fontSelect" name="fontSelect" title="اختيار الخط" aria-label="اختيار الخط">
+                                            <option value="Cairo">Cairo</option>
+                                            <option value="Arial">Arial</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                        </select>
+                                    </div>
+                                    <div class="tool-group">
+                                        <label for="fontSize">حجم الخط:</label>
+                                        <input type="range" min="12" max="72" value="24" id="fontSize" name="fontSize" title="حجم الخط" aria-label="حجم الخط">
+                                        <span id="fontSizeValue">24px</span>
+                                    </div>
+                                </div>
+
+                                <div class="design-tool-section">
+                                    <h4><i class="fas fa-image"></i> الشعار</h4>
+                                    <div class="tool-group">
+                                        <label for="logoUpload">رفع الشعار:</label>
+                                        <div class="logo-upload-controls">
+                                            <input type="file" accept="image/*" id="logoUpload" name="logoUpload" aria-label="رفع صورة الشعار" class="logo-upload-input">
+                                            <button type="button" class="btn btn-outline" onclick="document.getElementById('logoUpload').click()" aria-label="رفع صورة">
+                                                <i class="fas fa-upload"></i> رفع صورة
+                                            </button>
+                                            <button type="button" class="btn btn-outline remove-logo-btn" id="removeLogoBtn" aria-label="حذف الشعار">
+                                                <i class="fas fa-trash"></i> حذف
+                                            </button>
+                                        </div>
+                                        <div id="logoPreview" class="logo-preview logo-preview-hidden">
+                                            <img id="logoPreviewImg" src="" alt="معاينة الشعار" class="logo-preview-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="design-canvas">
+                                <div class="design-canvas-placeholder" id="canvasPlaceholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>منطقة التصميم</p>
+                                    <p class="design-canvas-hint">
+                                        اختر منتج من تبويب "المنتجات" لبدء التصميم
+                                    </p>
+                                </div>
+                                <div id="designPreview" class="design-preview-hidden"></div>
+                            </div>
+                        </div>
+
+                        <!-- Preview Tab -->
+                        <div class="studio-tab-content" id="preview-tab">
+                            <h3 class="studio-tab-title">معاينة التصميم</h3>
+                            <div class="design-canvas">
+                                <div class="design-canvas-placeholder">
+                                    <i class="fas fa-eye"></i>
+                                    <p>المعاينة ستظهر هنا</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Studio Actions -->
+                        <div class="studio-actions">
+                            <button class="btn btn-outline" id="resetBtn">
+                                <i class="fas fa-redo"></i>
+                                <span>إعادة تعيين</span>
+                            </button>
+                            <button class="btn btn-outline" id="saveBtn">
+                                <i class="fas fa-save"></i>
+                                <span>حفظ</span>
+                            </button>
+                            <button class="btn btn-outline" id="exportBtn">
+                                <i class="fas fa-download"></i>
+                                <span>تصدير</span>
+                            </button>
+                            <a href="contact.html" class="btn btn-primary" id="orderBtn">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>اطلب الآن</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="studio-cta">
+            <div class="container">
+                <h2>جاهز لبدء التصميم؟</h2>
+                <p>
+                    تواصل معنا الآن واحصل على استشارة مجانية
+                    لفريقنا خبرة 25 عاماً في التصميم والطباعة
+                </p>
+                <a href="contact.html" class="btn btn-white btn-large">
+                    <i class="fas fa-phone"></i>
+                    <span>تواصل معنا الآن</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Feedback Form Component -->
+    <div id="feedbackFormContainer" data-component="feedback-form"></div>
+
+    <!-- Feedback Notification -->
+    <div id="feedbackNotificationContainer" data-component="feedback-notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/core/component-loader.js"></script>
+    <script src="js/core/loading.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.load('loading', 'loadingScreen');
+            ComponentLoader.load('header', 'header');
+            ComponentLoader.load('footer', 'footer');
+            ComponentLoader.load('dev-banner', 'devBanner');
+            ComponentLoader.load('feedback-form', 'feedbackFormContainer');
+            ComponentLoader.load('feedback-notification', 'feedbackNotificationContainer');
+        });
+    </script>
+
+    <!-- Studio JavaScript -->
+    <script src="js/components/studio.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/feedback.js"></script>
+</body>
+</html>
+

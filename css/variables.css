@@ -1,0 +1,80 @@
+/* ====================================================
+   NEW MOON V1 - DESIGN SYSTEM VARIABLES
+   ==================================================== */
+
+:root {
+    /* ====== الألوان الأساسية ====== */
+    --primary-gold: #D4AF37;
+    --gold-light: #F4D03F;
+    --gold-dark: #B8941F;
+    
+    --dark-blue: #081226;
+    --dark-blue-2: #0b1d3a;
+    --medium-blue: #1E3A5F;
+    --light-blue: #2E5A8F;
+    
+    --white: #FFFFFF;
+    --light-bg: #F5F7FA;
+    --gray-light: #E5E7EB;
+    --gray-medium: #9CA3AF;
+    --gray-dark: #4B5563;
+    --black: #000000;
+    
+    /* ====== ألوان الحالة ====== */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --info: #3B82F6;
+    
+    /* ====== الخطوط ====== */
+    --font-main: 'Cairo', sans-serif;
+    
+    /* ====== أحجام الخطوط ====== */
+    --text-xs: 0.75rem;      /* 12px */
+    --text-sm: 0.875rem;     /* 14px */
+    --text-base: 1rem;       /* 16px */
+    --text-lg: 1.125rem;     /* 18px */
+    --text-xl: 1.25rem;      /* 20px */
+    --text-2xl: 1.5rem;      /* 24px */
+    --text-3xl: 1.875rem;    /* 30px */
+    --text-4xl: 2.25rem;     /* 36px */
+    --text-5xl: 3rem;        /* 48px */
+    --text-6xl: 3.75rem;     /* 60px */
+    
+    /* ====== المسافات ====== */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;    /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+    
+    /* ====== الظلال ====== */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    
+    --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.4);
+    --shadow-gold-hover: 0 12px 35px rgba(212, 175, 55, 0.6);
+    
+    /* ====== الانحناءات (Border Radius) ====== */
+    --radius-sm: 0.25rem;    /* 4px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.5rem;    /* 24px */
+    --radius-full: 9999px;   /* دائري كامل */
+    
+    /* ====== الانتقالات (Transitions) ====== */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* ====== الأحجام القياسية ====== */
+    --navbar-height: 80px;
+    --container-max-width: 1400px;
+}
+

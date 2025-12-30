@@ -1,0 +1,218 @@
+/* ====================================================
+   NEW MOON V1 - FEEDBACK NOTIFICATION
+   Alert to inform users about feedback system
+   ==================================================== */
+
+.feedback-notification {
+    position: fixed;
+    bottom: 100px; /* نفس موضع Feedback Button */
+    left: 100px; /* بجانب Feedback Button (30px + 60px + 10px) */
+    max-width: 350px;
+    background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+    z-index: 10000;
+    display: none; /* مخفي تماماً */
+    opacity: 0;
+    transform: translateX(-20px); /* يبدأ قليلاً على اليسار */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.feedback-notification.show {
+    display: block; /* يظهر */
+    opacity: 1;
+    transform: translateX(0); /* في مكانه الصحيح */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: auto; /* Enable interaction when shown */
+}
+
+/* Animation removed - using CSS transitions instead for better performance */
+
+.feedback-notification-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    color: var(--white);
+}
+
+.feedback-notification-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.feedback-notification-text {
+    flex: 1;
+}
+
+.feedback-notification-text strong {
+    display: block;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--white);
+}
+
+.feedback-notification-text p {
+    font-size: var(--text-sm);
+    margin: 0;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.95;
+    color: var(--white);
+}
+
+.feedback-notification-page {
+    display: block;
+    font-size: var(--text-xs);
+    opacity: 0.8;
+    color: var(--white);
+    margin-top: var(--spacing-xs);
+    font-style: italic;
+}
+
+.feedback-notification-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.feedback-notification-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    white-space: nowrap;
+}
+
+.feedback-notification-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.feedback-notification-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: var(--text-base);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.feedback-notification-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .feedback-notification {
+        bottom: 85px; /* نفس موضع Feedback Button على Mobile */
+        left: 75px; /* بجانب Feedback Button (20px + 55px) */
+        max-width: calc(100% - 90px); /* لا يتجاوز الشاشة */
+        transform: translateX(-20px);
+    }
+    
+    .feedback-notification.show {
+        transform: translateX(0);
+    }
+
+    .feedback-notification-content {
+        flex-wrap: wrap;
+        padding: var(--spacing-md);
+    }
+
+    .feedback-notification-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .feedback-notification-text strong {
+        font-size: var(--text-base);
+    }
+
+    .feedback-notification-text p {
+        font-size: var(--text-xs);
+    }
+
+    .feedback-notification-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: var(--spacing-sm);
+    }
+
+    .feedback-notification-btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-notification {
+        bottom: 80px; /* نفس موضع Feedback Button على Mobile الصغير */
+        left: 65px; /* بجانب Feedback Button (15px + 50px) */
+        max-width: calc(100% - 80px); /* لا يتجاوز الشاشة */
+        transform: translateX(-20px);
+    }
+    
+    .feedback-notification.show {
+        transform: translateX(0);
+    }
+    
+    .feedback-notification-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .feedback-notification-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+    .feedback-notification-content {
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+    
+    .feedback-notification-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Tablet Optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .feedback-notification {
+        max-width: 380px;
+        right: 25px;
+    }
+}
+

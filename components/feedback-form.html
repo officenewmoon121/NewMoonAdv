@@ -1,0 +1,85 @@
+<!-- Feedback Modal -->
+<div class="feedback-modal" id="feedbackModal">
+    <div class="feedback-modal-overlay" id="feedbackModalOverlay"></div>
+    <div class="feedback-modal-content">
+        <button class="feedback-modal-close" id="feedbackModalClose" aria-label="إغلاق">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="feedback-header">
+            <div class="feedback-icon">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <h2>الشكاوى والمقترحات</h2>
+            <p>نقدر رأيك! شاركنا أفكارك لنطور الموقع</p>
+        </div>
+
+        <form class="feedback-form" id="feedbackForm">
+            <div class="feedback-form-group">
+                <label for="feedbackType">نوع الرسالة *</label>
+                <select id="feedbackType" name="type" required>
+                    <option value="">اختر النوع</option>
+                    <option value="suggestion">مقترح تطوير</option>
+                    <option value="complaint">شكوى</option>
+                    <option value="bug">مشكلة تقنية</option>
+                    <option value="feature">ميزة جديدة</option>
+                    <option value="other">أخرى</option>
+                </select>
+            </div>
+
+            <div class="feedback-form-group">
+                <label for="feedbackName">الاسم (اختياري)</label>
+                <input type="text" id="feedbackName" name="name" placeholder="اسمك">
+            </div>
+
+            <div class="feedback-form-group">
+                <label for="feedbackEmail">البريد الإلكتروني (اختياري)</label>
+                <input type="email" id="feedbackEmail" name="email" placeholder="example@email.com">
+            </div>
+
+            <div class="feedback-form-group">
+                <label for="feedbackPage">الصفحة الحالية</label>
+                <input type="text" id="feedbackPage" name="page" readonly>
+            </div>
+
+            <div class="feedback-form-group">
+                <label for="feedbackMessage">رسالتك *</label>
+                <textarea 
+                    id="feedbackMessage" 
+                    name="message" 
+                    rows="6" 
+                    placeholder="اكتب شكواك أو مقترحك هنا..." 
+                    required
+                ></textarea>
+                <div class="feedback-char-count">
+                    <span id="feedbackCharCount">0</span> / 1000 حرف
+                </div>
+            </div>
+
+            <div class="feedback-form-actions">
+                <button type="button" class="feedback-btn feedback-btn-cancel" id="feedbackCancelBtn">
+                    إلغاء
+                </button>
+                <button type="submit" class="feedback-btn feedback-btn-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>إرسال</span>
+                </button>
+            </div>
+        </form>
+
+        <div class="feedback-success" id="feedbackSuccess" style="display: none;">
+            <div class="feedback-success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>شكراً لك!</h3>
+            <p>تم إرسال رسالتك بنجاح. سنراجعها قريباً.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Float Button -->
+<button class="feedback-float-btn" id="feedbackFloatBtn" aria-label="الشكاوى والمقترحات">
+    <i class="fas fa-comment-dots"></i>
+    <span class="feedback-float-tooltip">الشكاوى والمقترحات</span>
+</button>
+

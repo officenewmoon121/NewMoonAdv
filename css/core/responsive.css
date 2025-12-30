@@ -1,0 +1,137 @@
+/* ====================================================
+   NEW MOON V1 - RESPONSIVE UTILITIES
+   Global responsive helpers and breakpoints
+   ==================================================== */
+
+/* ====== Breakpoints ====== */
+/* 
+   Mobile: 0 - 480px
+   Tablet: 481px - 768px
+   Desktop: 769px - 1024px
+   Large Desktop: 1025px+
+*/
+
+/* ====== Mobile First Approach ====== */
+/* Base styles are mobile-first, then enhance for larger screens */
+
+/* ====== Touch Targets (Mobile) ====== */
+@media (max-width: 768px) {
+    /* Ensure touch targets are at least 44x44px for mobile */
+    button,
+    a,
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ====== Container Responsive ====== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* ====== Text Responsive ====== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--text-2xl);
+    }
+    
+    h2 {
+        font-size: var(--text-xl);
+    }
+    
+    h3 {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--text-xl);
+    }
+    
+    h2 {
+        font-size: var(--text-lg);
+    }
+    
+    h3 {
+        font-size: var(--text-base);
+    }
+}
+
+/* ====== Spacing Responsive ====== */
+@media (max-width: 768px) {
+    /* Reduce spacing on mobile for better fit */
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+}
+
+/* ====== Image Responsive ====== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ====== Grid Responsive ====== */
+@media (max-width: 768px) {
+    /* Convert grids to single column on mobile */
+    .grid,
+    [class*="grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ====== Hide/Show Utilities ====== */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* ====== Orientation Support ====== */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Adjust for landscape mobile */
+    .hero-section {
+        min-height: 60vh;
+    }
+}
+
+/* ====== Print Styles ====== */
+@media print {
+    .whatsapp-float,
+    .feedback-float-btn,
+    .feedback-notification,
+    .dev-banner {
+        display: none !important;
+    }
+}
+

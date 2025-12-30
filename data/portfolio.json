@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "title": "مجموعة هدايا دعائية للقطاع الطبي",
+        "description": "تصميم وتنفيذ مجموعة هدايا دعائية مخصصة لشركة طبية رائدة",
+        "category": "gifts",
+        "image": "portfolio-01.jpg"
+    },
+    {
+        "id": 2,
+        "title": "يونيفورم موظفين لشركة خدمات",
+        "description": "تصميم وتنفيذ يونيفورم احترافي يعكس هوية الشركة",
+        "category": "uniforms",
+        "image": "portfolio-02.jpg"
+    },
+    {
+        "id": 3,
+        "title": "مطبوعات احترافية لمعرض تجاري",
+        "description": "تصميم وطباعة مواد دعائية لمعرض تجاري كبير",
+        "category": "printing",
+        "image": "portfolio-03.jpg"
+    },
+    {
+        "id": 4,
+        "title": "هدايا ترويجية لحدث إطلاق منتج",
+        "description": "تصميم هدايا ترويجية مخصصة لحدث إطلاق منتج جديد",
+        "category": "gifts",
+        "image": "portfolio-04.jpg"
+    },
+    {
+        "id": 5,
+        "title": "يونيفورم فريق عمل لمؤسسة تعليمية",
+        "description": "تصميم يونيفورم موحد لفريق عمل مؤسسة تعليمية",
+        "category": "uniforms",
+        "image": "portfolio-05.jpg"
+    },
+    {
+        "id": 6,
+        "title": "طباعة UV على مواد مختلفة",
+        "description": "طباعة UV عالية الجودة على خامات متنوعة",
+        "category": "printing",
+        "image": "portfolio-06.jpg"
+    },
+    {
+        "id": 7,
+        "title": "مجموعة هدايا للعملاء المميزين",
+        "description": "تصميم هدايا فاخرة للعملاء المميزين في سلسلة متاجر",
+        "category": "gifts",
+        "image": "portfolio-07.jpg"
+    },
+    {
+        "id": 8,
+        "title": "مطبوعات طبية احترافية",
+        "description": "تصميم وطباعة مواد دعائية لشركة طبية متخصصة",
+        "category": "printing",
+        "image": "portfolio-08.jpg"
+    }
+]
+

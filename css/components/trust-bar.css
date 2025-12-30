@@ -1,0 +1,90 @@
+/* ====================================================
+   NEW MOON V1 - TRUST BAR COMPONENT STYLES
+   ==================================================== */
+
+.trust-bar {
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
+    padding: var(--spacing-2xl) 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold), var(--gold-light), var(--primary-gold));
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.trust-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-xl);
+    text-align: center;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: default;
+}
+
+.trust-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--white) 0%, rgba(212, 175, 55, 0.05) 100%);
+}
+
+.trust-item i {
+    color: var(--primary-gold);
+    font-size: var(--text-3xl);
+    transition: all var(--transition-normal);
+}
+
+.trust-item:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--gold-light);
+}
+
+.trust-item span {
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: var(--text-base);
+    transition: color var(--transition-normal);
+}
+
+.trust-item:hover span {
+    color: var(--primary-gold);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .trust-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .trust-item {
+        padding: var(--spacing-md);
+    }
+}
+

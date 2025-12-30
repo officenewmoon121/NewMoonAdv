@@ -1,0 +1,104 @@
+/* ====================================================
+   NEW MOON V1 - STUDIO PAGE HERO SECTION
+   ==================================================== */
+
+.studio-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+    padding-top: var(--navbar-height);
+    overflow: hidden;
+}
+
+.studio-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+    /* background: url('../../assets/images/studio-hero.webp') center/cover; */
+    /* Note: studio-hero.webp not found - using gradient fallback */
+}
+
+.studio-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.studio-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.studio-hero h1 .text-gold {
+    background: linear-gradient(135deg, var(--primary-gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.studio-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-2xl);
+    line-height: 1.8;
+}
+
+.studio-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.studio-feature {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.studio-feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+}
+
+.studio-feature i {
+    font-size: var(--text-3xl);
+    color: var(--primary-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.studio-feature h3 {
+    color: var(--white);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.studio-feature p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .studio-features {
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -1,0 +1,115 @@
+/* ====================================================
+   NEW MOON V1 - PORTFOLIO VIEW MORE CARD
+   ==================================================== */
+
+.portfolio-item-view-more {
+    cursor: pointer;
+}
+
+.portfolio-image-view-more {
+    background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image-view-more::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+}
+
+.view-more-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--white);
+    padding: var(--spacing-xl);
+}
+
+.view-more-icon-large {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto var(--spacing-lg);
+    animation: bounce 2s infinite;
+}
+
+.view-more-overlay h3 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--white);
+}
+
+.view-more-overlay p {
+    font-size: var(--text-lg);
+    margin: 0 0 var(--spacing-lg) 0;
+    opacity: 0.9;
+    color: var(--white);
+}
+
+.view-more-btn-portfolio {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.view-more-btn-portfolio:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+.view-more-btn-portfolio i {
+    transition: transform var(--transition-normal);
+}
+
+.view-more-btn-portfolio:hover i {
+    transform: translateX(-5px);
+}
+
+.portfolio-item-view-more:hover .portfolio-image-view-more {
+    transform: scale(1.05);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .portfolio-image-view-more {
+        min-height: 250px;
+    }
+
+    .view-more-icon-large {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .view-more-overlay h3 {
+        font-size: var(--text-xl);
+    }
+
+    .view-more-overlay p {
+        font-size: var(--text-base);
+    }
+}
+

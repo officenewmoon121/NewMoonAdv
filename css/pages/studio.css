@@ -1,0 +1,42 @@
+/* ====================================================
+   NEW MOON V1 - STUDIO PAGE STYLES
+   ==================================================== */
+
+.studio-content {
+    padding: var(--spacing-3xl) 0;
+}
+
+.studio-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.studio-section:last-child {
+    margin-bottom: 0;
+}
+
+.studio-cta {
+    background: linear-gradient(135deg, var(--primary-gold), var(--gold-light));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+.studio-cta h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-lg);
+}
+
+.studio-cta p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.studio-cta .btn {
+    font-size: var(--text-lg);
+    padding: var(--spacing-md) var(--spacing-2xl);
+}
+

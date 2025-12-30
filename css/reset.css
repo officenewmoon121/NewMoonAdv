@@ -1,0 +1,63 @@
+/* ====================================================
+   NEW MOON V1 - CSS RESET
+   ==================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main, 'Cairo', sans-serif);
+    background: var(--light-bg, #F5F7FA);
+    color: var(--dark-blue, #081226);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input, textarea, select {
+    font-family: inherit;
+}
+
+/* Prevent text selection on buttons */
+button {
+    user-select: none;
+}
+
+/* Remove default button styles */
+button:focus {
+    outline: none;
+}
+

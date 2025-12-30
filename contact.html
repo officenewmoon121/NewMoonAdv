@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>تواصل معنا | نيو مون - احصل على عرض سعر مجاني</title>
+    <meta name="description" content="تواصل مع نيو مون للحصول على عرض سعر مجاني لخدمات Branding والتوريد المؤسسي">
+    <meta name="keywords" content="تواصل, نيو مون, عرض سعر, هدايا دعائية, يونيفورم">
+    <meta name="theme-color" content="#081226">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/core/responsive.css">
+    <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/contact-form.css">
+    <link rel="stylesheet" href="css/components/whatsapp-float.css">
+    <link rel="stylesheet" href="css/components/dev-banner.css">
+    <link rel="stylesheet" href="css/components/feedback-form.css">
+    <link rel="stylesheet" href="css/components/feedback-notification.css">
+    <link rel="stylesheet" href="css/pages/contact.css">
+</head>
+<body>
+
+    <!-- Dev Banner -->
+    <div id="devBanner" data-component="dev-banner"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" data-component="loading"></div>
+
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main id="site-content">
+        
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <div class="container contact-hero-content">
+                <h1>تواصل معنا</h1>
+                <p>
+                    نحن هنا لمساعدتك في بناء هويتك البصرية وتقديم حلول توريد مؤسسية عالية الجودة
+                    تواصل معنا اليوم واحصل على عرض سعر مجاني
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>عنواننا</h3>
+                        </div>
+                        <p>177 أحمد عصمت، جسر السويس، القاهرة، مصر</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>هاتفنا</h3>
+                        </div>
+                        <p>
+                            <a href="tel:01280081544">01280081544</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>بريدنا الإلكتروني</h3>
+                        </div>
+                        <p>
+                            <a href="mailto:Officenewmoon121@gmail.com">Officenewmoon121@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>واتساب</h3>
+                        </div>
+                        <p>
+                            <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer">تواصل معنا عبر واتساب</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2 class="contact-form-title">أرسل لنا رسالة</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">اختر الموضوع</option>
+                                <option value="quote">طلب عرض سعر</option>
+                                <option value="info">استفسار عام</option>
+                                <option value="partnership">شراكة</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>إرسال الرسالة</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.5!2d31.3!3d30.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA2JzAwLjAiTiAzMcKwMTgnMDAuMCJF!5e0!3m2!1sar!2seg!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        title="موقع شركة New Moon - 177 أحمد عصمت، جسر السويس، القاهرة"
+                        aria-label="خريطة موقع شركة New Moon">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Feedback Form Component -->
+    <div id="feedbackFormContainer" data-component="feedback-form"></div>
+
+    <!-- Feedback Notification -->
+    <div id="feedbackNotificationContainer" data-component="feedback-notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/core/component-loader.js"></script>
+    <script src="js/core/loading.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.load('loading', 'loadingScreen');
+            ComponentLoader.load('header', 'header');
+            ComponentLoader.load('footer', 'footer');
+            ComponentLoader.load('dev-banner', 'devBanner');
+            ComponentLoader.load('feedback-form', 'feedbackFormContainer');
+            ComponentLoader.load('feedback-notification', 'feedbackNotificationContainer');
+            
+            // Form submission handler
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Form submission will be implemented with backend integration
+                    alert('شكراً لك! سنتواصل معك قريباً.');
+                    form.reset();
+                });
+            }
+        });
+    </script>
+    
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/feedback.js"></script>
+</body>
+</html>
+

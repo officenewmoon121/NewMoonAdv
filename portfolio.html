@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>أعمالنا | نيو مون - معرض أعمالنا ومشاريعنا الناجحة</title>
+    <meta name="description" content="اكتشف معرض أعمال نيو مون - مشاريع ناجحة في الهدايا الدعائية، اليونيفورم، والطباعة الاحترافية">
+    <meta name="keywords" content="معرض أعمال, مشاريع, نيو مون, هدايا دعائية, يونيفورم">
+    <meta name="theme-color" content="#081226">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/core/responsive.css">
+    <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/portfolio-grid.css">
+    <link rel="stylesheet" href="css/components/portfolio-view-more.css">
+    <link rel="stylesheet" href="css/components/cta-section.css">
+    <link rel="stylesheet" href="css/components/whatsapp-float.css">
+    <link rel="stylesheet" href="css/components/dev-banner.css">
+    <link rel="stylesheet" href="css/components/feedback-form.css">
+    <link rel="stylesheet" href="css/components/feedback-notification.css">
+    <link rel="stylesheet" href="css/pages/portfolio.css">
+</head>
+<body>
+
+    <!-- Dev Banner -->
+    <div id="devBanner" data-component="dev-banner"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" data-component="loading"></div>
+
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main id="site-content">
+        
+        <!-- Portfolio Hero -->
+        <section class="portfolio-hero">
+            <div class="container portfolio-hero-content">
+                <h1>أعمالنا</h1>
+                <p>
+                    معرض أعمالنا ومشاريعنا الناجحة في مختلف القطاعات
+                    اكتشف كيف ساعدنا الشركات في بناء هويتها وتعزيز حضورها
+                </p>
+            </div>
+        </section>
+
+        <!-- Portfolio Content -->
+        <section class="portfolio-content">
+            <div class="container">
+                
+                <div class="portfolio-intro">
+                    <h2>مشاريع ناجحة</h2>
+                    <p>
+                        على مدار 25 عاماً، أنجزنا مئات المشاريع الناجحة
+                        لشركات من مختلف القطاعات والصناعات
+                    </p>
+                </div>
+
+                <!-- Portfolio Filters -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="gifts">هدايا دعائية</button>
+                    <button class="filter-btn" data-filter="uniforms">يونيفورم</button>
+                    <button class="filter-btn" data-filter="printing">طباعة</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- سيتم تحميل الأعمال ديناميكياً من JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-title">جاهز لبدء مشروعك؟</h2>
+                    <p class="cta-description">
+                        تواصل معنا الآن واحصل على استشارة مجانية وعرض سعر مخصص
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="cta-button cta-button-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="contact.html" class="cta-button cta-button-phone">
+                            <i class="fas fa-envelope"></i>
+                            <span>تواصل معنا</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Feedback Form Component -->
+    <div id="feedbackFormContainer" data-component="feedback-form"></div>
+
+    <!-- Feedback Notification -->
+    <div id="feedbackNotificationContainer" data-component="feedback-notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/core/component-loader.js"></script>
+    <script src="js/core/loading.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.load('loading', 'loadingScreen');
+            ComponentLoader.load('header', 'header');
+            ComponentLoader.load('footer', 'footer');
+            ComponentLoader.load('dev-banner', 'devBanner');
+            ComponentLoader.load('feedback-form', 'feedbackFormContainer');
+            ComponentLoader.load('feedback-notification', 'feedbackNotificationContainer');
+        });
+    </script>
+    
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/feedback.js"></script>
+    <script src="js/components/portfolio.js"></script>
+</body>
+</html>
+

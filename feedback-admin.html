@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>عرض الاقتراحات - New Moon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body {
+            background: var(--light-bg);
+            padding: var(--spacing-2xl);
+            font-family: var(--font-main);
+        }
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-lg);
+        }
+        h1 {
+            color: var(--dark-blue);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-gold), #B8941F);
+            color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        .stat-number {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            display: block;
+        }
+        .stat-label {
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+        .actions {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-blue);
+        }
+        .btn-danger {
+            background: var(--error);
+            color: var(--white);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .feedback-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        .feedback-item {
+            background: var(--light-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border-right: 4px solid var(--primary-gold);
+        }
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        .feedback-type {
+            background: var(--primary-gold);
+            color: var(--dark-blue);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+        }
+        .feedback-date {
+            color: var(--gray);
+            font-size: var(--text-sm);
+        }
+        .feedback-message {
+            color: var(--dark-blue);
+            line-height: 1.8;
+            margin: var(--spacing-md) 0;
+        }
+        .feedback-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+            font-size: var(--text-sm);
+            color: var(--gray);
+        }
+        .feedback-meta span {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--gray);
+        }
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.5;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-md);
+            }
+            .admin-container {
+                padding: var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>
+            <i class="fas fa-comments"></i>
+            عرض الاقتراحات والشكاوى
+        </h1>
+
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalCount">0</span>
+                <span class="stat-label">إجمالي الاقتراحات</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="suggestionCount">0</span>
+                <span class="stat-label">مقترحات</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="complaintCount">0</span>
+                <span class="stat-label">شكاوى</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="bugCount">0</span>
+                <span class="stat-label">مشاكل تقنية</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" onclick="loadFeedbacks()">
+                <i class="fas fa-sync-alt"></i>
+                تحديث
+            </button>
+            <button class="btn btn-danger" onclick="clearAllFeedbacks()">
+                <i class="fas fa-trash"></i>
+                مسح الكل
+            </button>
+            <button class="btn btn-primary" onclick="exportFeedbacks()">
+                <i class="fas fa-download"></i>
+                تصدير JSON
+            </button>
+        </div>
+
+        <div class="feedback-list" id="feedbackList">
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <p>لا توجد اقتراحات بعد</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const typeLabels = {
+            'suggestion': 'مقترح تطوير',
+            'complaint': 'شكوى',
+            'bug': 'مشكلة تقنية',
+            'feature': 'ميزة جديدة',
+            'other': 'أخرى'
+        };
+
+        function loadFeedbacks() {
+            try {
+                const stored = localStorage.getItem('newmoon_feedback') || '[]';
+                const feedbacks = JSON.parse(stored);
+                
+                updateStats(feedbacks);
+                displayFeedbacks(feedbacks);
+            } catch (error) {
+                console.error('Error loading feedbacks:', error);
+                document.getElementById('feedbackList').innerHTML = 
+                    '<div class="empty-state"><p>خطأ في تحميل البيانات</p></div>';
+            }
+        }
+
+        function updateStats(feedbacks) {
+            const total = feedbacks.length;
+            const suggestions = feedbacks.filter(f => f.type === 'suggestion').length;
+            const complaints = feedbacks.filter(f => f.type === 'complaint').length;
+            const bugs = feedbacks.filter(f => f.type === 'bug').length;
+
+            document.getElementById('totalCount').textContent = total;
+            document.getElementById('suggestionCount').textContent = suggestions;
+            document.getElementById('complaintCount').textContent = complaints;
+            document.getElementById('bugCount').textContent = bugs;
+        }
+
+        function displayFeedbacks(feedbacks) {
+            const list = document.getElementById('feedbackList');
+            
+            if (feedbacks.length === 0) {
+                list.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>لا توجد اقتراحات بعد</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = feedbacks.reverse().map((feedback, index) => {
+                const date = new Date(feedback.timestamp);
+                const dateStr = date.toLocaleDateString('ar-EG', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                return `
+                    <div class="feedback-item">
+                        <div class="feedback-header">
+                            <span class="feedback-type">${typeLabels[feedback.type] || feedback.type}</span>
+                            <span class="feedback-date">${dateStr}</span>
+                        </div>
+                        <div class="feedback-message">${feedback.message}</div>
+                        <div class="feedback-meta">
+                            ${feedback.name && feedback.name !== 'غير محدد' ? 
+                                `<span><i class="fas fa-user"></i> ${feedback.name}</span>` : ''}
+                            ${feedback.email && feedback.email !== 'غير محدد' ? 
+                                `<span><i class="fas fa-envelope"></i> ${feedback.email}</span>` : ''}
+                            <span><i class="fas fa-file"></i> ${feedback.page || 'غير محدد'}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function clearAllFeedbacks() {
+            if (confirm('هل أنت متأكد من مسح جميع الاقتراحات؟')) {
+                localStorage.removeItem('newmoon_feedback');
+                loadFeedbacks();
+                alert('تم مسح جميع الاقتراحات');
+            }
+        }
+
+        function exportFeedbacks() {
+            try {
+                const stored = localStorage.getItem('newmoon_feedback') || '[]';
+                const feedbacks = JSON.parse(stored);
+                
+                const dataStr = JSON.stringify(feedbacks, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `feedbacks-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Error exporting:', error);
+                alert('خطأ في التصدير');
+            }
+        }
+
+        // Load on page load
+        loadFeedbacks();
+    </script>
+</body>
+</html>
+

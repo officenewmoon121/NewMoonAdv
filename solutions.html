@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO -->
+    <title>حلولنا | نيو مون - حلول Branding والتوريد المؤسسي</title>
+    <meta name="description" content="اكتشف حلول نيو مون الشاملة: هدايا دعائية، يونيفورم موظفين، مطبوعات احترافية - 25 عاماً من الخبرة">
+    <meta name="keywords" content="هدايا دعائية, يونيفورم, طباعة, Branding, نيو مون">
+    <!-- theme-color: Supported by Chrome, Edge, Safari. Firefox support coming soon -->
+    <meta name="theme-color" content="#081226">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/core/responsive.css">
+    <link rel="stylesheet" href="css/components/loading.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/solutions-grid.css">
+    <link rel="stylesheet" href="css/components/cta-section.css">
+    <link rel="stylesheet" href="css/components/premium-buttons.css">
+    <link rel="stylesheet" href="css/core/premium-animations.css">
+    <link rel="stylesheet" href="css/components/whatsapp-float.css">
+    <link rel="stylesheet" href="css/components/dev-banner.css">
+    <link rel="stylesheet" href="css/components/feedback-form.css">
+    <link rel="stylesheet" href="css/components/feedback-notification.css">
+    <link rel="stylesheet" href="css/pages/solutions.css">
+</head>
+<body>
+
+    <!-- Dev Banner -->
+    <div id="devBanner" data-component="dev-banner"></div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" data-component="loading"></div>
+
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main id="site-content">
+        
+        <!-- Solutions Hero -->
+        <section class="solutions-hero">
+            <div class="container solutions-hero-content">
+                <h1>حلولنا المميزة</h1>
+                <p>
+                    25 عاماً من الخبرة في تقديم حلول Branding والتوريد المؤسسي
+                    للشركات في مختلف القطاعات والصناعات
+                </p>
+            </div>
+        </section>
+
+        <!-- Solutions Content -->
+        <section class="solutions-content">
+            <div class="container">
+                
+                <div class="solutions-intro">
+                    <h2>حلول متكاملة لنجاحك</h2>
+                    <p>
+                        نقدم لك مجموعة شاملة من الحلول المصممة خصيصاً لتعزيز هوية شركتك
+                        وبناء علاقات أقوى مع عملائك. من الهدايا الدعائية إلى اليونيفورم الاحترافي
+                        والمطبوعات عالية الجودة
+                    </p>
+                </div>
+
+                <div class="solutions-grid">
+                    
+                    <!-- Solution 1: Premium Gifts -->
+                    <div class="solution-card fade-in-up card-3d">
+                        <div class="solution-image solution-image-premium">
+                            <img src="assets/images/solutions/premium-gifts-card.jpg" alt="Premium Gifts" class="solution-bg-image" loading="lazy" onerror="this.style.display='none';">
+                            <div class="solution-icon-overlay">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Premium Gifts</h3>
+                            <p>
+                                حلول هدايا دعائية استراتيجية مصممة لتعزيز حضور علامتك التجارية
+                                وبناء علاقات طويلة الأمد مع عملائك وشركائك. منتجات فاخرة بطباعة احترافية
+                                تحول كل هدية إلى رسالة قوية عن جودة شركتك.
+                            </p>
+                            <ul class="solution-features">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>تصميم مخصص 100% وفق هوية علامتك التجارية</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>منتجات فاخرة من موردين معتمدين عالمياً</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>حلول تسعير مرنة تناسب ميزانيتك</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>شبكة توصيل تغطي جميع أنحاء الجمهورية</span>
+                                </li>
+                            </ul>
+                            <div class="solution-cta">
+                                <a href="solutions/premium-gifts.html" class="btn-premium btn-premium-primary magnetic">
+                                    <span>اكتشف المزيد</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                            <div class="solution-interactions">
+                                <button class="solution-interaction-btn" onclick="openFeedbackModal('premium-gifts')" title="قدم نصيحة أو اقتراح">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>نصيحة</span>
+                                </button>
+                                <button class="solution-interaction-btn" onclick="openSupportModal('premium-gifts')" title="تواصل مع الدعم">
+                                    <i class="fas fa-headset"></i>
+                                    <span>دعم</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solution 2: Brand Essentials -->
+                    <div class="solution-card fade-in-up card-3d stagger-item">
+                        <div class="solution-image solution-image-brand">
+                            <img src="assets/images/solutions/brand-essentials-card.jpg" alt="Brand Essentials" class="solution-bg-image" loading="lazy" onerror="this.onerror=null; this.style.display='none';">
+                            <div class="solution-icon-overlay">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Brand Essentials</h3>
+                            <p>
+                                نظام متكامل لإدارة الهوية البصرية لشركتك من نقطة واحدة.
+                                من اليونيفورم الاحترافي إلى المطبوعات والمواد الدعائية،
+                                نضمن اتساقاً كاملاً في كل نقطة تواصل بين علامتك التجارية والعالم.
+                            </p>
+                            <ul class="solution-features">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>يونيفورم موظفين بتصميم احترافي ومقاسات دقيقة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>مواد دعائية مخصصة تحمل هوية علامتك</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>مطبوعات بجودة فائقة وتقنيات UV متقدمة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>حلول متكاملة للهوية البصرية من A إلى Z</span>
+                                </li>
+                            </ul>
+                            <div class="solution-cta">
+                                <a href="solutions/brand-essentials.html" class="btn-premium btn-premium-primary magnetic">
+                                    <span>اكتشف المزيد</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                            <div class="solution-interactions">
+                                <button class="solution-interaction-btn" onclick="openFeedbackModal('brand-essentials')" title="قدم نصيحة أو اقتراح">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>نصيحة</span>
+                                </button>
+                                <button class="solution-interaction-btn" onclick="openSupportModal('brand-essentials')" title="تواصل مع الدعم">
+                                    <i class="fas fa-headset"></i>
+                                    <span>دعم</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3: B2B Solutions -->
+                    <div class="solution-card fade-in-up card-3d stagger-item">
+                        <div class="solution-image solution-image-b2b">
+                            <img src="assets/images/solutions/b2b-solutions-card.jpg" alt="B2B Solutions" class="solution-bg-image" loading="lazy" onerror="this.onerror=null; this.style.display='none';">
+                            <div class="solution-icon-overlay">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>B2B Solutions</h3>
+                            <p>
+                                شريكك الاستراتيجي في التوريد المؤسسي. حلول شاملة تغطي احتياجات
+                                الشركات من مختلف القطاعات - من التصميم والتصنيع إلى التوريد والتوصيل.
+                                خبرة 25 عاماً في إدارة مشاريع B2B المعقدة.
+                            </p>
+                            <ul class="solution-features">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>حلول توريد مؤسسية متكاملة من مورد واحد</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>خدمات مخصصة مصممة خصيصاً لاحتياجات شركتك</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>إدارة مشاريع احترافية مع متابعة دقيقة</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>دعم فني واستشاري متواصل 24/7</span>
+                                </li>
+                            </ul>
+                            <div class="solution-cta">
+                                <a href="solutions/b2b-solutions.html" class="btn-premium btn-premium-primary magnetic">
+                                    <span>اكتشف المزيد</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                            <div class="solution-interactions">
+                                <button class="solution-interaction-btn" onclick="openFeedbackModal('b2b-solutions')" title="قدم نصيحة أو اقتراح">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>نصيحة</span>
+                                </button>
+                                <button class="solution-interaction-btn" onclick="openSupportModal('b2b-solutions')" title="تواصل مع الدعم">
+                                    <i class="fas fa-headset"></i>
+                                    <span>دعم</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-title">جاهز لبدء مشروعك؟</h2>
+                    <p class="cta-description">
+                        تواصل معنا الآن واحصل على استشارة مجانية وعرض سعر مخصص
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="cta-button cta-button-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="contact.html" class="cta-button cta-button-phone">
+                            <i class="fas fa-envelope"></i>
+                            <span>تواصل معنا</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/201280081544" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Feedback Form Component -->
+    <div id="feedbackFormContainer" data-component="feedback-form"></div>
+
+    <!-- Feedback Notification -->
+    <div id="feedbackNotificationContainer" data-component="feedback-notification"></div>
+
+    <!-- JavaScript -->
+    <script src="js/core/component-loader.js"></script>
+    <script src="js/core/loading.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.load('loading', 'loadingScreen');
+            ComponentLoader.load('header', 'header');
+            ComponentLoader.load('footer', 'footer');
+            ComponentLoader.load('dev-banner', 'devBanner');
+            ComponentLoader.load('feedback-form', 'feedbackFormContainer');
+            ComponentLoader.load('feedback-notification', 'feedbackNotificationContainer');
+        });
+    </script>
+    
+    <script src="js/components/navigation.js"></script>
+    <script src="js/core/premium-animations.js"></script>
+    
+    <!-- Solutions Interactions Script -->
+    <script>
+        // Check if banner was closed
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('devBannerClosed') === 'true') {
+                const banner = document.getElementById('devBanner');
+                if (banner) banner.style.display = 'none';
+            }
+        });
+
+        // Feedback Modal
+        function openFeedbackModal(solution) {
+            const solutionNames = {
+                'premium-gifts': 'Premium Gifts',
+                'brand-essentials': 'Brand Essentials',
+                'b2b-solutions': 'B2B Solutions'
+            };
+            
+            const message = `هل لديك نصيحة أو اقتراح لتحسين ${solutionNames[solution] || 'هذا الحل'}؟\n\nيمكنك التواصل معنا عبر:\n📧 Email: Officenewmoon121@gmail.com\n📱 WhatsApp: 01280081544`;
+            
+            if (confirm(message + '\n\nهل تريد فتح WhatsApp الآن؟')) {
+                window.open('https://wa.me/201280081544?text=' + encodeURIComponent(`أريد تقديم نصيحة/اقتراح حول ${solutionNames[solution]}`), '_blank');
+            }
+        }
+
+    <script>
+        // Support Modal
+        function openSupportModal(solution) {
+            const solutionNames = {
+                'premium-gifts': 'Premium Gifts',
+                'brand-essentials': 'Brand Essentials',
+                'b2b-solutions': 'B2B Solutions'
+            };
+            
+            const message = `هل تحتاج مساعدة بخصوص ${solutionNames[solution] || 'هذا الحل'}؟\n\nيمكنك التواصل مع فريق الدعم عبر:\n📧 Email: Officenewmoon121@gmail.com\n📱 WhatsApp: 01280081544`;
+            
+            if (confirm(message + '\n\nهل تريد فتح WhatsApp الآن؟')) {
+                window.open('https://wa.me/201280081544?text=' + encodeURIComponent(`أحتاج دعم فني بخصوص ${solutionNames[solution]}`), '_blank');
+            }
+        }
+    </script>
+    <script src="js/components/feedback.js"></script>
+</body>
+</html>
+
